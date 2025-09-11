@@ -20,29 +20,33 @@
   <body>
     <main>
       <header>
-        <img src="./images/logo.svg" alt="" class="logo" />
-        <nav class="main_menu">
-          <ul>
-            <li><a href="#">О нас</a></li>
-            <li><a href="#">Команда</a></li>
-            <li><a href="#">Услуги</a></li>
-            <li><a href="#">Оборудование</a></li>
-            <li сlass="leave_req">
-              <a href="#"
-                >Оставить заявку
-                <img
-                  src="./assets/images/icons/arrow-diag.svg"
-                  alt="leave a request"
-              /></a>
-            </li>
-          </ul>
-          <button>
-            <img
-              src="./assets/images/icons/burger_btn.svg"
-              alt="button burger"
-            />
-          </button>
-        </nav>
+        <div class="wrap_header">
+          <img src="./assets/images/logo.svg" alt="" class="logo" />
+          <nav>
+            <ul class="main_menu">
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Команда</a></li>
+              <li><a href="#">Услуги</a></li>
+              <li><a href="#">Оборудование</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="wrap_btns">
+            <a href="#" class="leave_req_btn"
+              >Оставить заявку
+              <img
+                src="./assets/images/icons/arrow-diag.svg"
+                alt="leave a request"
+            /></a>
+
+            <button class="burger_btn">
+              <img
+                src="./assets/images/icons/burger_btn.svg"
+                alt="button burger"
+              />
+            </button>
+          </div>
+        </div>
       </header>
       <section class="hero_section">
         <div class="wrap_section">

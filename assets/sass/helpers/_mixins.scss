@@ -1,0 +1,37 @@
+// $min-size / $max-size — любые одинаковые единицы (px, rem, em)
+// $min-vw / $max-vw — диапазон экрана, где идёт рост (по умолчанию 375–1440px)
+@mixin fluid-font(
+  $min-size,
+  $max-size,
+  $min-vw: $screen-medium,
+  $max-vw: $screen-larger
+) {
+  font-size: clamp(
+    #{$min-size}px,
+    calc(
+      #{$min-size}px + (#{$max-size} - #{$min-size}) *
+        ((100vw - #{$min-vw}px) / (#{$max-vw} - #{$min-vw}))
+    ),
+    #{$max-size}px
+  );
+}
+
+// медиазапросы
+
+@mixin mobile($max: $screen-small) {
+  @media screen and (max-width: #{$max}px) {
+    @content;
+  }
+}
+
+@mixin tablet-range($min: $screen-medium, $max: $screen-larger) {
+  @media screen and (min-width: (#{$min}px)) and (max-width: #{$max}px) {
+    @content;
+  }
+}
+
+@mixin tablet($max: $screen-medium) {
+  @media screen and (max-width: #{$max}px) {
+    @content;
+  }
+}

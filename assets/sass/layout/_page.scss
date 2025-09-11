@@ -1,0 +1,48 @@
+html {
+  font-family: "HelveticaNeueCyr", Arial, sans-serif;
+  color: white;
+}
+header {
+  width: 100%;
+  max-width: 1010px;
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  top: 17px;
+  transform: translateX(-50%);
+  .logo {
+    margin-left: 16px;
+  }
+  .wrap_header {
+    @extend %flexRowNowrapSB;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 1000px;
+    padding: 25px;
+  }
+  .main_menu {
+    @extend %flexRowNowrapSB;
+    gap: 50px;
+    a {
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+  .wrap_btns {
+    @extend %flexRowNowrapSB;
+    gap: 36px;
+    .leave_req_btn {
+      @extend %flexRowNowrapSB;
+      gap: 14px;
+      font-size: 14px;
+      font-weight: 400;
+      img {
+        margin-top: 3px;
+      }
+    }
+    .burger_btn {
+      padding: 5px 0;
+      border: 0;
+    }
+  }
+}
