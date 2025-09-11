@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/libs/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <title>4TECH</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="./images/logo.svg" alt="" class="logo" />
+        <nav class="main_menu">
+          <ul>
+            <li><a href="#">О нас</a></li>
+            <li><a href="#">Команда</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Оборудование</a></li>
+            <li сlass="leave_req">
+              <a href="#"
+                >Оставить заявку
+                <img
+                  src="./assets/images/icons/arrow-diag.svg"
+                  alt="leave a request"
+              /></a>
+            </li>
+          </ul>
+          <button>
+            <img
+              src="./assets/images/icons/burger_btn.svg"
+              alt="button burger"
+            />
+          </button>
+        </nav>
+      </header>
+      <section class="hero_section">
+        <div class="wrap_section">
+          <video
+            src="./assets/video/section_hero.mp4"
+            class="video_background"
+            id="video_background"
+            muted=""
+            autoplay=""
+            loop=""
+            playsinline=""
+            preload="auto"
+          ></video>
+          <div class="wrap_content">
+            <div class="head_content">
+              <div>
+                <img
+                  src="./assets/images/icons/check_mark.svg"
+                  alt="check_mark"
+                />
+                <span
+                  >От оборудования до облачных серверов — все в одном
+                  месте</span
+                >
+              </div>
+            </div>
+            <h1>
+              Комплексные решение, для цифровой трансформации вашей компании
+            </h1>
+            <div class="foot_content two_col">
+              <div class="left_col">
+                <button class="btn_hs white">
+                  Оставить заявку
+                  <img
+                    src="./assets/images/icons/arrow_in_circle_bl.svg"
+                    alt="arrow in circle"
+                  />
+                </button>
+                <button class="btn_hs transporent">
+                  Узнать больше
+                  <img
+                    src="./assets/images/icons/arrow_in_circle_w.svg"
+                    alt="arrow in circle"
+                  />
+                </button>
+              </div>
+              <div class="right_col">
+                <button class="btn_hs transporent down">
+                  Листайте вниз
+                  <img
+                    src="./assets/images/icons/arrow_in_circle_down_w.svg"
+                    alt="arrow in circle"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
