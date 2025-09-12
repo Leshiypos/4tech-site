@@ -24,4 +24,10 @@
   &.down {
     border: none;
   }
+  &.leave_request {
+    background: linear-gradient(135deg, #9300ce 0%, #2c03a5 100%);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+  }
 }
