@@ -9,3 +9,11 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+
+%paddingSectionFullWidthLR {
+  padding: 9px;
+
+  @include mobile {
+    padding: 5px;
+  }
+}

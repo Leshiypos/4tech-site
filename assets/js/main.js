@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         buildMaskFromPlaceholder();
         input.value = "";
         input.click();
+        input.focus();
       }, 0);
     });
 

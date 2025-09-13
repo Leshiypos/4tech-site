@@ -8,6 +8,7 @@
   font-size: 14px;
   font-weight: 500;
   border: none;
+  white-space: nowrap;
   img {
     width: 51px;
     height: 51px;
@@ -29,5 +30,8 @@
     color: white;
     font-size: 14px;
     font-weight: 500;
+  }
+  @include mobile {
+    height: 56px;
   }
 }
