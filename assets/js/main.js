@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!input || !form) return;
 
     const iti = window.intlTelInput(input, {
-      initialCountry: "ru",
+      initialCountry: "by",
       preferredCountries: ["by", "ru", "ua", "pl", "de"],
       separateDialCode: true,
       nationalMode: true, // вводим национальный номер
@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         buildMaskFromPlaceholder();
         input.value = "";
+        input.click();
       }, 0);
     });
 
@@ -130,8 +131,5 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       hidden.value = e164;
     });
-    // Закрыть после выбора страны
-
-    // Закрыть после выбора страны
   })();
 });
