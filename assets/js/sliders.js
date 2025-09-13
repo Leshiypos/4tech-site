@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Слайдер Комплексные решения
   let sliders_stripe = document.querySelectorAll(".solution-slider");
 
   if (sliders_stripe) {
@@ -6,6 +7,18 @@ document.addEventListener("DOMContentLoaded", () => {
       new Swiper(slider, {
         speed: 400,
         slidesPerView: 4,
+      });
+    });
+  }
+
+  //   Слайдер Партнеры
+  let slider_partners = document.querySelectorAll(".partners_slider");
+
+  if (slider_partners) {
+    slider_partners.forEach((slider) => {
+      new Swiper(slider, {
+        speed: 400,
+        slidesPerView: 5.3,
       });
     });
   }
