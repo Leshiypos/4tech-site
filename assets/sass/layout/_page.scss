@@ -18,7 +18,7 @@ body {
 .two_col {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .left_col,
 .right_col {
@@ -771,6 +771,16 @@ header {
       flex-flow: row nowrap;
       gap: 16px;
     }
+    .fields {
+      position: relative;
+      #phone_error {
+        position: absolute;
+        bottom: -31px;
+        left: 34px;
+        color: #9300ce;
+        display: none;
+      }
+    }
     .form-phone {
       width: 100%;
       .iti__selected-country {
@@ -851,6 +861,99 @@ header {
       font-size: 14px;
       line-height: 1.8;
       max-width: 170px;
+    }
+  }
+}
+
+footer {
+  margin-top: 150px;
+  margin-bottom: 80px;
+  .wrap {
+    padding: 0 20px;
+  }
+  .head_footer {
+    margin-bottom: 100px;
+  }
+  .two_col {
+    align-items: center;
+    gap: 20px;
+  }
+  .col {
+    flex: 2;
+    &.logo {
+      flex: 1;
+    }
+    &.menu_footer {
+      flex: 3;
+      ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        font-size: 18px;
+        letter-spacing: -0.03em;
+        color: rgba(108, 108, 108, 1);
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    .buttons_wrap {
+      display: flex;
+      flex-flow: row nowrap;
+      width: fit-content;
+      margin-left: auto;
+      gap: 10px;
+    }
+  }
+  // Низ футера
+  .foot_footer {
+    letter-spacing: -0.03em;
+    .col {
+      flex: 1;
+    }
+    .col_info {
+      .text_logo {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .address {
+        font-size: 14px;
+        color: rgba(105, 105, 105, 1);
+        line-height: 1.6;
+      }
+    }
+    .col_prodaction {
+      display: flex;
+      justify-content: center;
+      .wrap_content {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 7px;
+      }
+      .title {
+        font-size: 16px;
+        text-transform: uppercase;
+        margin-bottom: 3px;
+      }
+      .descriptios {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+    .col_privacy {
+      display: flex;
+
+      ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin-left: auto;
+        gap: 25px;
+        color: rgba(103, 103, 103, 1);
+      }
     }
   }
 }
