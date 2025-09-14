@@ -10,6 +10,15 @@
   -webkit-backdrop-filter: blur(12px);
 }
 
+%marginWrapDesktopLR {
+  margin: 0 64px;
+  @include desktop(1600) {
+    margin: 0 27px;
+  }
+  @include desktop(1400) {
+    margin: 0 20px;
+  }
+}
 %paddingSectionFullWidthLR {
   padding: 9px;
 

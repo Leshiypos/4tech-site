@@ -45,10 +45,16 @@ header {
     }
     .main_menu {
       @extend %flexRowNowrapSB;
+      align-items: center;
       gap: 50px;
       a {
         font-size: 14px;
         font-weight: 400;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+      li {
+        vertical-align: middle;
       }
     }
     .wrap_btns {
@@ -59,6 +65,7 @@ header {
         gap: 14px;
         font-size: 14px;
         font-weight: 400;
+        margin-top: 3px;
         img {
           margin-top: 3px;
         }
@@ -82,6 +89,42 @@ header {
     }
     .logo {
       height: 15px;
+    }
+  }
+  @include desktop {
+    .desktop {
+      max-width: 800px;
+      .logo {
+        width: 80px;
+      }
+      .wrap_header {
+        padding: 20px;
+        .main_menu {
+          gap: 25px;
+        }
+      }
+    }
+  }
+  @include desktop(1200) {
+    .desktop {
+      max-width: 600px;
+      .wrap_btns {
+        .leave_req_btn {
+          font-size: 10px;
+        }
+      }
+      .logo {
+        width: 60px;
+      }
+      .wrap_header {
+        padding: 15px;
+        .main_menu {
+          gap: 20px;
+          a {
+            font-size: 10px;
+          }
+        }
+      }
     }
   }
 
@@ -118,6 +161,7 @@ header {
           border-radius: 100px;
           width: fit-content;
           font-size: 16px;
+          @include fluid-font(10, 16);
         }
       }
       .foot_content {
@@ -139,9 +183,41 @@ header {
   }
   h1 {
     font-size: 105px;
+    @include fluid-font(50, 105);
     font-weight: 300;
     letter-spacing: -0.03em;
     margin-bottom: 77px;
+  }
+  @include desktop(1600) {
+    .wrap_section {
+      .wrap_content {
+        margin: 0 8px 24px 27px;
+        .head_content {
+          .pre_title {
+            padding: 15px 40px 15px 19px;
+          }
+        }
+      }
+    }
+
+    h1 {
+      margin-bottom: 60px;
+    }
+  }
+  @include desktop(1400) {
+    .wrap_section {
+      .wrap_content {
+        .head_content {
+          .pre_title {
+            padding: 10px 20px 10px 12px;
+          }
+        }
+      }
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
   }
   @include mobile {
     .wrap_section {
@@ -172,13 +248,13 @@ header {
     }
   }
 }
-
+// <----------------------------->
 .reliable_supplier_section {
   margin-top: 210px;
   overflow: hidden;
   padding-bottom: 135px;
   .wrap_section {
-    margin: 0 64px;
+    @extend %marginWrapDesktopLR;
   }
   .head_content {
     @extend %flexRowNowrapSB;
@@ -188,14 +264,21 @@ header {
       flex: 3;
       h2 {
         font-size: 70px;
+        @include fluid-font(40, 70);
         font-weight: normal;
       }
     }
     .description_wrap {
       flex: 2;
       padding-top: 17px;
+      .wrap {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: 15px;
+      }
       .description {
         font-size: 16px;
+        @include fluid-font(10, 16);
         font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.8;
@@ -208,6 +291,7 @@ header {
       margin-bottom: 21px;
       h3 {
         font-size: 40px;
+        @include fluid-font(28, 40);
         font-weight: 500;
         margin-bottom: 46px;
         letter-spacing: -0.03em;
@@ -215,6 +299,7 @@ header {
       }
       p {
         font-size: 16px;
+        @include fluid-font(10, 16);
         font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.8;
@@ -236,12 +321,74 @@ header {
       }
     }
   }
+  @include desktop(1600) {
+    margin-top: 160px;
+
+    .head_content {
+      margin-bottom: 140px;
+      .description_wrap {
+        flex: 1.7;
+        img {
+          width: 80px;
+        }
+      }
+    }
+    .main_content {
+      & > .left_col {
+        .left_col {
+          padding-right: 15%;
+        }
+        .right_col {
+          padding-left: 15%;
+        }
+        p {
+          margin-bottom: 30px;
+          line-height: 1.6;
+        }
+      }
+      & > .right_col {
+        .video_background {
+          transform: scale(1.9);
+        }
+        .logo_section {
+          width: 250px;
+        }
+      }
+    }
+  }
+
+  @include desktop(1400) {
+    margin-top: 140px;
+    .head_content {
+      margin-bottom: 100px;
+      .description_wrap {
+        img {
+          width: 60px;
+        }
+        .description {
+          margin-top: 10px;
+        }
+      }
+    }
+    .main_content {
+      & > .right_col {
+        .video_background {
+          transform: scale(1.7);
+        }
+        .logo_section {
+          width: 140px;
+        }
+      }
+    }
+  }
 }
+// <----------------------------->
 .overyone_here_section {
   .wrap_section {
     @extend %flexRowNowrapSB;
     gap: 19px;
-    margin: 0 23px 0 64px;
+    @extend %marginWrapDesktopLR;
+    margin-right: 23px;
   }
   .column {
     flex: 1;
@@ -249,6 +396,7 @@ header {
   .content {
     h2 {
       font-size: 50px;
+      @include fluid-font(30, 50);
       font-weight: 500;
       margin-bottom: 34px;
       letter-spacing: -0.03em;
@@ -256,6 +404,7 @@ header {
     p {
       max-width: 271px;
       font-size: 16px;
+      @include fluid-font(10, 16);
       font-weight: 300;
       line-height: 1.8;
       letter-spacing: -0.03em;
@@ -275,6 +424,7 @@ header {
       z-index: 2;
       p {
         font-size: 14px;
+        @include fluid-font(10, 14);
         font-weight: 300;
         line-height: 1.8;
         letter-spacing: -0.03em;
@@ -282,6 +432,7 @@ header {
     }
     h3 {
       font-size: 30px;
+      @include fluid-font(16, 30);
       font-weight: 500;
       margin-bottom: 8px;
       letter-spacing: -0.03em;
@@ -292,14 +443,64 @@ header {
       right: 24px;
     }
   }
+  @include desktop(1600) {
+    .wrap_section {
+    }
+    .card {
+      .card_content {
+        margin: 30px;
+      }
+      .arrow_diag {
+        width: 45px;
+        top: 20px;
+        right: 17px;
+      }
+    }
+    .content {
+      p {
+        width: 65%;
+      }
+    }
+  }
+  @include desktop(1400) {
+    .wrap_section {
+      gap: 12px;
+      margin: 0 20px;
+    }
+    .card {
+      .card_content {
+        margin: 20px;
+      }
+      .arrow_diag {
+        width: 30px;
+        top: 15px;
+        right: 12px;
+      }
+    }
+    .content {
+      h2 {
+        margin-bottom: 28px;
+      }
+      p {
+        margin-bottom: 28px;
+      }
+    }
+  }
 }
 
+// <----------------------------->
+
 .licensed_software_section {
+  @extend %paddingSectionFullWidthLR;
   margin-top: 102px;
   .wrap_section {
     position: relative;
     width: 100%;
-    max-height: 890px;
+    border-radius: 20px;
+    overflow: hidden;
+    .cover {
+      height: 890px;
+    }
   }
   .wrap_content {
     position: absolute;
@@ -311,13 +512,15 @@ header {
     top: 0;
     width: 100%;
     height: 100%;
+
     .content_top {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 40px;
+      gap: 30px;
       h2 {
         font-size: 105px;
+        @include fluid-font(50, 105);
         font-weight: 300;
         text-align: center;
         margin-bottom: 40px;
@@ -325,6 +528,7 @@ header {
       }
       .description {
         font-size: 18px;
+        @include fluid-font(12, 18);
         letter-spacing: -0.03em;
         font-weight: 400;
         text-align: center;
@@ -357,7 +561,69 @@ header {
       }
     }
   }
+  @include desktop(1600) {
+    .wrap_content {
+      padding: 50px 35px 90px;
+      .content_top {
+        gap: 20px;
+      }
+      .content_bottom {
+        .our_clients {
+          .card_client {
+            height: 120px;
+            img {
+              transform: scale(0.9);
+            }
+          }
+        }
+      }
+    }
+  }
+  @include desktop(1400) {
+    .wrap_section {
+      .cover {
+        height: 800px;
+      }
+    }
+    .wrap_content {
+      padding: 45px 30px 80px;
+      .content_top {
+        gap: 0;
+      }
+      .content_bottom {
+        .our_clients {
+          .card_client {
+            height: 100px;
+            img {
+              transform: scale(0.6);
+            }
+          }
+        }
+      }
+    }
+  }
+  @include desktop(1200) {
+    .wrap_section {
+      .cover {
+        height: 700px;
+      }
+    }
+    .wrap_content {
+      .content_bottom {
+        .our_clients {
+          .card_client {
+            height: 80px;
+            img {
+              transform: scale(0.5);
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
+// <----------------------------->
 
 .catalog_section {
   margin-top: 130px;
@@ -378,6 +644,7 @@ header {
       h2 {
         font-size: 170px;
         font-weight: 300;
+        margin-top: -15px;
       }
       img {
         transform: rotate(135deg);
@@ -388,6 +655,7 @@ header {
       padding-top: 17px;
       .description {
         font-size: 16px;
+        @include fluid-font(10, 16);
         font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.8;
@@ -412,12 +680,14 @@ header {
 
       h3 {
         font-size: 40px;
-        line-height: -0.03em;
+        @include fluid-font(20, 40);
+        letter-spacing: -0.03em;
         font-weight: 500;
         margin-bottom: 28px;
       }
       p {
         font-size: 14px;
+        @include fluid-font(10, 14);
         font-weight: 300;
         line-height: 1.8;
         max-width: 270px;
@@ -440,10 +710,104 @@ header {
       }
     }
   }
+  @include desktop(1600) {
+    .row_catalog {
+      margin-bottom: 120px;
+    }
+    .head_content {
+      margin-bottom: 140px;
+      .title {
+        h2 {
+          font-size: 150px;
+        }
+        img {
+          width: 100px;
+        }
+      }
+      .description_wrap {
+        flex: 1.7;
+        img {
+          width: 80px;
+        }
+      }
+    }
+  }
+  @include desktop(1400) {
+    margin-top: 110px;
+    .row_catalog {
+      &.last {
+        .card {
+          h3 {
+            margin-bottom: 15px;
+          }
+          &.text {
+            max-width: 350px;
+            .leave_request {
+              margin-top: 20px;
+            }
+          }
+        }
+      }
+    }
+    .row_catalog {
+      margin-bottom: 110px;
+    }
+    .head_content {
+      margin-bottom: 100px;
+      .title {
+        h2 {
+          font-size: 130px;
+        }
+        img {
+          width: 90px;
+        }
+      }
+      .description_wrap {
+        img {
+          width: 60px;
+        }
+        .description {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  @include desktop(1200) {
+    margin-top: 90px;
+    .row_catalog {
+      margin-bottom: 90px;
+      .card h3 {
+        margin-bottom: 15px;
+      }
+      &.last {
+        .card {
+          &.text {
+            max-width: 290px;
+            h3 {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+    .head_content {
+      margin-bottom: 100px;
+      .title {
+        h2 {
+          font-size: 110px;
+          margin-top: -5px;
+        }
+        img {
+          width: 75px;
+        }
+      }
+    }
+  }
 }
 
+// <------------------------------------->
 .protect_section {
-  padding: 9px;
+  @extend %paddingSectionFullWidthLR;
   margin-top: 100px;
   .wrap_section {
     position: relative;
@@ -456,19 +820,64 @@ header {
       margin: 0 16px 48px 55px;
     }
   }
-  h1 {
+  h2 {
     font-size: 100px;
+    @include fluid-font(45, 100);
     font-weight: 300;
     letter-spacing: -0.03em;
     margin-bottom: 46px;
   }
   p {
     font-size: 18px;
+    @include fluid-font(12, 18);
     font-weight: 300;
     line-height: 1.8;
     margin-bottom: 44px;
   }
+
+  @include desktop(1600) {
+    margin-top: 80px;
+    .wrap_section {
+      .wrap_content {
+        margin: 0 8px 24px 27px;
+        .head_content {
+          .pre_title {
+            padding: 15px 40px 15px 19px;
+          }
+        }
+      }
+    }
+
+    h2 {
+      margin-bottom: 35px;
+    }
+    p {
+      margin-bottom: 30px;
+    }
+  }
+  @include desktop(1400) {
+    margin-top: 60px;
+    .wrap_section {
+      .wrap_content {
+        .head_content {
+          .pre_title {
+            padding: 10px 20px 10px 12px;
+          }
+        }
+      }
+    }
+
+    h2 {
+      margin-bottom: 30px;
+    }
+    p {
+      margin-bottom: 24px;
+    }
+  }
 }
+
+// <------------------------------------->
+
 .outsourcing_section {
   margin-top: 160px;
   .wrap_section {
@@ -482,14 +891,21 @@ header {
       flex: 3;
       h2 {
         font-size: 100px;
+        @include fluid-font(45, 100);
         font-weight: normal;
       }
     }
     .description_wrap {
       flex: 2;
       padding-top: 17px;
+      .wrap {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: 15px;
+      }
       .description {
         font-size: 16px;
+        @include fluid-font(10, 16);
         font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.8;
@@ -512,7 +928,10 @@ header {
           border-radius: 20px;
           overflow: hidden;
         }
-        .from_descr,
+        .from_descr {
+          flex: 1;
+          width: 50%;
+        }
         .content {
           flex: 1;
         }
@@ -530,12 +949,14 @@ header {
         }
         h3 {
           font-size: 35px;
+          @include fluid-font(20, 35);
           font-weight: 500;
           margin-bottom: 20px;
           letter-spacing: -0.03em;
         }
         p {
           font-size: 16px;
+          @include fluid-font(10, 16);
           font-weight: 300;
           line-height: 1.6;
         }
@@ -548,8 +969,52 @@ header {
       object-fit: cover;
     }
   }
+  @include desktop(1600) {
+    margin-top: 140px;
+    .head_content {
+      margin-bottom: 140px;
+      .description_wrap {
+        flex: 1.7;
+        img {
+          width: 80px;
+        }
+      }
+    }
+    .main_content {
+      .row_cont {
+        gap: 15px;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  @include desktop(1400) {
+    margin-top: 120px;
+    .head_content {
+      margin-bottom: 90px;
+      .description_wrap {
+        img {
+          width: 60px;
+        }
+        .description {
+          margin-top: 10px;
+        }
+      }
+    }
+    .main_content {
+      .row_cont {
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  @include desktop(1200) {
+    margin-top: 100px;
+    .head_content {
+      margin-bottom: 70px;
+    }
+  }
 }
-
+// <------------------------------------->
 .solution_section {
   margin-top: 154px;
   .wrap_section {
@@ -566,6 +1031,7 @@ header {
 
       h2 {
         font-size: 70px;
+        @include fluid-font(40, 70);
         font-weight: normal;
       }
       .four_steps {
@@ -578,6 +1044,11 @@ header {
         .content {
           p {
             text-align: center;
+            @include fluid-font(10, 16);
+          }
+          .number {
+            font-size: 100px;
+            @include fluid-font(60, 100);
           }
         }
         .video_background {
@@ -587,16 +1058,19 @@ header {
           left: 50%;
           transform: translate(-50%, -50%) scale(2);
         }
-        .number {
-          font-size: 100px;
-        }
       }
     }
     .description_wrap {
       flex: 2;
       padding-top: 17px;
+      .wrap {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: 15px;
+      }
       .description {
         font-size: 16px;
+        @include fluid-font(10, 16);
         font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.8;
@@ -624,12 +1098,14 @@ header {
       }
       h3 {
         font-size: 40px;
+        @include fluid-font(20, 40);
         letter-spacing: -0.03em;
         font-weight: 500;
         margin-bottom: 22px;
       }
       p {
         font-size: 16px;
+        @include fluid-font(10, 16);
         font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.6;
@@ -641,10 +1117,73 @@ header {
       }
     }
   }
+
+  @include desktop(1600) {
+    .head_content {
+      margin-bottom: 150px;
+      .title {
+        .four_steps {
+          .video_background {
+            transform: translate(-50%, -50%) scale(1.6);
+          }
+        }
+      }
+      .description_wrap {
+        flex: 1.7;
+        img {
+          width: 80px;
+        }
+      }
+    }
+    .main_content {
+      .col {
+        img {
+          margin-top: 35px;
+          max-width: 70%;
+        }
+      }
+    }
+  }
+  @include desktop(1400) {
+    .head_content {
+      margin-bottom: 130px;
+      .title {
+        .four_steps {
+          .video_background {
+            transform: translate(-50%, -50%) scale(1.4);
+          }
+        }
+      }
+      .description_wrap {
+        img {
+          width: 60px;
+        }
+        .description {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  @include desktop(1200) {
+    .head_content {
+      margin-bottom: 110px;
+      .title {
+        .four_steps {
+          margin-left: -40px;
+          margin-top: -12px;
+          .video_background {
+            transform: translate(-50%, -50%) scale(1.2);
+          }
+        }
+      }
+    }
+  }
 }
 
+// <------------------------------------->
+
 .development_section {
-  padding: 9px;
+  @extend %paddingSectionFullWidthLR;
   margin-top: 200px;
   .wrap_section {
     position: relative;
@@ -658,8 +1197,9 @@ header {
       width: 100%;
     }
   }
-  h1 {
+  h2 {
     font-size: 100px;
+    @include fluid-font(40, 100);
     font-weight: 300;
     letter-spacing: -0.03em;
     margin-bottom: 64px;
@@ -694,17 +1234,92 @@ header {
       margin-left: 16px;
       h3 {
         font-size: 25px;
+        @include fluid-font(18, 25);
         letter-spacing: -0.03em;
         margin-bottom: 8px;
       }
       p {
         font-size: 14px;
+        @include fluid-font(10, 14);
         letter-spacing: -0.03em;
         color: rgba(255, 255, 255, 0.4);
       }
     }
   }
+
+  @include desktop(1600) {
+    margin-top: 180px;
+    .wrap_section {
+      .wrap_content {
+        padding: 0 14px 20px;
+      }
+    }
+    h2 {
+      margin-bottom: 35px;
+    }
+    .our_stecs {
+      .card_stec {
+        height: 120px;
+        padding-left: 30px;
+        .content {
+          margin-left: 14px;
+        }
+        img {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+  @include desktop(1400) {
+    margin-top: 160px;
+    .wrap_section {
+      .wrap_content {
+        padding: 0 10px 14px;
+      }
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .our_stecs {
+      .card_stec {
+        height: 100px;
+        padding-left: 20px;
+        .content {
+          margin-left: 12px;
+        }
+        img {
+          transform: scale(0.6);
+        }
+      }
+    }
+  }
+  @include desktop(1200) {
+    margin-top: 140px;
+    .wrap_section {
+      .wrap_content {
+        padding: 0 10px 10px;
+      }
+    }
+    h2 {
+      margin-bottom: 12px;
+    }
+    .our_stecs {
+      .card_stec {
+        padding-left: 10px;
+        height: 80px;
+        .content {
+          margin-left: 10px;
+        }
+        img {
+          transform: scale(0.5);
+        }
+      }
+    }
+  }
 }
+
+// <------------------------------------->
+
 .partners_section {
   margin-top: 145px;
   .wrap_section {
@@ -712,6 +1327,7 @@ header {
   }
   h2 {
     font-size: 40px;
+    @include fluid-font(20, 40);
     font-weight: 500;
     margin-bottom: 80px;
     letter-spacing: -0.03em;
@@ -730,7 +1346,46 @@ header {
       align-items: center;
     }
   }
+  @include desktop(1600) {
+    margin-top: 125px;
+    .sliders_wrap {
+      gap: 100px;
+    }
+    h2 {
+      margin-bottom: 60px;
+    }
+    .partner_logo {
+      transform: scale(0.9);
+    }
+  }
+  @include desktop(1400) {
+    margin-top: 100px;
+    .sliders_wrap {
+      gap: 80px;
+    }
+    h2 {
+      margin-bottom: 50px;
+    }
+    .partner_logo {
+      transform: scale(0.8);
+    }
+  }
+  @include desktop(1200) {
+    margin-top: 80px;
+    .sliders_wrap {
+      gap: 60px;
+    }
+    h2 {
+      margin-bottom: 40px;
+    }
+    .partner_logo {
+      transform: scale(0.7);
+    }
+  }
 }
+
+//  <------------------------------------->
+
 .it_solutions_section {
   padding: 9px;
   margin-top: 180px;
@@ -748,6 +1403,7 @@ header {
   }
   h2 {
     font-size: 105px;
+    @include fluid-font(40, 105);
     font-weight: 300;
     letter-spacing: -0.03em;
     margin-bottom: 34px;
@@ -782,11 +1438,104 @@ header {
     .content {
       h3 {
         font-size: 16px;
+        @include fluid-font(10, 16);
         letter-spacing: -0.03em;
       }
     }
   }
+  @include desktop(1600) {
+    margin-top: 160px;
+    .wrap_section {
+      .wrap_content {
+        padding: 0 14px 20px;
+      }
+    }
+    h2 {
+      margin-bottom: 35px;
+    }
+    .our_stecs {
+      .row {
+        gap: 12px;
+        margin-bottom: 12px;
+        &:first-child {
+          margin-left: 120px;
+        }
+        &:last-child {
+          margin-right: 120px;
+        }
+      }
+      .card_stec {
+        height: 130px;
+        gap: 10px;
+        img {
+          transform: scale(0.9);
+        }
+      }
+    }
+  }
+  @include desktop(1400) {
+    margin-top: 140px;
+    .wrap_section {
+      .wrap_content {
+        padding: 0 10px 14px;
+      }
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    .our_stecs {
+      .row {
+        gap: 8px;
+        margin-bottom: 8px;
+        &:first-child {
+          margin-left: 110px;
+        }
+        &:last-child {
+          margin-right: 110px;
+        }
+      }
+      .card_stec {
+        height: 110px;
+        gap: 5px;
+        img {
+          transform: scale(0.6);
+        }
+      }
+    }
+  }
+  @include desktop(1200) {
+    margin-top: 120px;
+    .wrap_section {
+      .wrap_content {
+        padding: 0 10px 10px;
+      }
+    }
+    h2 {
+      margin-bottom: 12px;
+    }
+    .our_stecs {
+      .row {
+        gap: 4px;
+        margin-bottom: 4px;
+        &:first-child {
+          margin-left: 90px;
+        }
+        &:last-child {
+          margin-right: 90px;
+        }
+      }
+      .card_stec {
+        height: 90px;
+        gap: 0;
+        img {
+          transform: scale(0.5);
+        }
+      }
+    }
+  }
 }
+
+//  <------------------------------------->
 .contact_form_section {
   margin-top: 95px;
   overflow: hidden;
@@ -800,6 +1549,7 @@ header {
   }
   h2 {
     font-size: 80px;
+    @include fluid-font(40, 80);
     font-weight: 300;
     letter-spacing: -0.03em;
     line-height: 0.8;
@@ -807,6 +1557,7 @@ header {
   }
   .description {
     font-size: 16px;
+    @include fluid-font(10, 16);
     font-weight: 300;
     letter-spacing: -0.03em;
     line-height: 1.8;
@@ -817,6 +1568,7 @@ header {
     .col {
       flex: 1;
       .video_background {
+        overflow: visible;
         position: relative;
         transform: scale(1.3);
         z-index: -1;
@@ -912,17 +1664,75 @@ header {
     }
     .stat {
       font-size: 65px;
+      @include fluid-font(40, 65);
       font-weight: 300;
       letter-spacing: -0.03em;
       margin-bottom: 25px;
     }
     .description_stat {
       font-size: 14px;
+      @include fluid-font(10, 14);
       line-height: 1.8;
       max-width: 170px;
     }
   }
+  @include desktop(1600) {
+    margin-top: 75px;
+    .head_content {
+      max-width: 90%;
+    }
+    .two_column {
+      .col {
+        .video_background {
+          transform: scale(1.2);
+        }
+      }
+    }
+    .foot_content {
+      .col_foot_content {
+        & > div {
+          max-width: 80%;
+        }
+      }
+    }
+  }
+  @include desktop(1400) {
+    margin-top: 55px;
+    .form_wrap {
+      input {
+        padding: 20px 70px;
+        min-width: unset;
+      }
+      form {
+        max-width: 90%;
+      }
+    }
+    .two_column {
+      .col {
+        .video_background {
+          transform: scale(1.25);
+        }
+      }
+    }
+  }
+  @include desktop(1200) {
+    margin-top: 40px;
+    .form_wrap {
+      input {
+        padding: 14px 70px;
+      }
+    }
+    .two_column {
+      .col {
+        .video_background {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
 }
+
+//  <------------------------------------->
 
 footer {
   margin-top: 150px;

@@ -18,7 +18,12 @@
 
 // медиазапросы
 
-@mixin mobile($max: $screen-small) {
+@mixin desktop($max: $screen-larger) {
+  @media screen and(min-width: #{$screen-medium+1}px) and (max-width: #{$max}px) {
+    @content;
+  }
+}
+@mixin mobile($max: $screen-medium) {
   @media screen and (max-width: #{$max}px) {
     @content;
   }
