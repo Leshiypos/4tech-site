@@ -17,6 +17,9 @@
   @media screen and (min-width: 1001px) and (max-width: 1400px) {
     .reliable_supplier_section .wrap_section, .overyone_here_section .wrap_section {
       margin: 0 20px; } }
+  @media screen and (max-width: 1000px) {
+    .reliable_supplier_section .wrap_section, .overyone_here_section .wrap_section {
+      margin: 34px; } }
 
 .hero_section, .licensed_software_section, .protect_section, .development_section {
   padding: 9px; }
@@ -208,7 +211,11 @@ a {
     .btn_hs {
       height: 56px; }
       .btn_hs img {
-        width: 45px; } }
+        width: 45px; }
+      .btn_hs.leave_request {
+        height: 65px; }
+        .btn_hs.leave_request img {
+          width: 51px; } }
 
 html {
   font-family: "HelveticaNeueCyr", Arial, sans-serif;
@@ -463,6 +470,31 @@ header .mobile {
         transform: scale(1.7); }
       .reliable_supplier_section .main_content > .right_col .logo_section {
         width: 140px; } }
+  @media screen and (max-width: 1000px) {
+    .reliable_supplier_section {
+      margin-top: 75px; }
+      .reliable_supplier_section .head_content {
+        display: none; }
+      .reliable_supplier_section .right_col.our_mission {
+        display: none; }
+      .reliable_supplier_section .main_content > .left_col h3 {
+        font-size: 30px;
+        max-width: 90%;
+        line-height: 1.2;
+        margin-bottom: 31px; }
+      .reliable_supplier_section .main_content > .left_col p {
+        font-size: 16px;
+        max-width: 90%;
+        margin-bottom: 34px; }
+        .reliable_supplier_section .main_content > .left_col p:last-child {
+          display: none; }
+      .reliable_supplier_section .main_content.two_col {
+        flex-direction: column;
+        gap: 160px; }
+      .reliable_supplier_section .main_content .right_col .logo_section {
+        width: 42%; }
+      .reliable_supplier_section .main_content .right_col .video_background {
+        transform: scale(3); } }
 
 .overyone_here_section .wrap_section {
   gap: 19px;
@@ -532,6 +564,20 @@ header .mobile {
     margin-bottom: 28px; }
   .overyone_here_section .content p {
     margin-bottom: 28px; } }
+@media screen and (max-width: 1000px) {
+  .overyone_here_section .wrap_section {
+    flex-direction: column;
+    margin: 0 34px; }
+  .overyone_here_section .content h2 {
+    font-size: 28px;
+    line-height: 1.2; }
+  .overyone_here_section .content p {
+    font-size: 16px;
+    max-width: 100%; }
+  .overyone_here_section .content .leave_request {
+    display: none; }
+  .overyone_here_section .column {
+    width: 100%; } }
 
 .licensed_software_section {
   margin-top: 102px; }

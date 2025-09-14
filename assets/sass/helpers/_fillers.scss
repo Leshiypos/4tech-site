@@ -18,6 +18,9 @@
   @include desktop(1400) {
     margin: 0 20px;
   }
+  @include mobile {
+    margin: 34px;
+  }
 }
 %paddingSectionFullWidthLR {
   padding: 9px;
