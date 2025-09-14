@@ -47,5 +47,8 @@
   }
   @include mobile {
     height: 56px;
+    img {
+      width: 45px;
+    }
   }
 }

@@ -206,7 +206,9 @@ a {
         height: 40px; } }
   @media screen and (max-width: 1000px) {
     .btn_hs {
-      height: 56px; } }
+      height: 56px; }
+      .btn_hs img {
+        width: 45px; } }
 
 html {
   font-family: "HelveticaNeueCyr", Arial, sans-serif;
@@ -1340,6 +1342,9 @@ header .mobile {
   @media screen and (min-width: 1001px) and (max-width: 1600px) {
     .contact_form_section {
       margin-top: 75px; }
+      .contact_form_section .form_wrap input {
+        min-width: unset;
+        width: 300px; }
       .contact_form_section .head_content {
         max-width: 90%; }
       .contact_form_section .two_column .col .video_background {
@@ -1351,7 +1356,7 @@ header .mobile {
       margin-top: 55px; }
       .contact_form_section .form_wrap input {
         padding: 20px 70px;
-        min-width: unset; }
+        width: 260px; }
       .contact_form_section .form_wrap form {
         max-width: 90%; }
       .contact_form_section .two_column .col .video_background {
@@ -1385,9 +1390,10 @@ footer {
         flex-flow: row wrap;
         justify-content: space-between;
         font-size: 18px;
+        font-size: clamp(12px, calc( 12px + (18 - 12) * ((100vw - 1000px) / (1900 - 1000)) ), 18px);
         letter-spacing: -0.03em;
         color: #6c6c6c;
-        max-width: 620px;
+        max-width: 80%;
         margin-left: auto;
         margin-right: auto; }
     footer .col .buttons_wrap {
@@ -1396,16 +1402,24 @@ footer {
       width: fit-content;
       margin-left: auto;
       gap: 10px; }
+      footer .col .buttons_wrap button {
+        height: 56px;
+        padding-left: 35px;
+        padding-right: 6px; }
+        footer .col .buttons_wrap button img {
+          width: 45px; }
   footer .foot_footer {
     letter-spacing: -0.03em; }
     footer .foot_footer .col {
       flex: 1; }
     footer .foot_footer .col_info .text_logo {
       font-size: 18px;
+      font-size: clamp(12px, calc( 12px + (18 - 12) * ((100vw - 1000px) / (1900 - 1000)) ), 18px);
       font-weight: 700;
       margin-bottom: 20px; }
     footer .foot_footer .col_info .address {
       font-size: 14px;
+      font-size: clamp(10px, calc( 10px + (14 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 14px);
       color: dimgray;
       line-height: 1.6; }
     footer .foot_footer .col_prodaction {
@@ -1418,10 +1432,12 @@ footer {
         gap: 7px; }
       footer .foot_footer .col_prodaction .title {
         font-size: 16px;
+        font-size: clamp(10px, calc( 10px + (16 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
         text-transform: uppercase;
         margin-bottom: 3px; }
       footer .foot_footer .col_prodaction .descriptios {
         font-size: 14px;
+        font-size: clamp(10px, calc( 10px + (14 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 14px);
         color: rgba(255, 255, 255, 0.5); }
     footer .foot_footer .col_privacy {
       display: flex; }
@@ -1432,5 +1448,44 @@ footer {
         margin-left: auto;
         gap: 25px;
         color: #676767; }
+        footer .foot_footer .col_privacy ul a {
+          font-size: 14px;
+          font-size: clamp(10px, calc( 10px + (14 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 14px); }
+  @media screen and (min-width: 1001px) and (max-width: 1600px) {
+    footer {
+      margin-top: 130px;
+      margin-bottom: 70px; }
+      footer .head_footer {
+        margin-bottom: 80px; }
+      footer .col.logo img {
+        width: 80px; }
+      footer .foot_footer .col_prodaction .wrap_content img {
+        width: 55px; } }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    footer {
+      margin-top: 110px;
+      margin-bottom: 60px; }
+      footer .head_footer {
+        margin-bottom: 60px; }
+      footer .col.logo img {
+        width: 70px; } }
+  @media screen and (min-width: 1001px) and (max-width: 1200px) {
+    footer {
+      margin-top: 90px;
+      margin-bottom: 50px; }
+      footer .head_footer {
+        margin-bottom: 40px; }
+      footer .col.logo img {
+        width: 60px; }
+      footer .col .buttons_wrap button {
+        height: 48px;
+        padding-right: 3px;
+        font-size: 10px;
+        padding-left: 25px; }
+        footer .col .buttons_wrap button img {
+          width: 40px;
+          height: 40px; }
+      footer .foot_footer .col_prodaction .wrap_content img {
+        width: 50px; } }
 
 /*# sourceMappingURL=styles.css.map */

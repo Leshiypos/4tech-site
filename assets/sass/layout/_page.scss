@@ -1678,6 +1678,12 @@ header {
   }
   @include desktop(1600) {
     margin-top: 75px;
+    .form_wrap {
+      input {
+        min-width: unset;
+        width: 300px;
+      }
+    }
     .head_content {
       max-width: 90%;
     }
@@ -1701,7 +1707,8 @@ header {
     .form_wrap {
       input {
         padding: 20px 70px;
-        min-width: unset;
+
+        width: 260px;
       }
       form {
         max-width: 90%;
@@ -1759,9 +1766,10 @@ footer {
         flex-flow: row wrap;
         justify-content: space-between;
         font-size: 18px;
+        @include fluid-font(12, 18);
         letter-spacing: -0.03em;
         color: rgba(108, 108, 108, 1);
-        max-width: 620px;
+        max-width: 80%;
         margin-left: auto;
         margin-right: auto;
       }
@@ -1773,6 +1781,14 @@ footer {
       width: fit-content;
       margin-left: auto;
       gap: 10px;
+      button {
+        height: 56px;
+        padding-left: 35px;
+        padding-right: 6px;
+        img {
+          width: 45px;
+        }
+      }
     }
   }
   // Низ футера
@@ -1784,11 +1800,13 @@ footer {
     .col_info {
       .text_logo {
         font-size: 18px;
+        @include fluid-font(12, 18);
         font-weight: 700;
         margin-bottom: 20px;
       }
       .address {
         font-size: 14px;
+        @include fluid-font(10, 14);
         color: rgba(105, 105, 105, 1);
         line-height: 1.6;
       }
@@ -1804,11 +1822,13 @@ footer {
       }
       .title {
         font-size: 16px;
+        @include fluid-font(10, 16);
         text-transform: uppercase;
         margin-bottom: 3px;
       }
       .descriptios {
         font-size: 14px;
+        @include fluid-font(10, 14);
         color: rgba(255, 255, 255, 0.5);
       }
     }
@@ -1822,6 +1842,84 @@ footer {
         margin-left: auto;
         gap: 25px;
         color: rgba(103, 103, 103, 1);
+        a {
+          font-size: 14px;
+          @include fluid-font(10, 14);
+        }
+      }
+    }
+  }
+  @include desktop(1600) {
+    margin-top: 130px;
+    margin-bottom: 70px;
+    .head_footer {
+      margin-bottom: 80px;
+    }
+    .col {
+      &.logo {
+        img {
+          width: 80px;
+        }
+      }
+    }
+
+    .foot_footer {
+      .col_prodaction {
+        .wrap_content {
+          img {
+            width: 55px;
+          }
+        }
+      }
+    }
+  }
+  @include desktop(1400) {
+    margin-top: 110px;
+    margin-bottom: 60px;
+    .head_footer {
+      margin-bottom: 60px;
+    }
+    .col {
+      &.logo {
+        img {
+          width: 70px;
+        }
+      }
+    }
+  }
+
+  @include desktop(1200) {
+    margin-top: 90px;
+    margin-bottom: 50px;
+    .head_footer {
+      margin-bottom: 40px;
+    }
+    .col {
+      &.logo {
+        img {
+          width: 60px;
+        }
+      }
+      .buttons_wrap {
+        button {
+          height: 48px;
+          padding-right: 3px;
+          font-size: 10px;
+          padding-left: 25px;
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+    .foot_footer {
+      .col_prodaction {
+        .wrap_content {
+          img {
+            width: 50px;
+          }
+        }
       }
     }
   }
