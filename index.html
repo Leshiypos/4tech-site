@@ -1445,5 +1445,68 @@
         </div>
       </div>
     </footer>
+    <div id="popup-overlay">
+      <div id="popup" class="popup">
+        <div class="wrap_popup">
+          <button class="popoup__close">
+            <img src="./assets/images/icons/cross.svg" alt="Закрыть окно" />
+          </button>
+          <div class="head_popup">
+            <h2>Оставьте заявку</h2>
+            <p>
+              Оставьте свой номер телефона, и мы свяжемся с вами как можно
+              скорее.
+            </p>
+          </div>
+          <div class="form_wrap">
+            <form
+              id="custom-contact-form-popup"
+              class="contact-form"
+              action=""
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <div class="fields">
+                <label class="form-phone" from="your_name">
+                  <input
+                    id="your_name"
+                    class="contact-form-input"
+                    type="text"
+                    name="your_name"
+                    placeholder="Ваше имя"
+                    required
+                  />
+                </label>
+                <label class="form-phone" from="number_visible">
+                  <input
+                    id="number"
+                    class="contact-form-input"
+                    type="tel"
+                    name="number_visible"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    placeholder="Ваш телефон"
+                    required
+                  />
+                  <input type="hidden" name="phone_e164" id="phone_e164" />
+                </label>
+                <small id="phone_error" class="input-hint"
+                  >Введите корректный номер</small
+                >
+              </div>
+
+              <button class="btn_hs leave_request" type="submit">
+                Оставить заявку
+                <img
+                  src="./assets/images/icons/arrow_diag_in_circle_W.svg"
+                  alt="button"
+                />
+              </button>
+            </form>
+            <div id="form-message"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
