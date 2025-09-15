@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nationalMode: true, // вводим национальный номер
       autoPlaceholder: "aggressive", // пример номера -> плейсхолдер
       formatOnDisplay: true,
+      useFullscreenPopup: false,
       // важно: та же UMD-версия utils, что и в index.html
       utilsScript:
         "https://cdn.jsdelivr.net/npm/intl-tel-input@23.7.4/build/js/utils.js?1688124762000",

@@ -6,7 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     sliders_stripe.forEach((slider) => {
       new Swiper(slider, {
         speed: 400,
-        slidesPerView: 4,
+        slidesPerView: 1,
+        spaceBetween: 15,
+        breakpoints: {
+          1001: {
+            slidesPerView: 4,
+          },
+        },
       });
     });
   }
@@ -18,7 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
     slider_partners.forEach((slider) => {
       new Swiper(slider, {
         speed: 400,
-        slidesPerView: 5.3,
+        slidesPerView: 2.4,
+        breakpoints: {
+          700: {
+            slidesPerView: 3.3,
+          },
+          1000: {
+            slidesPerView: 5.3,
+          },
+        },
       });
     });
   }
