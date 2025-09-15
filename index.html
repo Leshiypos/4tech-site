@@ -310,7 +310,7 @@
                 производителей программного обеспечения
               </div>
               <button class="btn_hs leave_request">
-                Смотреть больше
+                Оставить заявку
                 <img
                   src="./assets/images/icons/arrow_diag_in_circle_W.svg"
                   alt="button"
@@ -318,32 +318,50 @@
               </button>
             </div>
             <div class="content_bottom">
-              <div class="our_clients">
-                <div class="card_client">
-                  <img src="./assets/images/adobe.png" alt="adobe" />
-                </div>
+              <div class="swiper our_clients_slider">
+                <div class="swiper-wrapper our_clients">
+                  <div class="swiper-slide">
+                    <div class="card_client">
+                      <img src="./assets/images/adobe.png" alt="adobe" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card_client">
+                      <img
+                        src="./assets/images/microsoft.png"
+                        alt="microsoft"
+                      />
+                    </div>
+                  </div>
 
-                <div class="card_client">
-                  <img src="./assets/images/microsoft.png" alt="microsoft" />
-                </div>
+                  <div class="swiper-slide">
+                    <div class="card_client">
+                      <img
+                        src="./assets/images/team_viewer.png"
+                        alt="team_viewer"
+                      />
+                    </div>
+                  </div>
 
-                <div class="card_client">
-                  <img
-                    src="./assets/images/team_viewer.png"
-                    alt="team_viewer"
-                  />
-                </div>
+                  <div class="swiper-slide">
+                    <div class="card_client">
+                      <img src="./assets/images/esset.png" alt="esset" />
+                    </div>
+                  </div>
 
-                <div class="card_client">
-                  <img src="./assets/images/esset.png" alt="esset" />
-                </div>
-
-                <div class="card_client">
-                  <img src="./assets/images/symantec.png" alt="symantec" />
-                </div>
-
-                <div class="card_client">
-                  <img src="./assets/images/kaspersky.png" alt="kaspersky" />
+                  <div class="swiper-slide">
+                    <div class="card_client">
+                      <img src="./assets/images/symantec.png" alt="symantec" />
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card_client">
+                      <img
+                        src="./assets/images/kaspersky.png"
+                        alt="kaspersky"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -374,14 +392,10 @@
 
           <div class="row_catalog">
             <div class="card text">
-              <h3>
-                Компьютерное <br />
-                оборудование <br />
-                и ноутбуки
-              </h3>
+              <h3>Компьютерное оборудование и ноутбуки</h3>
               <p>Надёжная техника для стабильной работы вашей команды</p>
             </div>
-            <div class="card parent_cl_w">
+            <div class="card parent_cl_w mobile_visible">
               <img
                 src="./assets/images/caralog_row_1_1.png"
                 alt="itam1"
@@ -412,7 +426,7 @@
           </div>
 
           <div class="row_catalog">
-            <div class="card">
+            <div class="card mobile_visible">
               <img
                 src="./assets/images/caralog_row_2_1.png"
                 alt="itam1"
@@ -441,10 +455,7 @@
               />
             </div>
             <div class="card text">
-              <h3>
-                Серверное <br />
-                оборудование
-              </h3>
+              <h3>Серверное оборудование</h3>
               <p>
                 Мощные решения для бесперебойной работы вашей инфраструктуры
               </p>
@@ -453,14 +464,10 @@
 
           <div class="row_catalog">
             <div class="card text">
-              <h3>
-                Системы <br />
-                хранения <br />
-                данных
-              </h3>
+              <h3>Системы хранения данных</h3>
               <p>Безопасное и масштабируемое хранения ваших данных</p>
             </div>
-            <div class="card">
+            <div class="card mobile_visible">
               <img
                 src="./assets/images/caralog_row_3_1.png"
                 alt="itam1"
@@ -491,7 +498,7 @@
           </div>
 
           <div class="row_catalog last">
-            <div class="card child_cl_w">
+            <div class="card child_cl_w mobile_visible">
               <img
                 src="./assets/images/caralog_row_4_1.png"
                 alt="itam3"
@@ -506,10 +513,7 @@
               />
             </div>
             <div class="card text">
-              <h3>
-                Телекоммуникационное <br />
-                оборудование
-              </h3>
+              <h3 class="small">Телекоммуникационное оборудование</h3>
               <p>
                 Обеспечиваем стабильную и высокоскоростную связь для офиса,
                 дата-центра или распределённой инфраструктуры
@@ -522,6 +526,15 @@
                 />
               </button>
             </div>
+          </div>
+          <div class="mobile_btns_wrap">
+            <button class="btn_hs leave_request mobile_full_width">
+              <p>Смотреть больше</p>
+              <img
+                src="./assets/images/icons/arrow_diag_in_circle_W.svg"
+                alt="button"
+              />
+            </button>
           </div>
         </div>
       </section>
@@ -545,11 +558,11 @@
             </h2>
             <p>
               Обеспечиваем кибербезопасность на всех уровнях — от антивирусной
-              защиты рабочих станций <br />
-              до комплексных систем предотвращения атак и утечек данных
+              защиты рабочих станций до комплексных систем предотвращения атак и
+              утечек данных
             </p>
-            <button class="btn_hs leave_request">
-              Оставить заявку
+            <button class="btn_hs leave_request mobile_full_width">
+              <p>Оставить заявку</p>
               <img
                 src="./assets/images/icons/arrow_diag_in_circle_W.svg"
                 alt="button"

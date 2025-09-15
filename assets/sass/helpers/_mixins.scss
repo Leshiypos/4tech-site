@@ -29,14 +29,14 @@
   }
 }
 
-@mixin tablet-range($min: $screen-medium, $max: $screen-larger) {
+@mixin tablet($min: $screen-small, $max: $screen-medium) {
   @media screen and (min-width: (#{$min+1}px)) and (max-width: #{$max}px) {
     @content;
   }
 }
 
-@mixin tablet($max: $screen-medium) {
-  @media screen and (max-width: #{$max}px) {
-    @content;
-  }
-}
+// @mixin tablet($max: $screen-medium) {
+//   @media screen and (max-width: #{$max}px) {
+//     @content;
+//   }
+// }

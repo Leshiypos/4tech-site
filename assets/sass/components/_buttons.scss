@@ -56,5 +56,14 @@
         width: 51px;
       }
     }
+    &.mobile_full_width {
+      width: 100%;
+      max-width: 450px;
+      justify-content: flex-end;
+      p {
+        width: 100%;
+        margin: 0;
+      }
+    }
   }
 }

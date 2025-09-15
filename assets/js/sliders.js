@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Слайдер Комплексные решения
   let sliders_stripe = document.querySelectorAll(".solution-slider");
 
-  if (sliders_stripe) {
+  if (sliders_stripe.length) {
     sliders_stripe.forEach((slider) => {
       new Swiper(slider, {
         speed: 400,
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //   Слайдер Партнеры
   let slider_partners = document.querySelectorAll(".partners_slider");
 
-  if (slider_partners) {
+  if (slider_partners.length) {
     slider_partners.forEach((slider) => {
       new Swiper(slider, {
         speed: 400,
@@ -23,6 +23,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  let our_clients = document.querySelector(".our_clients_slider");
+  if (our_clients) {
+    new Swiper(our_clients, {
+      speed: 400,
+      slidesPerView: 2,
+      spaceBetween: 14,
+      breakpoints: {
+        650: {
+          slidesPerView: 3,
+        },
+        800: {
+          slidesPerView: 4,
+        },
+        1000: {
+          slidesPerView: 6,
+        },
+      },
+    });
+  }
   //   let sliders_section = document.querySelectorAll(
   //     ".slider_section .img_slider"
   //   );
