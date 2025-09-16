@@ -1,4 +1,27 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // плавный скролл
+  const lenis = new Lenis({
+    duration: 1.05, // «инерция» (0.6–1.4 — подбирай на вкус)
+    smoothWheel: true, // сглаживание колёсика мыши
+    smoothTouch: false, // при желании можно включить и для тача
+    // orientation: 'vertical', // если понадобится горизонтальный — можно переключать
+  });
+
+  // Обновляем ScrollTrigger на каждом «виртуальном» скролле Lenis
+  lenis.on("scroll", () => {
+    ScrollTrigger.update();
+  });
+
+  // Привязываем Lenis к кадрам анимации (используем GSAP ticker)
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+
+  // Отключаем сглаживание лага GSAP, чтобы не было задержек
+  gsap.ticker.lagSmoothing(0);
+
+  // После инициализации — пересчитать все триггеры
+  ScrollTrigger.refresh();
   //   Анмация
   function fadeInAnimation(selector) {
     const banerSections = document.querySelectorAll(selector);

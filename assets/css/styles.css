@@ -226,7 +226,8 @@ a {
 
 html {
   font-family: "HelveticaNeueCyr", Arial, sans-serif;
-  color: white; }
+  color: white;
+  scroll-behavior: smooth; }
 
 body {
   background-color: black; }
