@@ -46,7 +46,7 @@
               </ul>
             </nav>
             <div class="wrap_btns">
-              <a href="#" class="leave_req_btn"
+              <a href="#" class="leave_req_btn" data-open-popup
                 >Оставить заявку
                 <img
                   src="./assets/images/icons/arrow-diag.svg"
@@ -99,14 +99,14 @@
             </div>
             <div class="foot_content two_col">
               <div class="left_col">
-                <button class="btn_hs white">
+                <button class="btn_hs white" data-open-popup>
                   Оставить заявку
                   <img
                     src="./assets/images/icons/arrow_in_circle_bl.svg"
                     alt="arrow in circle"
                   />
                 </button>
-                <button class="btn_hs transporent">
+                <button class="btn_hs transporent" data-open-popup>
                   Узнать больше
                   <img
                     src="./assets/images/icons/arrow_in_circle_w.svg"
@@ -180,7 +180,7 @@
                   </p>
                 </div>
               </div>
-              <button class="btn_hs leave_request">
+              <button class="btn_hs leave_request" data-open-popup>
                 Оставить заявку
                 <img
                   src="./assets/images/icons/arrow_diag_in_circle_W.svg"
@@ -219,7 +219,7 @@
               оборудование и техподдержку. Закрываем любые задачи — от простой
               поставки до комплексных проектов "под ключ"
             </p>
-            <button class="btn_hs leave_request">
+            <button class="btn_hs leave_request" data-open-popup>
               Узнать больше
               <img
                 src="./assets/images/icons/arrow_diag_in_circle_W.svg"
@@ -309,7 +309,7 @@
                 4tech является авторизированным партнером международных
                 производителей программного обеспечения
               </div>
-              <button class="btn_hs leave_request">
+              <button class="btn_hs leave_request" data-open-popup>
                 Оставить заявку
                 <img
                   src="./assets/images/icons/arrow_diag_in_circle_W.svg"
@@ -518,7 +518,7 @@
                 Обеспечиваем стабильную и высокоскоростную связь для офиса,
                 дата-центра или распределённой инфраструктуры
               </p>
-              <button class="btn_hs leave_request">
+              <button class="btn_hs leave_request" data-open-popup>
                 Смотреть больше
                 <img
                   src="./assets/images/icons/arrow_diag_in_circle_W.svg"
@@ -528,7 +528,10 @@
             </div>
           </div>
           <div class="mobile_btns_wrap">
-            <button class="btn_hs leave_request mobile_full_width">
+            <button
+              class="btn_hs leave_request mobile_full_width"
+              data-open-popup
+            >
               <p>Смотреть больше</p>
               <img
                 src="./assets/images/icons/arrow_diag_in_circle_W.svg"
@@ -561,7 +564,10 @@
               защиты рабочих станций до комплексных систем предотвращения атак и
               утечек данных
             </p>
-            <button class="btn_hs leave_request mobile_full_width">
+            <button
+              class="btn_hs leave_request mobile_full_width"
+              data-open-popup
+            >
               <p>Оставить заявку</p>
               <img
                 src="./assets/images/icons/arrow_diag_in_circle_W.svg"
@@ -1394,14 +1400,14 @@
           </div>
           <div class="col buttons_inner">
             <div class="buttons_wrap">
-              <button class="btn_hs white">
+              <button class="btn_hs white" data-open-popup>
                 Оставить заявку
                 <img
                   src="./assets/images/icons/arrow_in_circle_bl.svg"
                   alt="arrow in circle"
                 />
               </button>
-              <button class="btn_hs transporent">
+              <button class="btn_hs transporent" data-open-popup>
                 Узнать больше
                 <img
                   src="./assets/images/icons/arrow_in_circle_w.svg"
@@ -1445,10 +1451,10 @@
         </div>
       </div>
     </footer>
-    <div id="popup-overlay">
+    <div id="popup-overlay" class="hidden">
       <div id="popup" class="popup">
         <div class="wrap_popup">
-          <button class="popoup__close">
+          <button class="popoup__close" data-close-popup>
             <img src="./assets/images/icons/cross.svg" alt="Закрыть окно" />
           </button>
           <div class="head_popup">
@@ -1479,7 +1485,7 @@
                 </label>
                 <label class="form-phone" from="number_visible">
                   <input
-                    id="number"
+                    id="number_popup"
                     class="contact-form-input"
                     type="tel"
                     name="number_visible"
@@ -1488,15 +1494,23 @@
                     placeholder="Ваш телефон"
                     required
                   />
-                  <input type="hidden" name="phone_e164" id="phone_e164" />
+                  <input
+                    type="hidden"
+                    name="phone_e164"
+                    id="phone_e164_popUp"
+                  />
+                  <small
+                    id="phone_error_popup"
+                    class="input-hint"
+                    style="display: none"
+                  >
+                    Введите корректный номер
+                  </small>
                 </label>
-                <small id="phone_error" class="input-hint"
-                  >Введите корректный номер</small
-                >
               </div>
 
               <button class="btn_hs leave_request" type="submit">
-                Оставить заявку
+                <p>Оставить заявку</p>
                 <img
                   src="./assets/images/icons/arrow_diag_in_circle_W.svg"
                   alt="button"
