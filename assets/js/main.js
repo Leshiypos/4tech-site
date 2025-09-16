@@ -268,10 +268,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!burgerMenu) return;
     window.addEventListener("click", (e) => {
       const btnToggleMenu = e.target.closest("[data-toggle-menu]");
-
+      const linkBurger = e.target.closest("[data-link-burger]");
       if (btnToggleMenu) {
         console.log("нажал");
         burgerMenu.classList.toggle("active");
+      }
+      if (linkBurger) {
+        burgerMenu.classList.remove("active");
       }
     });
   }
