@@ -281,8 +281,7 @@ header .desktop {
     header .desktop .wrap_btns .leave_req_btn {
       gap: 14px;
       font-size: 14px;
-      font-weight: 400;
-      margin-top: 3px; }
+      font-weight: 400; }
       header .desktop .wrap_btns .leave_req_btn img {
         margin-top: 3px; }
 header .mobile {
@@ -359,7 +358,8 @@ header .mobile {
   font-size: clamp(50px, calc( 50px + (105 - 50) * ((100vw - 1000px) / (1900 - 1000)) ), 105px);
   font-weight: 300;
   letter-spacing: -0.03em;
-  margin-bottom: 77px; }
+  margin-bottom: 77px;
+  line-height: 90%; }
 @media screen and (min-width: 1001px) and (max-width: 1600px) {
   .hero_section .wrap_section .wrap_content {
     margin: 0 8px 24px 27px; }
@@ -404,14 +404,16 @@ header .mobile {
       .reliable_supplier_section .head_content .title h2 {
         font-size: 70px;
         font-size: clamp(40px, calc( 40px + (70 - 40) * ((100vw - 1000px) / (1900 - 1000)) ), 70px);
-        font-weight: normal; }
+        font-weight: normal;
+        line-height: 106%; }
     .reliable_supplier_section .head_content .description_wrap {
       flex: 2;
       padding-top: 17px; }
       .reliable_supplier_section .head_content .description_wrap .wrap {
         width: fit-content;
         margin-left: auto;
-        margin-right: 15px; }
+        margin-right: 15px;
+        max-width: 86%; }
       .reliable_supplier_section .head_content .description_wrap .description {
         font-size: 16px;
         font-size: clamp(10px, calc( 10px + (16 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
@@ -427,7 +429,8 @@ header .mobile {
       font-weight: 500;
       margin-bottom: 46px;
       letter-spacing: -0.03em;
-      max-width: 260px; }
+      max-width: 260px;
+      line-height: 112%; }
     .reliable_supplier_section .main_content > .left_col p {
       font-size: 16px;
       font-size: clamp(10px, calc( 10px + (16 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
@@ -519,7 +522,8 @@ header .mobile {
   font-weight: 500;
   margin-bottom: 34px;
   letter-spacing: -0.03em;
-  max-width: 80%; }
+  max-width: 80%;
+  line-height: 102%; }
 .overyone_here_section .content p {
   max-width: 271px;
   font-size: 16px;
@@ -537,7 +541,8 @@ header .mobile {
     margin: 40px;
     bottom: 0;
     left: 0;
-    z-index: 2; }
+    z-index: 2;
+    max-width: 65%; }
     .overyone_here_section .card .card_content p {
       font-size: 14px;
       font-size: clamp(10px, calc( 10px + (14 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 14px);
@@ -549,7 +554,8 @@ header .mobile {
     font-size: clamp(16px, calc( 16px + (30 - 16) * ((100vw - 1000px) / (1900 - 1000)) ), 30px);
     font-weight: 500;
     margin-bottom: 8px;
-    letter-spacing: -0.03em; }
+    letter-spacing: -0.03em;
+    line-height: 117%; }
   .overyone_here_section .card .arrow_diag {
     position: absolute;
     top: 27px;
@@ -577,6 +583,9 @@ header .mobile {
     margin-bottom: 28px; }
   .overyone_here_section .content p {
     margin-bottom: 28px; } }
+@media screen and (min-width: 1001px) and (max-width: 1400px) {
+  .overyone_here_section .card .card_content {
+    max-width: 75%; } }
 @media screen and (max-width: 1000px) {
   .overyone_here_section .wrap_section {
     flex-direction: column;
@@ -595,7 +604,8 @@ header .mobile {
     top: 23px;
     right: 20px; }
   .overyone_here_section .card .card_content {
-    margin: 28px 34px; }
+    margin: 28px 34px;
+    max-width: 250px; }
     .overyone_here_section .card .card_content p {
       font-size: 14px; }
   .overyone_here_section .card h3 {
@@ -643,7 +653,8 @@ header .mobile {
         font-weight: 300;
         text-align: center;
         margin-bottom: 40px;
-        letter-spacing: -0.03em; }
+        letter-spacing: -0.03em;
+        line-height: 90%; }
       .licensed_software_section .wrap_content .content_top .description {
         font-size: 18px;
         font-size: clamp(12px, calc( 12px + (18 - 12) * ((100vw - 1000px) / (1900 - 1000)) ), 18px);
@@ -753,7 +764,7 @@ header .mobile {
         width: fit-content;
         margin-left: auto;
         margin-right: 15px;
-        max-width: 450px; }
+        max-width: 86%; }
       .catalog_section .head_content .description_wrap .description {
         font-size: 16px;
         font-size: clamp(10px, calc( 10px + (16 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
@@ -777,20 +788,26 @@ header .mobile {
         font-size: clamp(20px, calc( 20px + (40 - 20) * ((100vw - 1000px) / (1900 - 1000)) ), 40px);
         letter-spacing: -0.03em;
         font-weight: 500;
-        margin-bottom: 28px; }
+        margin-bottom: 28px;
+        line-height: 97%;
+        max-width: 76%; }
       .catalog_section .row_catalog .card p {
         font-size: 14px;
         font-size: clamp(10px, calc( 10px + (14 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 14px);
         font-weight: 300;
         line-height: 1.8;
-        max-width: 270px; }
+        max-width: 270px;
+        max-width: 75%; }
     .catalog_section .row_catalog.last {
       justify-content: flex-end;
       margin-bottom: 0; }
       .catalog_section .row_catalog.last .card.text {
         max-width: 500px; }
         .catalog_section .row_catalog.last .card.text p {
-          max-width: 100%; }
+          max-width: 100%;
+          font-size: 16px;
+          font-size: clamp(10px, calc( 10px + (16 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
+          max-width: 430px; }
         .catalog_section .row_catalog.last .card.text .leave_request {
           margin-top: 40px; }
   @media screen and (min-width: 1001px) and (max-width: 1600px) {
@@ -895,6 +912,9 @@ header .mobile {
         flex-direction: column-reverse; }
       .catalog_section .row_catalog .leave_request {
         display: none; }
+      .catalog_section .row_catalog.last .card.text p {
+        font-size: 14px;
+        max-width: 300px; }
     .catalog_section .mobile_btns_wrap {
       display: block;
       margin-top: 57px; } }
@@ -943,7 +963,8 @@ header .mobile {
     font-size: clamp(45px, calc( 45px + (100 - 45) * ((100vw - 1000px) / (1900 - 1000)) ), 100px);
     font-weight: 300;
     letter-spacing: -0.03em;
-    margin-bottom: 46px; }
+    margin-bottom: 46px;
+    line-height: 85%; }
   @media screen and (min-width: 1001px) and (max-width: 1600px) {
     .protect_section {
       margin-top: 80px; }
@@ -1052,7 +1073,8 @@ header .mobile {
         font-size: clamp(20px, calc( 20px + (35 - 20) * ((100vw - 1000px) / (1900 - 1000)) ), 35px);
         font-weight: 500;
         margin-bottom: 20px;
-        letter-spacing: -0.03em; }
+        letter-spacing: -0.03em;
+        line-height: 106%; }
       .outsourcing_section .main_content .row_cont .content p {
         font-size: 16px;
         font-size: clamp(10px, calc( 10px + (16 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
@@ -1142,7 +1164,8 @@ header .mobile {
       .solution_section .head_content .title h2 {
         font-size: 70px;
         font-size: clamp(40px, calc( 40px + (70 - 40) * ((100vw - 1000px) / (1900 - 1000)) ), 70px);
-        font-weight: normal; }
+        font-weight: normal;
+        line-height: 81%; }
       .solution_section .head_content .title .four_steps {
         position: relative;
         overflow: visible;
@@ -1194,7 +1217,8 @@ header .mobile {
       font-size: clamp(20px, calc( 20px + (40 - 20) * ((100vw - 1000px) / (1900 - 1000)) ), 40px);
       letter-spacing: -0.03em;
       font-weight: 500;
-      margin-bottom: 22px; }
+      margin-bottom: 22px;
+      line-height: 112%; }
     .solution_section .main_content .col p {
       font-size: 16px;
       font-size: clamp(10px, calc( 10px + (16 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
@@ -1296,7 +1320,8 @@ header .mobile {
     font-weight: 300;
     letter-spacing: -0.03em;
     margin-bottom: 64px;
-    max-width: 75%; }
+    max-width: 75%;
+    line-height: 85%; }
   .development_section .our_stecs .row {
     display: flex;
     flex-flow: row nowrap;
@@ -1504,7 +1529,8 @@ header .mobile {
     font-size: clamp(40px, calc( 40px + (105 - 40) * ((100vw - 1000px) / (1900 - 1000)) ), 105px);
     font-weight: 300;
     letter-spacing: -0.03em;
-    margin-bottom: 34px; }
+    margin-bottom: 34px;
+    line-height: 90%; }
   .it_solutions_section .our_stecs .row {
     display: flex;
     flex-flow: row nowrap;

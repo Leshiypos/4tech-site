@@ -66,7 +66,7 @@ header {
         gap: 14px;
         font-size: 14px;
         font-weight: 400;
-        margin-top: 3px;
+
         img {
           margin-top: 3px;
         }
@@ -188,6 +188,7 @@ header {
     font-weight: 300;
     letter-spacing: -0.03em;
     margin-bottom: 77px;
+    line-height: 90%;
   }
   @include desktop(1600) {
     .wrap_section {
@@ -268,6 +269,7 @@ header {
         font-size: 70px;
         @include fluid-font(40, 70);
         font-weight: normal;
+        line-height: 106%;
       }
     }
     .description_wrap {
@@ -277,6 +279,7 @@ header {
         width: fit-content;
         margin-left: auto;
         margin-right: 15px;
+        max-width: 86%;
       }
       .description {
         font-size: 16px;
@@ -298,6 +301,7 @@ header {
         margin-bottom: 46px;
         letter-spacing: -0.03em;
         max-width: 260px;
+        line-height: 112%;
       }
       p {
         font-size: 16px;
@@ -458,6 +462,7 @@ header {
       margin-bottom: 34px;
       letter-spacing: -0.03em;
       max-width: 80%;
+      line-height: 102%;
     }
     p {
       max-width: 271px;
@@ -480,6 +485,7 @@ header {
       bottom: 0;
       left: 0;
       z-index: 2;
+      max-width: 65%;
       p {
         font-size: 14px;
         @include fluid-font(10, 14);
@@ -494,6 +500,7 @@ header {
       font-weight: 500;
       margin-bottom: 8px;
       letter-spacing: -0.03em;
+      line-height: 117%;
     }
     .arrow_diag {
       position: absolute;
@@ -542,7 +549,13 @@ header {
       }
     }
   }
-
+  @include desktop(1400) {
+    .card {
+      .card_content {
+        max-width: 75%;
+      }
+    }
+  }
   @include mobile {
     .wrap_section {
       flex-direction: column;
@@ -570,6 +583,7 @@ header {
       }
       .card_content {
         margin: 28px 34px;
+        max-width: 250px;
         p {
           font-size: 14px;
         }
@@ -641,6 +655,7 @@ header {
         text-align: center;
         margin-bottom: 40px;
         letter-spacing: -0.03em;
+        line-height: 90%;
       }
       .description {
         font-size: 18px;
@@ -817,7 +832,7 @@ header {
         width: fit-content;
         margin-left: auto;
         margin-right: 15px;
-        max-width: 450px;
+        max-width: 86%;
       }
       .description {
         font-size: 16px;
@@ -850,6 +865,8 @@ header {
         letter-spacing: -0.03em;
         font-weight: 500;
         margin-bottom: 28px;
+        line-height: 97%;
+        max-width: 76%;
       }
       p {
         font-size: 14px;
@@ -857,6 +874,7 @@ header {
         font-weight: 300;
         line-height: 1.8;
         max-width: 270px;
+        max-width: 75%;
       }
     }
     &.last {
@@ -868,6 +886,9 @@ header {
 
           p {
             max-width: 100%;
+            font-size: 16px;
+            @include fluid-font(10, 16);
+            max-width: 430px;
           }
           .leave_request {
             margin-top: 40px;
@@ -1038,6 +1059,16 @@ header {
       .leave_request {
         display: none;
       }
+      &.last {
+        .card {
+          &.text {
+            p {
+              font-size: 14px;
+              max-width: 300px;
+            }
+          }
+        }
+      }
     }
     .mobile_btns_wrap {
       display: block;
@@ -1112,6 +1143,7 @@ header {
     font-weight: 300;
     letter-spacing: -0.03em;
     margin-bottom: 46px;
+    line-height: 85%;
   }
 
   @include desktop(1600) {
@@ -1275,6 +1307,7 @@ header {
           font-weight: 500;
           margin-bottom: 20px;
           letter-spacing: -0.03em;
+          line-height: 106%;
         }
         p {
           font-size: 16px;
@@ -1410,6 +1443,7 @@ header {
         font-size: 70px;
         @include fluid-font(40, 70);
         font-weight: normal;
+        line-height: 81%;
       }
       .four_steps {
         position: relative;
@@ -1479,6 +1513,7 @@ header {
         letter-spacing: -0.03em;
         font-weight: 500;
         margin-bottom: 22px;
+        line-height: 112%;
       }
       p {
         font-size: 16px;
@@ -1647,6 +1682,7 @@ header {
     letter-spacing: -0.03em;
     margin-bottom: 64px;
     max-width: 75%;
+    line-height: 85%;
   }
   .our_stecs {
     .row {
@@ -1948,6 +1984,7 @@ header {
     font-weight: 300;
     letter-spacing: -0.03em;
     margin-bottom: 34px;
+    line-height: 90%;
   }
   .our_stecs {
     .row {
