@@ -812,6 +812,12 @@ header {
     .description_wrap {
       flex: 2;
       padding-top: 17px;
+      .wrap {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: 15px;
+        max-width: 450px;
+      }
       .description {
         font-size: 16px;
         @include fluid-font(10, 16);
@@ -1042,6 +1048,9 @@ header {
       .description_wrap {
         max-width: 50%;
         margin-left: auto;
+        .wrap {
+          text-align: right;
+        }
       }
     }
     .row_catalog {
@@ -1383,7 +1392,7 @@ header {
 // <------------------------------------->
 .solution_section {
   margin-top: 154px;
-  overflow: hidden;
+
   .wrap_section {
     padding: 0 20px;
   }
@@ -1547,6 +1556,7 @@ header {
   }
   @include mobile {
     margin-top: 64px;
+    overflow: hidden;
     .wrap_section {
       padding: 0;
     }
@@ -1635,6 +1645,7 @@ header {
     font-weight: 300;
     letter-spacing: -0.03em;
     margin-bottom: 64px;
+    max-width: 75%;
   }
   .our_stecs {
     .row {
@@ -1768,6 +1779,7 @@ header {
     }
     h2 {
       font-size: 30px;
+      max-width: 100%;
     }
 
     .our_stecs {
@@ -2767,6 +2779,11 @@ footer {
         display: inline-block;
         flex: 1 1 250px;
       }
+      .contact-form-input {
+        &::placeholder {
+          padding-left: 25px;
+        }
+      }
       .form-phone {
         .iti__selected-country {
           padding-left: 20px;
@@ -2964,7 +2981,7 @@ footer {
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      height: 50%;
+      flex: 2;
       a {
         font-size: 25px;
       }

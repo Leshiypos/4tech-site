@@ -1,21 +1,98 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Слайдер Комплексные решения
-  let sliders_stripe = document.querySelectorAll(".solution-slider");
+  //   Анмация
+  function fadeInAnimation(selector) {
+    const banerSections = document.querySelectorAll(selector);
+    if (banerSections) {
+      banerSections.forEach((section) => {
+        gsap.from(section, {
+          opacity: 0,
+          y: 24,
+          duration: 1,
+          //   delay: 1,
 
-  if (sliders_stripe.length) {
-    sliders_stripe.forEach((slider) => {
+          scrollTrigger: {
+            trigger: section,
+            start: "top 90%",
+            once: true,
+            markers: false,
+          },
+        });
+      });
+    }
+  }
+
+  function gorizontalSwiper() {
+    // Слайдер Комплексные решения
+    // Инициализация Swiper (если у тебя уже инициализируется, просто возьми reference)
+    const slider = document.querySelector(".solution-slider");
+    if (!slider) return;
+
+    const swiper =
+      slider.swiper ||
       new Swiper(slider, {
         speed: 400,
         slidesPerView: 1,
         spaceBetween: 15,
+        allowTouchMove: true, // на десктопе/широких разрешениях можно оставить свайп
         breakpoints: {
           1001: {
             slidesPerView: 4,
+            allowTouchMove: true,
           },
         },
       });
+
+    // Горизонтальный скролл только до 1000px ширины
+    const mm = gsap.matchMedia();
+
+    mm.add("(max-width: 1000px)", () => {
+      // отключаем ручной свайп — управление будет скроллом страницы
+      swiper.allowTouchMove = false;
+
+      const section = document.querySelector(".solution_section .wrap_section"); // пинится весь блок
+      const wrapper = slider.querySelector(".swiper-wrapper");
+
+      // На случай, если размеры слайдов подвяжутся к шрифтам/картинкам
+      swiper.update();
+
+      const getScrollLength = () => {
+        // сдвиг = полная ширина контента минус видимая ширина слайдера
+        const length = wrapper.scrollWidth - slider.clientWidth;
+        return Math.max(0, length);
+      };
+
+      // Анимация «влево» на длину контента
+      const tween = gsap.to(wrapper, {
+        x: () => -getScrollLength(),
+        ease: "none",
+        scrollTrigger: {
+          trigger: section,
+          start: "bottom bottom-=50px", // как только секция пришла к верху вьюпорта
+          end: () => `+=${getScrollLength()}`, // длина вертикального скролла = горизонтальному пути
+          scrub: true,
+          pin: section, // пин ВСЕЙ секции, не только слайдера
+          anticipatePin: 1,
+          invalidateOnRefresh: true, // пересчитать при ресайзе/перезагрузке
+          //   markers: true, // включи для отладки
+        },
+      });
+
+      // На ресайз пересчитываем
+      const onResize = () => ScrollTrigger.refresh();
+      window.addEventListener("resize", onResize);
+
+      // cleanup при выходе из медиа-условия
+      return () => {
+        window.removeEventListener("resize", onResize);
+        tween.scrollTrigger && tween.scrollTrigger.kill();
+        tween.kill();
+        gsap.set(wrapper, { x: 0 });
+        swiper.allowTouchMove = true; // возвращаем свайп, если нужно
+      };
     });
   }
+  gorizontalSwiper();
+  fadeInAnimation(".fade_in");
 
   //   Слайдер Партнеры
   let slider_partners = document.querySelectorAll(".partners_slider");

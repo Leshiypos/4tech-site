@@ -748,6 +748,11 @@ header .mobile {
     .catalog_section .head_content .description_wrap {
       flex: 2;
       padding-top: 17px; }
+      .catalog_section .head_content .description_wrap .wrap {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: 15px;
+        max-width: 450px; }
       .catalog_section .head_content .description_wrap .description {
         font-size: 16px;
         font-size: clamp(10px, calc( 10px + (16 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
@@ -896,6 +901,8 @@ header .mobile {
     .catalog_section .head_content .description_wrap {
       max-width: 50%;
       margin-left: auto; }
+      .catalog_section .head_content .description_wrap .wrap {
+        text-align: right; }
     .catalog_section .row_catalog {
       flex-direction: row;
       align-items: center; }
@@ -1121,8 +1128,7 @@ header .mobile {
       flex-direction: row; } }
 
 .solution_section {
-  margin-top: 154px;
-  overflow: hidden; }
+  margin-top: 154px; }
   .solution_section .wrap_section {
     padding: 0 20px; }
   .solution_section .head_content {
@@ -1229,7 +1235,8 @@ header .mobile {
           transform: translate(-50%, -50%) scale(1.2); } }
   @media screen and (max-width: 1000px) {
     .solution_section {
-      margin-top: 64px; }
+      margin-top: 64px;
+      overflow: hidden; }
       .solution_section .wrap_section {
         padding: 0; }
       .solution_section .head_content {
@@ -1287,7 +1294,8 @@ header .mobile {
     font-size: clamp(40px, calc( 40px + (100 - 40) * ((100vw - 1000px) / (1900 - 1000)) ), 100px);
     font-weight: 300;
     letter-spacing: -0.03em;
-    margin-bottom: 64px; }
+    margin-bottom: 64px;
+    max-width: 75%; }
   .development_section .our_stecs .row {
     display: flex;
     flex-flow: row nowrap;
@@ -1376,7 +1384,8 @@ header .mobile {
         border-radius: 20px;
         overflow: hidden; }
       .development_section h2 {
-        font-size: 30px; }
+        font-size: 30px;
+        max-width: 100%; }
       .development_section .our_stecs .row {
         flex-direction: column;
         gap: 26px; }
@@ -2060,6 +2069,8 @@ footer {
       #popup-overlay .popup .form_wrap label {
         display: inline-block;
         flex: 1 1 250px; }
+      #popup-overlay .popup .form_wrap .contact-form-input::placeholder {
+        padding-left: 25px; }
       #popup-overlay .popup .form_wrap .form-phone .iti__selected-country {
         padding-left: 20px; }
       #popup-overlay .popup .form_wrap .form-phone .iti--inline-dropdown .iti__dropdown-content {
@@ -2193,7 +2204,7 @@ footer {
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      height: 50%; }
+      flex: 2; }
       .menu_mobile .wrap_content .burger__list a {
         font-size: 25px; }
     .menu_mobile .wrap_content .burger__button {
