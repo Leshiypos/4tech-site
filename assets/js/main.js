@@ -243,17 +243,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   })();
   //   Работа с popUp
-  const popUp = document.getElementById("popup-overlay");
-  popUp.classList.add("hidden");
-  window.addEventListener("click", (e) => {
-    e.preventDefault();
-    const targetClose = e.target.closest("[data-close-popup]");
-    const targetOpen = e.target.closest("[data-open-popup]");
-    if (targetClose) {
-      popUp.classList.add("hidden");
-    }
-    if (targetOpen) {
-      popUp.classList.remove("hidden");
-    }
-  });
+  function popUpControl() {
+    const popUp = document.getElementById("popup-overlay");
+    const burgerMenu = document.getElementById("burger-menu");
+    //   popUp.classList.add("hidden");
+    window.addEventListener("click", (e) => {
+      // .e.preventDefault();
+      const targetClose = e.target.closest("[data-close-popup]");
+      const targetOpen = e.target.closest("[data-open-popup]");
+      if (targetClose) {
+        popUp.classList.add("hidden");
+      }
+      if (targetOpen) {
+        e.preventDefault();
+        popUp.classList.remove("hidden");
+        burgerMenu ? burgerMenu.classList.remove("active") : null;
+      }
+    });
+  }
+  popUpControl();
+
+  function bergerMenuControl() {
+    const burgerMenu = document.getElementById("burger-menu");
+    if (!burgerMenu) return;
+    window.addEventListener("click", (e) => {
+      const btnToggleMenu = e.target.closest("[data-toggle-menu]");
+
+      if (btnToggleMenu) {
+        console.log("нажал");
+        burgerMenu.classList.toggle("active");
+      }
+    });
+  }
+  bergerMenuControl();
 });

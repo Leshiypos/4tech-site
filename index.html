@@ -31,6 +31,37 @@
   </head>
   <body>
     <main>
+      <!-- Мобильное меню -->
+      <nav id="burger-menu" class="menu_mobile">
+        <div class="head_burger">
+          <img class="logo_burger" src="./assets/images/logo.svg" alt="logo" />
+          <button class="close_menu" data-toggle-menu>
+            <img src="./assets/images/icons/cross.svg" alt="Закрыть меню" />
+          </button>
+        </div>
+        <div class="wrap_content">
+          <div></div>
+          <ul class="burger__list">
+            <li class="burger__list-link"><a href="./index.html">О нас</a></li>
+            <li class="burger__list-link"><a href="#law">Команда</a></li>
+            <li class="burger__list-link">
+              <a href="#consultation">Услуги</a>
+            </li>
+            <li class="burger__list-link"><a href="#about">Оборудование</a></li>
+            <li class="burger__list-link"><a href="#about">Контакты</a></li>
+          </ul>
+
+          <div class="burger__button">
+            <button class="btn_hs leave_request" data-open-popup>
+              <p>Оставить заявку</p>
+              <img
+                src="./assets/images/icons/arrow_diag_in_circle_W.svg"
+                alt="button"
+              />
+            </button>
+          </div>
+        </div>
+      </nav>
       <!-- Хедер -->
       <header>
         <div class="desktop">
@@ -57,7 +88,7 @@
         </div>
         <div class="mobile">
           <img src="./assets/images/logo.svg" alt="" class="logo" />
-          <button class="burger_btn">
+          <button class="burger_btn" data-toggle-menu>
             <img
               src="./assets/images/icons/burger_btn.svg"
               alt="button burger"
