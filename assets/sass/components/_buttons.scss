@@ -1,20 +1,30 @@
 .btn_hs {
   @extend %flexRowNowrapSB;
-  gap: 27px;
+  justify-content: flex-end;
+
   height: 65px;
-  padding-left: 41px;
+  padding-left: 0;
   padding-right: 8px;
   border-radius: 1000px;
   font-size: 14px;
   font-weight: 500;
   border: none;
   white-space: nowrap;
+  width: 100%;
+  max-width: 239px;
+  p {
+    margin: 0 !important;
+    text-align: center;
+    width: 100%;
+    padding-left: 6px;
+  }
   img {
     width: 51px;
     height: 51px;
   }
   &.white {
     background-color: white;
+    color: black;
   }
   &.transporent {
     background-color: rgba(0, 0, 0, 0.1);
@@ -29,20 +39,58 @@
     background: linear-gradient(135deg, #9300ce 0%, #2c03a5 100%);
     color: white;
     font-weight: 500;
+    max-width: 230px;
   }
-  @include desktop(1400) {
-    height: 60px;
+  &.footer {
+    width: 208px;
+    height: 56px;
     font-size: 12px;
-    padding-left: 35px;
-  }
-  @include desktop(1200) {
-    height: 48px;
-    padding-right: 3px;
-    font-size: 10px;
-    padding-left: 25px;
+    padding-right: 6px;
     img {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+    }
+  }
+  @include desktop(1600) {
+    height: 50px;
+    max-width: 200px;
+    padding-right: 6px;
+    font-size: 13px;
+    img {
+      width: 38px;
+    }
+    &.leave_request {
+      max-width: 190px;
+    }
+    &.footer {
+      width: 170px;
+      height: 41px;
+      font-size: 10px;
+      padding-right: 5px;
+      img {
+        width: 33px;
+      }
+    }
+  }
+
+  @include desktop(1200) {
+    height: 40px;
+    max-width: 170px;
+    padding-right: 4px;
+    font-size: 11px;
+    img {
+      width: 32px;
+    }
+    &.leave_request {
+      max-width: 160px;
+    }
+    &.footer {
+      width: 140px;
+      height: 34px;
+      font-size: 10px;
+      padding-right: 4px;
+      img {
+        width: 26px;
+      }
     }
   }
   @include mobile {
@@ -58,7 +106,7 @@
     }
     &.mobile_full_width {
       width: 100%;
-      max-width: 450px;
+      max-width: 100%;
       justify-content: flex-end;
       gap: 0;
       p {
