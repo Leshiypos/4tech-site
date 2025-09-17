@@ -1493,9 +1493,29 @@ header {
         }
       }
       img {
-        width: auto;
         &.cover_left {
           object-position: right;
+        }
+        &.cover_right {
+          object-position: left;
+        }
+      }
+    }
+  }
+  @include mobile(560) {
+    .main_content {
+      img {
+        &.cover_left {
+          width: 100%;
+          object-position: right;
+        }
+      }
+      .row_cont {
+        .col {
+          flex: 0 1 auto;
+          &.img {
+            aspect-ratio: 1/1;
+          }
         }
       }
     }

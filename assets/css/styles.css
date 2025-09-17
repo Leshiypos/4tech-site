@@ -1239,10 +1239,18 @@ header .mobile {
             letter-spacing: -0.03em; }
             .outsourcing_section .main_content .row_cont .content p.long {
               max-width: 425px; }
-      .outsourcing_section .main_content img {
-        width: auto; }
-        .outsourcing_section .main_content img.cover_left {
-          object-position: right; } }
+      .outsourcing_section .main_content img.cover_left {
+        object-position: right; }
+      .outsourcing_section .main_content img.cover_right {
+        object-position: left; } }
+  @media screen and (max-width: 560px) {
+    .outsourcing_section .main_content img.cover_left {
+      width: 100%;
+      object-position: right; }
+    .outsourcing_section .main_content .row_cont .col {
+      flex: 0 1 auto; }
+      .outsourcing_section .main_content .row_cont .col.img {
+        aspect-ratio: 1/1; } }
   @media screen and (min-width: 561px) and (max-width: 1000px) {
     .outsourcing_section .main_content .row_cont {
       flex-direction: row; } }
