@@ -726,9 +726,9 @@ header {
       .content_bottom {
         .our_clients {
           .card_client {
-            height: 120px;
+            height: 110px;
             img {
-              transform: scale(0.9);
+              transform: scale(0.8);
             }
           }
         }
@@ -1835,15 +1835,16 @@ header {
     }
     .content {
       margin-left: 16px;
+      width: 80%;
       h3 {
         font-size: 25px;
-        @include fluid-font(18, 25);
+        @include fluid-font(16, 25);
         letter-spacing: -0.03em;
         margin-bottom: 8px;
       }
       p {
         font-size: 14px;
-        @include fluid-font(10, 14);
+        @include fluid-font(7, 14);
         letter-spacing: -0.03em;
         color: rgba(255, 255, 255, 0.4);
       }
@@ -1862,7 +1863,7 @@ header {
     }
     .our_stecs {
       .card_stec {
-        height: 120px;
+        height: 105px;
         padding-left: 30px;
         .content {
           margin-left: 14px;

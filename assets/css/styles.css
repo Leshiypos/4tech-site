@@ -747,9 +747,9 @@ header .mobile {
       .licensed_software_section .wrap_content .content_top {
         gap: 20px; }
       .licensed_software_section .wrap_content .content_bottom .our_clients .card_client {
-        height: 120px; }
+        height: 110px; }
         .licensed_software_section .wrap_content .content_bottom .our_clients .card_client img {
-          transform: scale(0.9); } }
+          transform: scale(0.8); } }
   @media screen and (min-width: 1001px) and (max-width: 1400px) {
     .licensed_software_section .wrap_section .cover {
       height: 800px; }
@@ -1469,15 +1469,16 @@ header .mobile {
     height: 140px;
     padding-left: 40px; }
   .development_section .our_stecs .content {
-    margin-left: 16px; }
+    margin-left: 16px;
+    width: 80%; }
     .development_section .our_stecs .content h3 {
       font-size: 25px;
-      font-size: clamp(18px, calc( 18px + (25 - 18) * ((100vw - 1000px) / (1900 - 1000)) ), 25px);
+      font-size: clamp(16px, calc( 16px + (25 - 16) * ((100vw - 1000px) / (1900 - 1000)) ), 25px);
       letter-spacing: -0.03em;
       margin-bottom: 8px; }
     .development_section .our_stecs .content p {
       font-size: 14px;
-      font-size: clamp(10px, calc( 10px + (14 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 14px);
+      font-size: clamp(7px, calc( 7px + (14 - 7) * ((100vw - 1000px) / (1900 - 1000)) ), 14px);
       letter-spacing: -0.03em;
       color: rgba(255, 255, 255, 0.4); }
   @media screen and (min-width: 1001px) and (max-width: 1600px) {
@@ -1488,7 +1489,7 @@ header .mobile {
       .development_section h2 {
         margin-bottom: 35px; }
       .development_section .our_stecs .card_stec {
-        height: 120px;
+        height: 105px;
         padding-left: 30px; }
         .development_section .our_stecs .card_stec .content {
           margin-left: 14px; }
