@@ -12,8 +12,10 @@
   white-space: nowrap;
   width: 100%;
   max-width: 239px;
+
   p {
-    margin: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 20px;
     text-align: center;
     width: 100%;
     padding-left: 6px;
@@ -48,6 +50,9 @@
     padding-right: 6px;
     img {
       width: 44px;
+    }
+    p {
+      margin-left: 20px;
     }
   }
   @include desktop(1600) {
@@ -104,6 +109,9 @@
         width: 51px;
       }
     }
+    p {
+      margin-left: 20px;
+    }
     &.mobile_full_width {
       width: 100%;
       max-width: 100%;
@@ -112,6 +120,7 @@
       p {
         width: 100%;
         margin: 0;
+        margin-left: 51px;
       }
     }
   }
