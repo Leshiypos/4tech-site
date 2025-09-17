@@ -184,8 +184,7 @@ a {
     margin-bottom: 0 !important;
     margin-left: 20px;
     text-align: center;
-    width: 100%;
-    padding-left: 6px; }
+    width: 100%; }
   .btn_hs img {
     width: 51px;
     height: 51px; }
@@ -266,6 +265,9 @@ a {
           width: 100%;
           margin: 0;
           margin-left: 51px; } }
+  @media screen and (max-width: 420px) {
+    .btn_hs {
+      min-width: 195px; } }
 
 html {
   font-family: "HelveticaNeueCyr", Arial, sans-serif;
@@ -475,7 +477,7 @@ header .mobile {
         max-width: 86%; }
       .reliable_supplier_section .head_content .description_wrap .description {
         font-size: 16px;
-        font-size: clamp(10px, calc( 10px + (16 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
+        font-size: clamp(8px, calc( 8px + (16 - 8) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
         font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.8;

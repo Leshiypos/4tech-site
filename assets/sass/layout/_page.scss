@@ -301,7 +301,7 @@ header {
       }
       .description {
         font-size: 16px;
-        @include fluid-font(10, 16);
+        @include fluid-font(8, 16);
         font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.8;
