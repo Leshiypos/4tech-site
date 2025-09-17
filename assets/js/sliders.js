@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.refresh();
   }
 
-  //   smoothScroll();
+  smoothScroll();
 
   //   <-------------------------------------->
   //   Анмация
