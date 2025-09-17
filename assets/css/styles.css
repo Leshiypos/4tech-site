@@ -1972,12 +1972,10 @@ header .mobile {
         padding-top: 0; }
       .contact_form_section .two_column {
         flex-direction: column; }
-        .contact_form_section .two_column .col {
-          flex: 0 1 auto; }
-          .contact_form_section .two_column .col.video_col {
-            height: 500px; }
-          .contact_form_section .two_column .col .video_background {
-            transform: scale(1.3); }
+        .contact_form_section .two_column .col.video_col {
+          height: 500px; }
+        .contact_form_section .two_column .col .video_background {
+          transform: scale(1.3); }
       .contact_form_section h2 {
         font-size: 40px; }
       .contact_form_section .description {

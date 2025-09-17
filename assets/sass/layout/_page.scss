@@ -2560,7 +2560,7 @@ header {
     .two_column {
       flex-direction: column;
       .col {
-        flex: 0 1 auto;
+        // flex: 0 1 auto;
         &.video_col {
           height: 500px;
         }
@@ -3202,3 +3202,18 @@ footer {
     }
   }
 }
+
+// video {
+//   &.mobile {
+//     display: none;
+//   }
+// }
+
+// @include mobile {
+//   video {
+//     display: none;
+//     &.mobile {
+//       display: inline;
+//     }
+//   }
+// }
