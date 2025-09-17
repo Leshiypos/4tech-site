@@ -301,7 +301,7 @@ header {
       }
       .description {
         font-size: 16px;
-        @include fluid-font(8, 16);
+        @include fluid-font(10, 16);
         font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.8;
@@ -354,6 +354,9 @@ header {
     .head_content {
       margin-bottom: 140px;
       .description_wrap {
+        .wrap {
+          max-width: 95%;
+        }
         flex: 1.7;
         img {
           width: 80px;
@@ -393,6 +396,9 @@ header {
     .head_content {
       margin-bottom: 100px;
       .description_wrap {
+        .wrap {
+          max-width: 100%;
+        }
         img {
           width: 60px;
         }
@@ -946,6 +952,9 @@ header {
       }
       .description_wrap {
         flex: 1.7;
+        .wrap {
+          max-width: 95%;
+        }
         img {
           width: 80px;
         }
@@ -992,6 +1001,9 @@ header {
         }
       }
       .description_wrap {
+        .wrap {
+          max-width: 100%;
+        }
         img {
           width: 60px;
         }

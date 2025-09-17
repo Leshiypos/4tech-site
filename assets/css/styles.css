@@ -477,7 +477,7 @@ header .mobile {
         max-width: 86%; }
       .reliable_supplier_section .head_content .description_wrap .description {
         font-size: 16px;
-        font-size: clamp(8px, calc( 8px + (16 - 8) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
+        font-size: clamp(10px, calc( 10px + (16 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 16px);
         font-weight: 300;
         letter-spacing: -0.03em;
         line-height: 1.8;
@@ -520,6 +520,8 @@ header .mobile {
         margin-bottom: 140px; }
         .reliable_supplier_section .head_content .description_wrap {
           flex: 1.7; }
+          .reliable_supplier_section .head_content .description_wrap .wrap {
+            max-width: 95%; }
           .reliable_supplier_section .head_content .description_wrap img {
             width: 80px; }
       .reliable_supplier_section .main_content > .left_col .left_col {
@@ -541,6 +543,8 @@ header .mobile {
         transform: rotate(-90deg) translateX(-45%); }
       .reliable_supplier_section .head_content {
         margin-bottom: 100px; }
+        .reliable_supplier_section .head_content .description_wrap .wrap {
+          max-width: 100%; }
         .reliable_supplier_section .head_content .description_wrap img {
           width: 60px; }
         .reliable_supplier_section .head_content .description_wrap .description {
@@ -895,6 +899,8 @@ header .mobile {
         width: 90px; }
       .catalog_section .head_content .description_wrap {
         flex: 1.7; }
+        .catalog_section .head_content .description_wrap .wrap {
+          max-width: 95%; }
         .catalog_section .head_content .description_wrap img {
           width: 80px; }
     .catalog_section.last .card.text .leave_request {
@@ -916,6 +922,8 @@ header .mobile {
           font-size: 110px; }
         .catalog_section .head_content .title img {
           width: 80px; }
+        .catalog_section .head_content .description_wrap .wrap {
+          max-width: 100%; }
         .catalog_section .head_content .description_wrap img {
           width: 60px; }
         .catalog_section .head_content .description_wrap .description {
