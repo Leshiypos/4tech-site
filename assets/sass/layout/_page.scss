@@ -489,8 +489,14 @@ header {
     @extend %marginWrapDesktopLR;
     margin-right: 23px;
   }
-  .column {
-    flex: 1;
+  .wrap {
+    & > .column {
+      flex: 1;
+    }
+  }
+  .wrap_mobile {
+    padding: 0 29px;
+    display: none;
   }
   .content {
     h2 {
@@ -651,6 +657,20 @@ header {
     .column {
       &.content {
         width: 80%;
+      }
+    }
+  }
+  @include mobile(560) {
+    .wrap_section {
+      .desktop {
+        display: none;
+      }
+    }
+    .wrap_mobile {
+      margin-top: 53px;
+      display: block;
+      .card {
+        max-height: 95vh;
       }
     }
   }
@@ -2037,7 +2057,12 @@ header {
 }
 
 // <------------------------------------->
-
+.partners_cluster {
+  @include mobile {
+    height: 80vh;
+    padding: 100px 0;
+  }
+}
 .partners_section {
   margin-top: 145px;
   .wrap_section {

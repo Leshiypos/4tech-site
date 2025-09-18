@@ -120,26 +120,156 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     });
   }
+  initOveryoneHere();
   gorizontalSwiper();
+
+  //   Секция Все в одном месте
+  function initOveryoneHere() {
+    const section = document.querySelector("#services.overyone_here_section");
+    const swiperEl = section?.querySelector(".overyone_here_slider");
+    if (!section || !swiperEl) return;
+
+    // Инициализируем Swiper (без повторной инициализации)
+    const swiper =
+      swiperEl.swiper ||
+      new Swiper(swiperEl, {
+        speed: 400,
+        slidesPerView: 1,
+        spaceBetween: 14,
+      });
+
+    const mm = gsap.matchMedia();
+
+    // Горизонтальный скролл только на ширине ≤ 561px
+    mm.add("(max-width: 561px)", () => {
+      swiper.allowTouchMove = false; // отключаем свайп — управляем скроллом
+
+      const wrapper = swiperEl.querySelector(".swiper-wrapper");
+
+      const getScrollLength = () => {
+        // сколько нужно протащить по X
+        const len = wrapper.scrollWidth - swiperEl.clientWidth;
+        return Math.max(0, len);
+      };
+
+      swiper.update(); // пересчитать размеры слайдов
+
+      const tween = gsap.to(wrapper, {
+        x: () => -getScrollLength(),
+        ease: "none",
+        scrollTrigger: {
+          trigger: section, // пин всей секции
+          start: "bottom bottom-=50px",
+          end: () => `+=${getScrollLength()}`,
+          scrub: true,
+          pin: section,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+          // markers: true,
+        },
+      });
+
+      // пересчитать ВСЕ триггеры после создания пина
+      ScrollTrigger.refresh();
+
+      const onResize = () => ScrollTrigger.refresh();
+      window.addEventListener("resize", onResize);
+
+      // cleanup при выходе из брейкпоинта
+      return () => {
+        window.removeEventListener("resize", onResize);
+        tween.scrollTrigger?.kill();
+        tween.kill();
+        gsap.set(wrapper, { x: 0 });
+        swiper.allowTouchMove = true;
+        ScrollTrigger.refresh();
+      };
+    });
+  }
+
   fadeInAnimation(".fade_in");
 
   //   Слайдер Партнеры
-  let slider_partners = document.querySelectorAll(".partners_slider");
+  if (window.innerWidth > 1000) {
+    let slider_partners = document.querySelectorAll(".partners_slider");
+    if (slider_partners.length) {
+      slider_partners.forEach((slider) => {
+        new Swiper(slider, {
+          speed: 400,
+          slidesPerView: 2.4,
+          breakpoints: {
+            700: {
+              slidesPerView: 3.3,
+            },
+            1000: {
+              slidesPerView: 5.3,
+            },
+          },
+        });
+      });
+    }
+  } else {
+    partnersGorizontalSliders();
+  }
 
-  if (slider_partners.length) {
-    slider_partners.forEach((slider) => {
-      new Swiper(slider, {
-        speed: 400,
-        slidesPerView: 2.4,
-        breakpoints: {
-          700: {
-            slidesPerView: 3.3,
-          },
-          1000: {
-            slidesPerView: 5.3,
-          },
+  function partnersGorizontalSliders() {
+    const cluster = document.querySelector(".partners_cluster");
+    if (!cluster) return;
+
+    const mm = gsap.matchMedia();
+    mm.add("(max-width: 1000px)", () => {
+      const sliderEls = Array.from(
+        cluster.querySelectorAll(".partners_slider")
+      );
+      if (!sliderEls.length) return;
+
+      sliderEls.forEach((el) => {
+        const sw = el.swiper;
+        if (sw) {
+          sw.allowTouchMove = false;
+          sw.autoplay?.stop?.();
+          sw.update();
+        }
+      });
+
+      const wrappers = sliderEls.map((el) =>
+        el.querySelector(".swiper-wrapper")
+      );
+      const lengths = wrappers.map((w, i) => {
+        const container = sliderEls[i];
+        return Math.max(0, w.scrollWidth - container.clientWidth);
+      });
+      const maxLen = Math.max(...lengths, 0);
+
+      const tl = gsap.timeline({
+        defaults: { ease: "none" },
+        scrollTrigger: {
+          trigger: cluster,
+          start: "top top",
+          end: () => `+=${maxLen}`,
+          scrub: true,
+          pin: cluster, // пин всего блока с двумя секциями
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
         },
       });
+
+      wrappers.forEach((w, idx) => tl.to(w, { x: -lengths[idx] }, 0));
+      ScrollTrigger.refresh();
+
+      return () => {
+        tl.scrollTrigger?.kill();
+        tl.kill();
+        wrappers.forEach((w) => gsap.set(w, { x: 0 }));
+        sliderEls.forEach((el) => {
+          const sw = el.swiper;
+          if (sw) {
+            sw.allowTouchMove = true;
+            sw.autoplay?.start?.();
+          }
+        });
+        ScrollTrigger.refresh();
+      };
     });
   }
 
@@ -162,6 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   }
+
   //   let sliders_section = document.querySelectorAll(
   //     ".slider_section .img_slider"
   //   );

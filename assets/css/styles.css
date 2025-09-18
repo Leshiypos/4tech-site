@@ -591,8 +591,11 @@ header .mobile {
 .overyone_here_section .wrap_section {
   gap: 19px;
   margin-right: 23px; }
-.overyone_here_section .column {
+.overyone_here_section .wrap > .column {
   flex: 1; }
+.overyone_here_section .wrap_mobile {
+  padding: 0 29px;
+  display: none; }
 .overyone_here_section .content h2 {
   font-size: 50px;
   font-size: clamp(30px, calc( 30px + (50 - 30) * ((100vw - 1000px) / (1900 - 1000)) ), 50px);
@@ -700,6 +703,14 @@ header .mobile {
     max-width: 250px; }
   .overyone_here_section .column.content {
     width: 80%; } }
+@media screen and (max-width: 560px) {
+  .overyone_here_section .wrap_section .desktop {
+    display: none; }
+  .overyone_here_section .wrap_mobile {
+    margin-top: 53px;
+    display: block; }
+    .overyone_here_section .wrap_mobile .card {
+      max-height: 95vh; } }
 
 .licensed_software_section {
   margin-top: 102px; }
@@ -1603,6 +1614,11 @@ header .mobile {
         justify-content: space-between; }
         .development_section .our_stecs .row:first-child {
           margin-bottom: 0; } }
+
+@media screen and (max-width: 1000px) {
+  .partners_cluster {
+    height: 80vh;
+    padding: 100px 0; } }
 
 .partners_section {
   margin-top: 145px; }
