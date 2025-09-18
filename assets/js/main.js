@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!input || !form) return;
 
     const iti = window.intlTelInput(input, {
-      initialCountry: "by",
+      initialCountry: "ru",
       preferredCountries: ["by", "ru", "ua", "pl", "de"],
       separateDialCode: true,
       nationalMode: true, // вводим национальный номер
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!input || !form) return;
 
     const iti = window.intlTelInput(input, {
-      initialCountry: "by",
+      initialCountry: "ru",
       preferredCountries: ["by", "ru", "ua", "pl", "de"],
       separateDialCode: true,
       nationalMode: true, // вводим национальный номер
