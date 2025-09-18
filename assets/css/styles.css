@@ -1928,7 +1928,7 @@ header .mobile {
           background-color: #836fff;
           /* подсветка при наведении */ }
     .contact_form_section .form_wrap input {
-      padding: 24px 70px 22px 70px;
+      padding: 23px 70px;
       background-color: transparent;
       outline: none;
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -2302,7 +2302,7 @@ footer {
           background-color: #836fff;
           /* подсветка при наведении */ }
       #popup-overlay .popup .form_wrap input {
-        padding: 24px 70px 22px 70px;
+        padding: 23px 70px;
         background-color: transparent;
         outline: none;
         border: 1px solid rgba(255, 255, 255, 0.2);
@@ -2313,6 +2313,8 @@ footer {
         width: 100%; }
         #popup-overlay .popup .form_wrap input.iti__search-input {
           border-top: none !important; }
+        #popup-overlay .popup .form_wrap input::placeholder {
+          text-align: center; }
   #popup-overlay .wrap_popup {
     background: black;
     border-radius: 20px;

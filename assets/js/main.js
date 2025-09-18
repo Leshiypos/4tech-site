@@ -108,17 +108,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function applyMask(digitsOnly) {
       const digits = digitsOnly.replace(/\D+/g, "").slice(0, maxDigits);
-      let di = 0,
-        out = "";
 
-      for (let i = 0; i < maskTemplate.length; i++) {
+      // Если цифр нет — поле должно стать ПУСТЫМ (никаких "(" или "+")
+      if (digits.length === 0) return "";
+
+      // Префикс до первого символа ввода (например, "(" или "+375 ")
+      const firstIdx = maskTemplate.indexOf("_");
+      let out = firstIdx > 0 ? maskTemplate.slice(0, firstIdx) : "";
+      let di = 0;
+
+      // Заполняем начиная с первой "_"
+      for (let i = Math.max(firstIdx, 0); i < maskTemplate.length; i++) {
         const ch = maskTemplate[i];
         if (ch === "_") {
           if (di < digits.length) out += digits[di++];
-          else break; // дальше не заполняем
+          else break; // закончились цифры — не тянем хвост фикс-символов
         } else {
-          // фиксированные символы (скобки/пробелы/дефисы и т.п.)
-          if (di > 0 || i === 0) out += ch;
+          out += ch; // фикс-символы между цифрами ( ) - пробел и т.п.
         }
       }
       return out;
@@ -142,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // форматируем при любом изменении (включая paste/drag&drop)
-    input.addEventListener("input", formatInputValue);
+    // input.addEventListener("input", formatInputValue);
 
     // при смене страны перестраиваем маску и очищаем поле
     input.addEventListener("countrychange", () => {
@@ -250,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // форматируем при любом изменении (включая paste/drag&drop)
-    input.addEventListener("input", formatInputValue);
+    // input.addEventListener("input", formatInputValue);
 
     // при смене страны перестраиваем маску и очищаем поле
     input.addEventListener("countrychange", () => {

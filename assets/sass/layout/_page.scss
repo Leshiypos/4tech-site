@@ -2479,7 +2479,7 @@ header {
       }
     }
     input {
-      padding: 24px 70px 22px 70px;
+      padding: 23px 70px;
       background-color: transparent;
       outline: none;
       border: 1px solid rgba(255, 255, 255, 0.2);
@@ -3047,7 +3047,7 @@ footer {
         }
       }
       input {
-        padding: 24px 70px 22px 70px;
+        padding: 23px 70px;
         background-color: transparent;
         outline: none;
         border: 1px solid rgba(255, 255, 255, 0.2);
@@ -3058,6 +3058,9 @@ footer {
         width: 100%;
         &.iti__search-input {
           border-top: none !important;
+        }
+        &::placeholder {
+          text-align: center;
         }
       }
     }
