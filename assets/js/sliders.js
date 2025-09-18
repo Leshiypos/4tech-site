@@ -120,8 +120,6 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     });
   }
-  initOveryoneHere();
-  gorizontalSwiper();
 
   //   Секция Все в одном месте
   function initOveryoneHere() {
@@ -187,34 +185,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  fadeInAnimation(".fade_in");
-
   //   Слайдер Партнеры
-  if (window.innerWidth > 1000) {
-    let slider_partners = document.querySelectorAll(".partners_slider");
-    if (slider_partners.length) {
-      slider_partners.forEach((slider) => {
-        new Swiper(slider, {
-          speed: 400,
-          slidesPerView: 2.4,
-          breakpoints: {
-            700: {
-              slidesPerView: 3.3,
-            },
-            1000: {
-              slidesPerView: 5.3,
-            },
+
+  let slider_partners = document.querySelectorAll(".partners_slider");
+  if (slider_partners.length) {
+    slider_partners.forEach((slider) => {
+      new Swiper(slider, {
+        speed: 400,
+        slidesPerView: 1.4,
+        breakpoints: {
+          700: {
+            slidesPerView: 3.3,
           },
-        });
+          1000: {
+            slidesPerView: 5.3,
+          },
+        },
       });
-    }
-  } else {
-    partnersGorizontalSliders();
+    });
   }
 
   function partnersGorizontalSliders() {
     const cluster = document.querySelector(".partners_cluster");
     if (!cluster) return;
+    // получаем высоту кластера
+    const clusterHeight = cluster.getBoundingClientRect().height;
+    const heightWindow = window.innerHeight;
+    const padTrigger = (heightWindow - clusterHeight) / 2;
 
     const mm = gsap.matchMedia();
     mm.add("(max-width: 1000px)", () => {
@@ -245,12 +242,13 @@ document.addEventListener("DOMContentLoaded", () => {
         defaults: { ease: "none" },
         scrollTrigger: {
           trigger: cluster,
-          start: "top top",
+          start: `bottom bottom-=${padTrigger}`,
           end: () => `+=${maxLen}`,
           scrub: true,
           pin: cluster, // пин всего блока с двумя секциями
           anticipatePin: 1,
           invalidateOnRefresh: true,
+          //   markers: true,
         },
       });
 
@@ -272,7 +270,11 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     });
   }
-
+  initOveryoneHere();
+  gorizontalSwiper();
+  fadeInAnimation(".fade_in");
+  partnersGorizontalSliders();
+  //   Секция наши клиенты
   let our_clients = document.querySelector(".our_clients_slider");
   if (our_clients) {
     new Swiper(our_clients, {
@@ -292,42 +294,4 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   }
-
-  //   let sliders_section = document.querySelectorAll(
-  //     ".slider_section .img_slider"
-  //   );
-
-  //   if (sliders_section) {
-  //     sliders_section.forEach((slider) => {
-  //       new Swiper(slider, {
-  //         speed: 400,
-  //         loop: true,
-  //         slidesPerView: "auto",
-  //         spaceBetween: 10,
-  //       });
-  //     });
-  //   }
-
-  //   //   Блок новости
-  //   let news_section = document.querySelectorAll(
-  //     ".news_section .swiper.news_slider"
-  //   );
-  //   if (news_section) {
-  //     news_section.forEach((slider) => {
-  //       new Swiper(slider, {
-  //         speed: 400,
-  //         slidesPerView: 1.3,
-  //         spaceBetween: 16,
-  //         breakpoints: {
-  //           530: {
-  //             spaceBetween: 36,
-  //           },
-
-  //           1000: {
-  //             slidesPerView: 3,
-  //           },
-  //         },
-  //       });
-  //     });
-  //   }
 });
