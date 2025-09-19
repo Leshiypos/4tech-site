@@ -2313,8 +2313,6 @@ footer {
         width: 100%; }
         #popup-overlay .popup .form_wrap input.iti__search-input {
           border-top: none !important; }
-        #popup-overlay .popup .form_wrap input::placeholder {
-          text-align: center; }
   #popup-overlay .wrap_popup {
     background: black;
     border-radius: 20px;
