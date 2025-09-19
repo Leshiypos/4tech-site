@@ -1972,7 +1972,7 @@ header .mobile {
       .contact_form_section .form_wrap input {
         min-width: unset;
         width: 300px;
-        height: 50px; }
+        padding: 15px 70px; }
       .contact_form_section .head_content {
         max-width: 90%; }
       .contact_form_section .two_column .col .video_background {
@@ -1983,7 +1983,7 @@ header .mobile {
     .contact_form_section {
       margin-top: 55px; }
       .contact_form_section .form_wrap input {
-        padding: 20px 70px;
+        padding: 15px 70px;
         width: 260px; }
       .contact_form_section .form_wrap form {
         max-width: 90%; }
@@ -1993,8 +1993,7 @@ header .mobile {
     .contact_form_section {
       margin-top: 40px; }
       .contact_form_section .form_wrap input {
-        padding: 14px 70px;
-        height: 40px; }
+        padding: 10px 70px; }
       .contact_form_section .two_column .col .video_background {
         transform: scale(1.1); } }
   @media screen and (max-width: 1000px) {
@@ -2023,7 +2022,8 @@ header .mobile {
           gap: 16px; }
         .contact_form_section .form_wrap input {
           min-width: unset;
-          width: 100%; }
+          width: 100%;
+          padding: 22px 70px 23px 70px; }
       .contact_form_section .head_content {
         margin-bottom: 50px; }
       .contact_form_section .foot_content {
