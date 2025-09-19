@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
         defaults: { ease: "none" },
         scrollTrigger: {
           trigger: cluster,
-          start: `bottom bottom-=150px`,
+          start: `bottom bottom-=210px`,
           end: () => `+=${maxLen}`,
           scrub: true,
           pin: cluster, // пин всего блока с двумя секциями
