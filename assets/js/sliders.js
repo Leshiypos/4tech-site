@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "none",
         scrollTrigger: {
           trigger: section,
-          start: "bottom bottom-=50px", // как только секция пришла к верху вьюпорта
+          start: "bottom bottom-=120px", // как только секция пришла к верху вьюпорта
           end: () => `+=${getScrollLength()}`, // длина вертикального скролла = горизонтальному пути
           scrub: true,
           pin: section, // пин ВСЕЙ секции, не только слайдера
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "none",
         scrollTrigger: {
           trigger: section, // пин всей секции
-          start: "bottom bottom-=50px",
+          start: "bottom bottom-=150px",
           end: () => `+=${getScrollLength()}`,
           scrub: true,
           pin: section,
@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // получаем высоту кластера
     const clusterHeight = cluster.getBoundingClientRect().height;
     const heightWindow = window.innerHeight;
-    const padTrigger = (heightWindow - clusterHeight) / 2;
+    const padTrigger = heightWindow - clusterHeight;
 
     const mm = gsap.matchMedia();
     mm.add("(max-width: 1000px)", () => {
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
         defaults: { ease: "none" },
         scrollTrigger: {
           trigger: cluster,
-          start: `bottom bottom-=${padTrigger}`,
+          start: `bottom bottom-=150px`,
           end: () => `+=${maxLen}`,
           scrub: true,
           pin: cluster, // пин всего блока с двумя секциями
