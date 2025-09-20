@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("load", () => {
   console.log("Старница загружена");
   document.querySelectorAll('[data-autoplay="delay"]').forEach((video) => {
-    video.preload = "auto"; // начинаем догрузку
+    video.setAttribute("preload", "auto");
     video.muted = true; // обязательно для autoplay
     video.setAttribute("autoplay", "autoplay");
     video.load(); // перезапускаем загрузку
