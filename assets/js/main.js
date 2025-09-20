@@ -322,3 +322,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   bergerMenuControl();
 });
+
+// отложенный автоплей
+
+window.addEventListener("load", () => {
+  let allVideo = document.querySelectorAll('[data-autoplay="delay"]');
+  console.log("Страница загружена");
+  allVideo.forEach((video) => {
+    video.setAttribute("autoplay", "");
+    video.load();
+  });
+});
