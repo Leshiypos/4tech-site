@@ -313,6 +313,7 @@ window.addEventListener("load", () => {
   document.querySelectorAll('[data-autoplay="delay"]').forEach((video) => {
     video.preload = "auto"; // начинаем догрузку
     video.muted = true; // обязательно для autoplay
+    video.setAttribute("autoplay", "autoplay");
     video.load(); // перезапускаем загрузку
 
     video
