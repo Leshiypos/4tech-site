@@ -276,7 +276,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initOveryoneHere();
   gorizontalSwiper();
   fadeInAnimation(".fade_in");
-  partnersGorizontalSliders();
+  //   partnersGorizontalSliders();
+  console.log("Выключен горизонтаьный слайдер партнеров");
   //   Секция наши клиенты
   let our_clients = document.querySelector(".our_clients_slider");
   if (our_clients) {
