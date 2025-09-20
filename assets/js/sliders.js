@@ -25,7 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.refresh();
   }
 
-  smoothScroll();
+  if (window.innerWidth > 1000) {
+    console.log("Мягкий сролл включен");
+    smoothScroll();
+  }
 
   //   <-------------------------------------->
   //   Анмация

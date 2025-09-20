@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
   bergerMenuControl();
 });
 
-// отложенный автоплей
+// отложенный автоплей видер
 
 window.addEventListener("load", () => {
   console.log("Страница загружена");
