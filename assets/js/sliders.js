@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
           pin: section, // пин ВСЕЙ секции, не только слайдера
           anticipatePin: 1,
           invalidateOnRefresh: true, // пересчитать при ресайзе/перезагрузке
-          markers: true, // включи для отладки
+          //   markers: true, // включи для отладки
         },
       });
 
@@ -160,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "none",
         scrollTrigger: {
           trigger: wrapper, // пин всей секции
-          start: "top top+=90px",
+          start: "top top+=50px",
           end: () => `+=${getScrollLength()}`,
           scrub: true,
           pin: section,
