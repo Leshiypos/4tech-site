@@ -99,13 +99,13 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "none",
         scrollTrigger: {
           trigger: section,
-          start: "bottom bottom-=120px", // как только секция пришла к верху вьюпорта
+          start: "top top+=50px", // как только секция пришла к верху вьюпорта
           end: () => `+=${getScrollLength()}`, // длина вертикального скролла = горизонтальному пути
           scrub: true,
           pin: section, // пин ВСЕЙ секции, не только слайдера
           anticipatePin: 1,
           invalidateOnRefresh: true, // пересчитать при ресайзе/перезагрузке
-          //   markers: true, // включи для отладки
+          markers: true, // включи для отладки
         },
       });
 
@@ -159,8 +159,8 @@ document.addEventListener("DOMContentLoaded", () => {
         x: () => -getScrollLength(),
         ease: "none",
         scrollTrigger: {
-          trigger: section, // пин всей секции
-          start: "bottom bottom-=150px",
+          trigger: wrapper, // пин всей секции
+          start: "top top+=90px",
           end: () => `+=${getScrollLength()}`,
           scrub: true,
           pin: section,
@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initOveryoneHere();
   gorizontalSwiper();
   partnersGorizontalSliders();
-  console.log("Выключен горизонтаьный слайдер партнеров");
+
   //   Секция наши клиенты
   let our_clients = document.querySelector(".our_clients_slider");
   if (our_clients) {
