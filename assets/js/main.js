@@ -309,16 +309,60 @@ document.addEventListener("DOMContentLoaded", () => {
 // отложенный автоплей
 
 window.addEventListener("load", () => {
-  console.log("Старница загружена");
-  document.querySelectorAll('[data-autoplay="delay"]').forEach((video) => {
-    video.setAttribute("preload", "auto");
-    video.muted = true; // обязательно для autoplay
-    video.setAttribute("autoplay", "autoplay");
-    video.load(); // перезапускаем загрузку
-
-    video
-      .play()
-      .then(() => console.log("Видео запустилось:", video))
-      .catch((err) => console.warn("Автозапуск заблокирован:", err));
-  });
+  console.log("Страница загружена");
+  const videos = [...document.querySelectorAll('[data-autoplay="delay"]')];
+  loadSequentially(videos).catch(console.warn);
 });
+
+function wait(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+function once(el, type, opts = { once: true }) {
+  return new Promise((resolve) => el.addEventListener(type, resolve, opts));
+}
+
+// Запускаем конкретное видео и ждём, пока оно будет готово играть
+async function startVideo(video, { timeoutMs = 20000 } = {}) {
+  // подготовка
+  video.preload = "auto";
+  video.setAttribute("preload", "auto");
+  video.muted = true; // нужно для автозапуска
+  video.setAttribute("playsinline", ""); // iOS
+  video.autoplay = true;
+  video.load();
+
+  // ждём, пока появятся данные для воспроизведения
+  const ready = Promise.race([
+    once(video, "canplaythrough"),
+    once(video, "loadeddata"),
+  ]);
+
+  // страховка от вечного ожидания
+  const timeout = new Promise((resolve) => {
+    setTimeout(resolve, timeoutMs);
+  });
+
+  await Promise.race([ready, timeout]);
+
+  // пытаемся запустить
+  try {
+    console.log("Попытка запуска");
+    await video.play();
+  } catch (e) {
+    console.warn("Автозапуск заблокирован, пробуем без звука/по клику:", e);
+    // уже muted=true, так что чаще всего всё пойдёт; если нет — оставим как есть
+  }
+
+  // опционально дождёмся события "playing", чтобы точно пошло
+  await Promise.race([once(video, "playing"), wait(300)]);
+}
+
+// Последовательная очередь
+async function loadSequentially(videos, gapMs = 300) {
+  for (const video of videos) {
+    await startVideo(video);
+    // небольшая пауза, чтобы не «забивать» сеть
+    if (gapMs) await wait(gapMs);
+  }
+}
