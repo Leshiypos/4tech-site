@@ -104,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
           scrub: true,
           pin: section, // пин ВСЕЙ секции, не только слайдера
           anticipatePin: 1,
-          pinSpacing: "margin",
           invalidateOnRefresh: true, // пересчитать при ресайзе/перезагрузке
           //   markers: true, // включи для отладки
         },
@@ -166,7 +165,6 @@ document.addEventListener("DOMContentLoaded", () => {
           scrub: true,
           pin: section,
           anticipatePin: 1,
-          pinSpacing: "margin",
           invalidateOnRefresh: true,
           // markers: true,
         },
@@ -252,9 +250,9 @@ document.addEventListener("DOMContentLoaded", () => {
           scrub: 1,
           pin: cluster, // пин всего блока с двумя секциями
           anticipatePin: 1,
-          pinSpacing: "margin",
+          pinSpacing: true,
           invalidateOnRefresh: true,
-          //   markers: true,
+          markers: true,
         },
       });
 

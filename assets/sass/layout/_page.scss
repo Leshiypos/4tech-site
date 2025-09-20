@@ -2061,6 +2061,10 @@ header {
   @include mobile {
     height: auto;
     padding: 5px 0;
+    transform: translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+    contain: paint; /* заставляет браузер перерисовывать отдельно */
   }
 }
 .partners_section {
