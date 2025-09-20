@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
           scrub: 1,
           pin: cluster, // пин всего блока с двумя секциями
           anticipatePin: 1,
-          pinSpacing: true,
+          pinSpacing: "margin",
           invalidateOnRefresh: true,
           //   markers: true,
         },
