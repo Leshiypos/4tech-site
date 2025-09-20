@@ -1,5 +1,3 @@
-// preloader
-
 document.addEventListener("DOMContentLoaded", () => {
   // preloader
 
@@ -311,10 +309,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // отложенный автоплей
 
 window.addEventListener("load", () => {
-  let allVideo = document.querySelectorAll('[data-autoplay="delay"]');
-  console.log("Страница загружена");
-  allVideo.forEach((video) => {
-    video.setAttribute("autoplay", "");
-    video.load();
+  console.log("Старница загружена");
+  document.querySelectorAll('[data-autoplay="delay"]').forEach((video) => {
+    video.preload = "auto"; // начинаем догрузку
+    video.muted = true; // обязательно для autoplay
+    video.load(); // перезапускаем загрузку
+
+    video
+      .play()
+      .then(() => console.log("Видео запустилось:", video))
+      .catch((err) => console.warn("Автозапуск заблокирован:", err));
   });
 });
