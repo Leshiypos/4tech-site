@@ -1617,7 +1617,7 @@ header .mobile {
 
 @media screen and (max-width: 1000px) {
   .partners_cluster {
-    height: fit-content;
+    height: auto;
     padding: 5px 0; } }
 
 .partners_section {
@@ -1671,7 +1671,8 @@ header .mobile {
         transform: scale(0.7); } }
   @media screen and (max-width: 1000px) {
     .partners_section {
-      margin-top: 110px; }
+      margin-top: 0;
+      padding-top: 110px; }
       .partners_section .partners_slider .swiper-slide img {
         transform: scale(0.8); }
       .partners_section h2 {
@@ -1796,7 +1797,8 @@ header .mobile {
           transform: scale(0.5); } }
   @media screen and (max-width: 1000px) {
     .it_solutions_section {
-      margin-top: 100px; }
+      margin-top: 0;
+      padding-top: 100px; }
       .it_solutions_section .video_background {
         height: 390px;
         border-radius: 20px;

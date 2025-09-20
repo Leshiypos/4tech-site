@@ -245,13 +245,14 @@ document.addEventListener("DOMContentLoaded", () => {
         defaults: { ease: "none" },
         scrollTrigger: {
           trigger: cluster,
-          start: `bottom bottom-=210px`,
+          start: `top top+=70px`,
           end: () => `+=${maxLen}`,
-          scrub: true,
+          scrub: 1,
           pin: cluster, // пин всего блока с двумя секциями
           anticipatePin: 1,
+          pinSpacing: true,
           invalidateOnRefresh: true,
-          //   markers: true,
+          markers: true,
         },
       });
 
@@ -273,10 +274,10 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     });
   }
-  initOveryoneHere();
-  gorizontalSwiper();
+  //   initOveryoneHere();
+  //   gorizontalSwiper();
   fadeInAnimation(".fade_in");
-  //   partnersGorizontalSliders();
+  partnersGorizontalSliders();
   console.log("Выключен горизонтаьный слайдер партнеров");
   //   Секция наши клиенты
   let our_clients = document.querySelector(".our_clients_slider");

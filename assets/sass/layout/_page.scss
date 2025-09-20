@@ -2059,7 +2059,7 @@ header {
 // <------------------------------------->
 .partners_cluster {
   @include mobile {
-    height: fit-content;
+    height: auto;
     padding: 5px 0;
   }
 }
@@ -2127,7 +2127,8 @@ header {
     }
   }
   @include mobile {
-    margin-top: 110px;
+    margin-top: 0;
+    padding-top: 110px;
     .partners_slider {
       .swiper-slide {
         img {
@@ -2309,7 +2310,8 @@ header {
     }
   }
   @include mobile {
-    margin-top: 100px;
+    margin-top: 0;
+    padding-top: 100px;
     .video_background {
       height: 390px;
       border-radius: 20px;
