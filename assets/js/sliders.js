@@ -252,7 +252,8 @@ document.addEventListener("DOMContentLoaded", () => {
           anticipatePin: 1,
           pinSpacing: true,
           invalidateOnRefresh: true,
-          //   markers: true,
+          markers: true,
+          once: true,
         },
       });
 
