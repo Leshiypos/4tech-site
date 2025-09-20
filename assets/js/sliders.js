@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
           anticipatePin: 1,
           pinSpacing: true,
           invalidateOnRefresh: true,
-          markers: true,
+          //   markers: true,
         },
       });
 
@@ -275,8 +275,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   fadeInAnimation(".fade_in");
-  //   initOveryoneHere();
-  //   gorizontalSwiper();
+  initOveryoneHere();
+  gorizontalSwiper();
   partnersGorizontalSliders();
   console.log("Выключен горизонтаьный слайдер партнеров");
   //   Секция наши клиенты
