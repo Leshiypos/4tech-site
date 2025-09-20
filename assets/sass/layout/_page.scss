@@ -2061,9 +2061,6 @@ header {
   @include mobile {
     height: auto;
     padding: 5px 0;
-    transform: translateZ(0);
-    will-change: transform;
-    backface-visibility: hidden;
   }
 }
 .partners_section {

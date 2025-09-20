@@ -1618,10 +1618,7 @@ header .mobile {
 @media screen and (max-width: 1000px) {
   .partners_cluster {
     height: auto;
-    padding: 5px 0;
-    transform: translateZ(0);
-    will-change: transform;
-    backface-visibility: hidden; } }
+    padding: 5px 0; } }
 
 .partners_section {
   margin-top: 145px; }
