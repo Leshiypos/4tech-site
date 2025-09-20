@@ -211,11 +211,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function partnersGorizontalSliders() {
     const cluster = document.querySelector(".partners_cluster");
     if (!cluster) return;
-
-    // GPU-фиксы для артефактов (можно и в CSS добавить)
-    cluster.style.transform = "translateZ(0)";
-    cluster.style.willChange = "transform";
-    cluster.style.backfaceVisibility = "hidden";
+    // получаем высоту кластера
+    const clusterHeight = cluster.getBoundingClientRect().height;
+    const heightWindow = window.innerHeight;
+    const padTrigger = heightWindow - clusterHeight;
 
     const mm = gsap.matchMedia();
     mm.add("(max-width: 1000px)", () => {
@@ -224,7 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       if (!sliderEls.length) return;
 
-      // отключаем ручной свайп и авто-плей
       sliderEls.forEach((el) => {
         const sw = el.swiper;
         if (sw) {
@@ -247,36 +245,20 @@ document.addEventListener("DOMContentLoaded", () => {
         defaults: { ease: "none" },
         scrollTrigger: {
           trigger: cluster,
-          start: "top top+=70px",
+          start: `top top+=70px`,
           end: () => `+=${maxLen}`,
           scrub: 1,
-          pin: cluster,
+          pin: cluster, // пин всего блока с двумя секциями
           anticipatePin: 1,
-          pinSpacing: "margin",
+          pinSpacing: true,
           invalidateOnRefresh: true,
-          // ← колбэки прямо в vars
-          onLeave: () => ScrollTrigger.refresh(),
-          onLeaveBack: () => ScrollTrigger.refresh(),
-          // markers: true,
+          //   markers: true,
         },
       });
 
-      // все врапперы едут синхронно
       wrappers.forEach((w, idx) => tl.to(w, { x: -lengths[idx] }, 0));
-
-      // фиксы артефактов при быстрых скроллах вверх/вниз
-      if (tl.scrollTrigger) {
-        tl.scrollTrigger.eventCallback("onLeave", () =>
-          ScrollTrigger.refresh()
-        );
-        tl.scrollTrigger.eventCallback("onLeaveBack", () =>
-          ScrollTrigger.refresh()
-        );
-      }
-
       ScrollTrigger.refresh();
 
-      // cleanup при выходе из брейкпоинта
       return () => {
         tl.scrollTrigger?.kill();
         tl.kill();
