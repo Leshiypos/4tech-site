@@ -2064,7 +2064,6 @@ header {
     transform: translateZ(0);
     will-change: transform;
     backface-visibility: hidden;
-    contain: paint; /* заставляет браузер перерисовывать отдельно */
   }
 }
 .partners_section {
