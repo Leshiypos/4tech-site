@@ -211,10 +211,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function partnersGorizontalSliders() {
     const cluster = document.querySelector(".partners_cluster");
     if (!cluster) return;
-    // получаем высоту кластера
-    const clusterHeight = cluster.getBoundingClientRect().height;
-    const heightWindow = window.innerHeight;
-    const padTrigger = heightWindow - clusterHeight;
 
     const mm = gsap.matchMedia();
     mm.add("(max-width: 1000px)", () => {
@@ -241,6 +237,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       const maxLen = Math.max(...lengths, 0);
 
+      const updateSwipers = () => {
+        sliderEls.forEach((el) => {
+          const sw = el.swiper;
+          sw?.update?.();
+        });
+      };
+
       const tl = gsap.timeline({
         defaults: { ease: "none" },
         scrollTrigger: {
@@ -252,14 +255,17 @@ document.addEventListener("DOMContentLoaded", () => {
           anticipatePin: 1,
           pinSpacing: true,
           invalidateOnRefresh: true,
-          markers: true,
+          //   markers: true,
         },
       });
 
       wrappers.forEach((w, idx) => tl.to(w, { x: -lengths[idx] }, 0));
+
+      ScrollTrigger.addEventListener("refreshInit", updateSwipers);
       ScrollTrigger.refresh();
 
       return () => {
+        ScrollTrigger.removeEventListener("refreshInit", updateSwipers);
         tl.scrollTrigger?.kill();
         tl.kill();
         wrappers.forEach((w) => gsap.set(w, { x: 0 }));
@@ -277,8 +283,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initOveryoneHere();
   gorizontalSwiper();
-  partnersGorizontalSliders();
   fadeInAnimation(".fade_in");
+  partnersGorizontalSliders();
 
   //   Секция наши клиенты
   let our_clients = document.querySelector(".our_clients_slider");
