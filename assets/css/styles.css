@@ -1618,8 +1618,7 @@ header .mobile {
 @media screen and (max-width: 1000px) {
   .partners_cluster {
     height: auto;
-    padding: 5px 0;
-    z-index: 1; } }
+    padding: 5px 0; } }
 
 .partners_section {
   margin-top: 145px; }
@@ -1695,7 +1694,7 @@ header .mobile {
       left: 0;
       padding: 0 16px 40px 20px;
       width: 100%;
-      z-index: 5; }
+      z-index: 2; }
     .it_solutions_section .wrap_section .overlay_content {
       position: absolute;
       left: 0;
@@ -1800,8 +1799,7 @@ header .mobile {
     .it_solutions_section {
       margin-top: 0;
       padding-top: 100px;
-      background-color: #000;
-      z-index: 4; }
+      background-color: #000; }
       .it_solutions_section .video_background {
         height: 390px;
         border-radius: 20px;
