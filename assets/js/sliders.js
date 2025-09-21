@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
           pin: section,
           anticipatePin: 1,
           invalidateOnRefresh: true,
-          markers: true,
+          //   markers: true,
         },
       });
 
