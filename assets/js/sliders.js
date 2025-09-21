@@ -109,13 +109,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
 
-      // На ресайз пересчитываем
-      const onResize = () => ScrollTrigger.refresh();
-      window.addEventListener("resize", onResize);
+      const onRefreshInit = () => swiper.update();
+      ScrollTrigger.addEventListener("refreshInit", onRefreshInit);
 
       // cleanup при выходе из медиа-условия
       return () => {
-        window.removeEventListener("resize", onResize);
+        ScrollTrigger.removeEventListener("refreshInit", onRefreshInit);
         tween.scrollTrigger && tween.scrollTrigger.kill();
         tween.kill();
         gsap.set(wrapper, { x: 0 });
@@ -170,20 +169,16 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
 
-      // пересчитать ВСЕ триггеры после создания пина
-      ScrollTrigger.refresh();
-
-      const onResize = () => ScrollTrigger.refresh();
-      window.addEventListener("resize", onResize);
+      const onRefreshInit = () => swiper.update();
+      ScrollTrigger.addEventListener("refreshInit", onRefreshInit);
 
       // cleanup при выходе из брейкпоинта
       return () => {
-        window.removeEventListener("resize", onResize);
+        ScrollTrigger.removeEventListener("refreshInit", onRefreshInit);
         tween.scrollTrigger?.kill();
         tween.kill();
         gsap.set(wrapper, { x: 0 });
         swiper.allowTouchMove = true;
-        ScrollTrigger.refresh();
       };
     });
   }
@@ -211,10 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function partnersGorizontalSliders() {
     const cluster = document.querySelector(".partners_cluster");
     if (!cluster) return;
-    // получаем высоту кластера
-    const clusterHeight = cluster.getBoundingClientRect().height;
-    const heightWindow = window.innerHeight;
-    const padTrigger = heightWindow - clusterHeight;
 
     const mm = gsap.matchMedia();
     mm.add("(max-width: 1000px)", () => {
@@ -235,31 +226,45 @@ document.addEventListener("DOMContentLoaded", () => {
       const wrappers = sliderEls.map((el) =>
         el.querySelector(".swiper-wrapper")
       );
-      const lengths = wrappers.map((w, i) => {
-        const container = sliderEls[i];
-        return Math.max(0, w.scrollWidth - container.clientWidth);
-      });
-      const maxLen = Math.max(...lengths, 0);
+      const getLengthFor = (index) => {
+        const wrapper = wrappers[index];
+        const container = sliderEls[index];
+        if (!wrapper || !container) return 0;
+        return Math.max(0, wrapper.scrollWidth - container.clientWidth);
+      };
+      const getMaxLen = () =>
+        wrappers.reduce((max, _, idx) => Math.max(max, getLengthFor(idx)), 0);
+
+      const updateSwipers = () => {
+        sliderEls.forEach((el) => {
+          const sw = el.swiper;
+          sw?.update?.();
+        });
+      };
 
       const tl = gsap.timeline({
         defaults: { ease: "none" },
         scrollTrigger: {
           trigger: cluster,
           start: `top top+=70px`,
-          end: () => `+=${maxLen}`,
+          end: () => `+=${getMaxLen()}`,
           scrub: 1,
           pin: cluster, // пин всего блока с двумя секциями
           anticipatePin: 1,
           pinSpacing: true,
           invalidateOnRefresh: true,
-          markers: true,
         },
       });
 
-      wrappers.forEach((w, idx) => tl.to(w, { x: -lengths[idx] }, 0));
-      ScrollTrigger.refresh();
+      wrappers.forEach((w, idx) =>
+        tl.to(w, { x: () => -getLengthFor(idx) }, 0)
+      );
+
+      ScrollTrigger.addEventListener("refreshInit", updateSwipers);
+      tl.scrollTrigger?.refresh();
 
       return () => {
+        ScrollTrigger.removeEventListener("refreshInit", updateSwipers);
         tl.scrollTrigger?.kill();
         tl.kill();
         wrappers.forEach((w) => gsap.set(w, { x: 0 }));
@@ -270,7 +275,6 @@ document.addEventListener("DOMContentLoaded", () => {
             sw.autoplay?.start?.();
           }
         });
-        ScrollTrigger.refresh();
       };
     });
   }
