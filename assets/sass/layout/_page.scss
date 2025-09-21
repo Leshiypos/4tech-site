@@ -2312,6 +2312,7 @@ header {
   @include mobile {
     margin-top: 0;
     padding-top: 100px;
+    background-color: #000;
     .video_background {
       height: 390px;
       border-radius: 20px;
@@ -2594,6 +2595,7 @@ header {
   }
   @include mobile {
     margin-top: 0;
+    background-color: #000;
     .wrap_section {
       padding-top: 0;
     }
@@ -2862,6 +2864,7 @@ footer {
   @include mobile {
     margin-top: 39px;
     margin-bottom: 59px;
+    background-color: #000;
 
     .col {
       .buttons_wrap {
