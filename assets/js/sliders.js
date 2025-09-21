@@ -109,13 +109,12 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
 
-      // На ресайз пересчитываем
-      const onResize = () => ScrollTrigger.refresh();
-      window.addEventListener("resize", onResize);
+      const onRefreshInit = () => swiper.update();
+      ScrollTrigger.addEventListener("refreshInit", onRefreshInit);
 
       // cleanup при выходе из медиа-условия
       return () => {
-        window.removeEventListener("resize", onResize);
+        ScrollTrigger.removeEventListener("refreshInit", onRefreshInit);
         tween.scrollTrigger && tween.scrollTrigger.kill();
         tween.kill();
         gsap.set(wrapper, { x: 0 });
@@ -166,24 +165,20 @@ document.addEventListener("DOMContentLoaded", () => {
           pin: section,
           anticipatePin: 1,
           invalidateOnRefresh: true,
-          // markers: true,
+          markers: true,
         },
       });
 
-      // пересчитать ВСЕ триггеры после создания пина
-      ScrollTrigger.refresh();
-
-      const onResize = () => ScrollTrigger.refresh();
-      window.addEventListener("resize", onResize);
+      const onRefreshInit = () => swiper.update();
+      ScrollTrigger.addEventListener("refreshInit", onRefreshInit);
 
       // cleanup при выходе из брейкпоинта
       return () => {
-        window.removeEventListener("resize", onResize);
+        ScrollTrigger.removeEventListener("refreshInit", onRefreshInit);
         tween.scrollTrigger?.kill();
         tween.kill();
         gsap.set(wrapper, { x: 0 });
         swiper.allowTouchMove = true;
-        ScrollTrigger.refresh();
       };
     });
   }
@@ -231,11 +226,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const wrappers = sliderEls.map((el) =>
         el.querySelector(".swiper-wrapper")
       );
-      const lengths = wrappers.map((w, i) => {
-        const container = sliderEls[i];
-        return Math.max(0, w.scrollWidth - container.clientWidth);
-      });
-      const maxLen = Math.max(...lengths, 0);
+      const getLengthFor = (index) => {
+        const wrapper = wrappers[index];
+        const container = sliderEls[index];
+        if (!wrapper || !container) return 0;
+        return Math.max(0, wrapper.scrollWidth - container.clientWidth);
+      };
+      const getMaxLen = () =>
+        wrappers.reduce((max, _, idx) => Math.max(max, getLengthFor(idx)), 0);
 
       const updateSwipers = () => {
         sliderEls.forEach((el) => {
@@ -249,20 +247,21 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
           trigger: cluster,
           start: `top top+=70px`,
-          end: () => `+=${maxLen}`,
+          end: () => `+=${getMaxLen()}`,
           scrub: 1,
           pin: cluster, // пин всего блока с двумя секциями
           anticipatePin: 1,
           pinSpacing: true,
           invalidateOnRefresh: true,
-          //   markers: true,
         },
       });
 
-      wrappers.forEach((w, idx) => tl.to(w, { x: -lengths[idx] }, 0));
+      wrappers.forEach((w, idx) =>
+        tl.to(w, { x: () => -getLengthFor(idx) }, 0)
+      );
 
       ScrollTrigger.addEventListener("refreshInit", updateSwipers);
-      ScrollTrigger.refresh();
+      tl.scrollTrigger?.refresh();
 
       return () => {
         ScrollTrigger.removeEventListener("refreshInit", updateSwipers);
@@ -276,15 +275,14 @@ document.addEventListener("DOMContentLoaded", () => {
             sw.autoplay?.start?.();
           }
         });
-        ScrollTrigger.refresh();
       };
     });
   }
 
   initOveryoneHere();
   gorizontalSwiper();
-  fadeInAnimation(".fade_in");
   partnersGorizontalSliders();
+  fadeInAnimation(".fade_in");
 
   //   Секция наши клиенты
   let our_clients = document.querySelector(".our_clients_slider");
