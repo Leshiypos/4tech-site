@@ -278,10 +278,11 @@ document.addEventListener("DOMContentLoaded", () => {
       };
     });
   }
-
-  initOveryoneHere();
-  gorizontalSwiper();
-  partnersGorizontalSliders();
+  if (window.innerWidth < 1001) {
+    initOveryoneHere();
+    gorizontalSwiper();
+    partnersGorizontalSliders();
+  }
   fadeInAnimation(".fade_in");
 
   //   Секция наши клиенты

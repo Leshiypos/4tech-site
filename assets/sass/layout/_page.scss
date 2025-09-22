@@ -1818,6 +1818,15 @@ header {
       }
     }
   }
+  @include mobile(390) {
+    .head_content {
+      .title {
+        h2 {
+          font-size: 50px;
+        }
+      }
+    }
+  }
 }
 
 // <------------------------------------->
