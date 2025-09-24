@@ -255,9 +255,18 @@ document.addEventListener("DOMContentLoaded", () => {
           invalidateOnRefresh: true,
         },
       });
-
+      // крутится прямо
+      //   wrappers.forEach((w, idx) =>
+      //     tl.to(w, { x: () => -getLengthFor(idx) }, 0)
+      //   );
+      // врутится обратно
       wrappers.forEach((w, idx) =>
-        tl.to(w, { x: () => -getLengthFor(idx) }, 0)
+        tl.fromTo(
+          w,
+          { x: () => -getLengthFor(idx) }, // стартуем с правого края
+          { x: 0, immediateRender: false }, // едем к левому (нормальному) положению
+          0
+        )
       );
 
       ScrollTrigger.addEventListener("refreshInit", updateSwipers);
