@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //   <-------------------------------------->
   //   Анмация
-  function fadeInAnimation(selector) {
+  function fadeInAnimation(selector, position = 90) {
     const banerSections = document.querySelectorAll(selector);
     if (banerSections) {
       banerSections.forEach((section) => {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
           scrollTrigger: {
             trigger: section,
-            start: "top 90%",
+            start: `top ${position}%`,
             once: true,
             markers: false,
           },
@@ -284,6 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
     partnersGorizontalSliders();
   }
   fadeInAnimation(".fade_in");
+  fadeInAnimation(".fade_in_fast", 95);
 
   //   Секция наши клиенты
   let our_clients = document.querySelector(".our_clients_slider");

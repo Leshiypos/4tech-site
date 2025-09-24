@@ -255,8 +255,9 @@ header {
 .reliable_supplier_section {
   position: relative;
   margin-top: 210px;
+  padding-bottom: 10px;
   overflow: hidden;
-  padding-bottom: 135px;
+
   .side_decor_text {
     margin-left: auto;
     margin-right: 54px;
@@ -280,7 +281,7 @@ header {
   .head_content {
     @extend %flexRowNowrapSB;
     align-items: flex-start;
-    margin-bottom: 171px;
+    margin-bottom: 115px;
     .title {
       flex: 3;
       h2 {
@@ -335,7 +336,7 @@ header {
       position: relative;
       z-index: -1;
       .video_background {
-        transform: scale(2);
+        transform: scale(1.4);
       }
       .logo_section {
         position: absolute;
@@ -378,7 +379,7 @@ header {
       }
       & > .right_col {
         .video_background {
-          transform: scale(1.9);
+          transform: scale(1.4);
         }
         .logo_section {
           width: 250px;
@@ -410,7 +411,7 @@ header {
     .main_content {
       & > .right_col {
         .video_background {
-          transform: scale(1.7);
+          transform: scale(1.4);
         }
         .logo_section {
           width: 140px;
@@ -426,6 +427,7 @@ header {
   }
   @include mobile {
     margin-top: 75px;
+    padding-bottom: 85px;
     .side_decor_text {
       display: none;
     }
@@ -464,12 +466,13 @@ header {
           width: 42%;
         }
         .video_background {
-          transform: scale(3);
+          transform: scale(2.6);
         }
       }
     }
   }
   @include tablet {
+    padding-bottom: 120px;
     .main_content {
       .right_col {
         .video_background {
@@ -483,6 +486,7 @@ header {
 // <----------------------------->
 
 .overyone_here_section {
+  padding-top: 165px;
   .wrap_section {
     @extend %flexRowNowrapSB;
     gap: 19px;
