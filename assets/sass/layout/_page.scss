@@ -175,6 +175,7 @@ header {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
+    height: 98vh;
     .wrap_content {
       position: absolute;
       bottom: 0;
@@ -283,7 +284,7 @@ header {
 // <----------------------------->
 .reliable_supplier_section {
   position: relative;
-  margin-top: 210px;
+  margin-top: 140px;
   padding-bottom: 10px;
   overflow: hidden;
 
@@ -305,12 +306,13 @@ header {
     transform-origin: right bottom;
   }
   .wrap_section {
+    padding-top: 72px;
     @extend %marginWrapDesktopLR;
   }
   .head_content {
     @extend %flexRowNowrapSB;
     align-items: flex-start;
-    margin-bottom: 115px;
+    margin-bottom: 43px;
     .title {
       flex: 3;
       h2 {
@@ -376,7 +378,7 @@ header {
     }
   }
   @include desktop(1600) {
-    margin-top: 160px;
+    margin-top: 90px;
     .side_decor_text {
       margin-right: 40px;
       transform: rotate(-90deg) translateX(-40%);
@@ -422,7 +424,7 @@ header {
       margin-right: 35px;
       transform: rotate(-90deg) translateX(-45%);
     }
-    margin-top: 140px;
+    margin-top: 70px;
     .head_content {
       margin-bottom: 100px;
       .description_wrap {
@@ -457,6 +459,9 @@ header {
   @include mobile {
     margin-top: 75px;
     padding-bottom: 85px;
+    .wrap_section {
+      padding-top: 0;
+    }
     .side_decor_text {
       display: none;
     }
@@ -642,7 +647,7 @@ header {
   @include mobile {
     display: block;
     height: auto;
-    padding-top: 120px;
+    padding-top: 100px;
     .wrap_section {
       flex-direction: column;
       margin: 0 29px;
@@ -756,6 +761,7 @@ header {
         margin-bottom: 40px;
         letter-spacing: -0.03em;
         line-height: 90%;
+        padding-top: 30px;
       }
       .description {
         font-size: 18px;
@@ -864,6 +870,7 @@ header {
           font-size: 37px;
           text-align: left;
           margin-bottom: 21px;
+          padding-top: 0;
         }
         .description {
           font-size: 16px;
@@ -898,9 +905,10 @@ header {
 // <----------------------------->
 
 .catalog_section {
-  margin-top: 130px;
+  margin-top: 40px;
   .wrap_section {
     padding: 0 32px;
+    padding-top: 90px;
   }
   .mobile_btns_wrap {
     display: none;
@@ -999,8 +1007,7 @@ header {
     }
   }
   @include desktop(1600) {
-    margin-top: 70px;
-    padding-top: 60px;
+    margin-top: 50px;
     .row_catalog {
       margin-bottom: 30px;
     }
@@ -1035,7 +1042,7 @@ header {
     }
   }
   @include desktop(1400) {
-    margin-top: 40px;
+    margin-top: 20px;
     .row_catalog {
       &.last {
         .card {
@@ -1078,7 +1085,7 @@ header {
     }
   }
   @include desktop(1200) {
-    margin-top: 20px;
+    margin-top: 0;
     .row_catalog {
       margin-bottom: 30px;
       .card h3 {
@@ -1112,6 +1119,7 @@ header {
     }
   }
   @include mobile {
+    margin-top: 20px;
     .wrap_section {
       padding: 0 30px;
     }
@@ -1257,6 +1265,7 @@ header {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
+    height: 98vh;
     .wrap_content {
       position: absolute;
       bottom: 0;
@@ -1336,6 +1345,7 @@ header {
   @include mobile {
     padding: 0 20px;
     .wrap_section {
+      height: auto;
       .wrap_content {
         position: static;
         margin: 0;
@@ -1384,9 +1394,10 @@ header {
 // <------------------------------------->
 
 .outsourcing_section {
-  margin-top: 160px;
+  margin-top: 60px;
   .wrap_section {
     padding: 0 20px;
+    padding-top: 100px;
   }
   .head_content {
     @extend %flexRowNowrapSB;
@@ -1476,7 +1487,7 @@ header {
     }
   }
   @include desktop(1600) {
-    margin-top: 140px;
+    margin-top: 40px;
     .head_content {
       margin-bottom: 140px;
       .description_wrap {
@@ -1494,7 +1505,7 @@ header {
     }
   }
   @include desktop(1400) {
-    margin-top: 120px;
+    margin-top: 20px;
     .head_content {
       margin-bottom: 90px;
       .description_wrap {
@@ -1514,13 +1525,16 @@ header {
     }
   }
   @include desktop(1200) {
-    margin-top: 100px;
+    margin-top: 0;
     .head_content {
       margin-bottom: 70px;
     }
   }
   @include mobile {
     margin-top: 110px;
+    .wrap_section {
+      padding-top: 0;
+    }
     .head_content {
       margin-bottom: 40px;
       .title {
@@ -1606,10 +1620,11 @@ header {
 }
 // <------------------------------------->
 .solution_section {
-  margin-top: 154px;
+  margin-top: 14px;
 
   .wrap_section {
     padding: 0 20px;
+    padding-top: 140px;
   }
   .head_content {
     @extend %flexRowNowrapSB;
@@ -1882,6 +1897,7 @@ header {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
+    height: 98vh;
     .wrap_content {
       position: absolute;
       bottom: 0;
@@ -2029,6 +2045,7 @@ header {
   @include mobile {
     margin: 82px 20px 0;
     .wrap_section {
+      height: auto;
       .wrap_content {
         position: static;
         margin-top: 51px;
@@ -2111,6 +2128,7 @@ header {
 
 // <------------------------------------->
 .partners_cluster {
+  padding-top: 1px;
   @include mobile {
     height: auto;
     padding: 5px 0;
@@ -2208,6 +2226,7 @@ header {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
+    height: 98vh;
     .wrap_content {
       position: absolute;
       bottom: 0;
@@ -2371,6 +2390,7 @@ header {
       object-position: right;
     }
     .wrap_section {
+      height: auto;
       .wrap_content {
         position: static;
         padding: 0 11px;
@@ -2442,10 +2462,10 @@ header {
 
 //  <------------------------------------->
 .contact_form_section {
-  margin-top: 95px;
+  margin-top: 55px;
   overflow: hidden;
   .wrap_section {
-    padding-top: 60px;
+    padding-top: 100px;
     padding-bottom: 100px;
     margin: 0 20px;
   }
@@ -2582,7 +2602,7 @@ header {
     }
   }
   @include desktop(1600) {
-    margin-top: 75px;
+    margin-top: 35px;
     .form_wrap {
       input {
         min-width: unset;
@@ -2630,7 +2650,7 @@ header {
     }
   }
   @include desktop(1200) {
-    margin-top: 40px;
+    margin-top: 0;
     .form_wrap {
       input {
         padding: 10px 70px;
