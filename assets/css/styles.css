@@ -306,9 +306,9 @@ body {
   flex: 1; }
 
 header .desktop {
-  width: 100%;
-  max-width: 1010px;
-  position: absolute;
+  width: 90%;
+  max-width: 1800px;
+  position: fixed;
   z-index: 4;
   left: 50%;
   top: 17px;
@@ -317,12 +317,12 @@ header .desktop {
     margin-left: 16px; }
   header .desktop .wrap_header {
     width: 100%;
-    background-color: black;
+    background-color: #121212;
     border-radius: 1000px;
     padding: 25px; }
   header .desktop .main_menu {
     align-items: center;
-    gap: 50px; }
+    gap: 40px; }
     header .desktop .main_menu a {
       font-size: 14px;
       font-weight: 400;
@@ -355,27 +355,35 @@ header .mobile {
   header .mobile .logo {
     height: 15px; }
 @media screen and (min-width: 1001px) and (max-width: 1900px) {
-  header .desktop {
-    max-width: 800px; }
-    header .desktop .logo {
-      width: 80px; }
-    header .desktop .wrap_header {
-      padding: 20px; }
-      header .desktop .wrap_header .main_menu {
-        gap: 25px; } }
+  header .desktop .logo {
+    width: 80px; }
+  header .desktop .wrap_header {
+    padding: 20px; }
+    header .desktop .wrap_header .main_menu {
+      gap: 25px; } }
+@media screen and (min-width: 1001px) and (max-width: 1600px) {
+  header .desktop .wrap_header {
+    padding: 20px; }
+    header .desktop .wrap_header .main_menu {
+      gap: 20px; } }
+@media screen and (min-width: 1001px) and (max-width: 1400px) {
+  header .desktop .wrap_header .main_menu {
+    gap: 16px; }
+    header .desktop .wrap_header .main_menu a {
+      font-size: 12px; }
+  header .desktop .wrap_btns .leave_req_btn {
+    font-size: 12px; } }
 @media screen and (min-width: 1001px) and (max-width: 1200px) {
-  header .desktop {
-    max-width: 600px; }
-    header .desktop .wrap_btns .leave_req_btn {
-      font-size: 10px; }
-    header .desktop .logo {
-      width: 60px; }
-    header .desktop .wrap_header {
-      padding: 15px; }
-      header .desktop .wrap_header .main_menu {
-        gap: 20px; }
-        header .desktop .wrap_header .main_menu a {
-          font-size: 10px; } }
+  header .desktop .wrap_btns .leave_req_btn {
+    font-size: 10px; }
+  header .desktop .logo {
+    width: 60px; }
+  header .desktop .wrap_header {
+    padding: 15px; }
+    header .desktop .wrap_header .main_menu {
+      gap: 13px; }
+      header .desktop .wrap_header .main_menu a {
+        font-size: 10px; } }
 @media screen and (max-width: 1000px) {
   header .desktop {
     display: none; }

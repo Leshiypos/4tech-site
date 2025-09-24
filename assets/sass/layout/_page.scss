@@ -27,9 +27,10 @@ body {
 }
 header {
   .desktop {
-    width: 100%;
-    max-width: 1010px;
-    position: absolute;
+    width: 90%;
+
+    max-width: 1800px;
+    position: fixed;
     z-index: 4;
     left: 50%;
     top: 17px;
@@ -40,14 +41,14 @@ header {
     .wrap_header {
       @extend %flexRowNowrapSB;
       width: 100%;
-      background-color: rgba(0, 0, 0, 1);
+      background-color: #121212;
       border-radius: 1000px;
       padding: 25px;
     }
     .main_menu {
       @extend %flexRowNowrapSB;
       align-items: center;
-      gap: 50px;
+      gap: 40px;
       a {
         font-size: 14px;
         font-weight: 400;
@@ -94,7 +95,7 @@ header {
   }
   @include desktop {
     .desktop {
-      max-width: 800px;
+      //   max-width: 800px;
       .logo {
         width: 80px;
       }
@@ -106,9 +107,37 @@ header {
       }
     }
   }
+  @include desktop(1600) {
+    .desktop {
+      .wrap_header {
+        padding: 20px;
+        .main_menu {
+          gap: 20px;
+        }
+      }
+    }
+  }
+  @include desktop(1400) {
+    .desktop {
+      .wrap_header {
+        .main_menu {
+          gap: 16px;
+          a {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .wrap_btns {
+        .leave_req_btn {
+          font-size: 12px;
+        }
+      }
+    }
+  }
   @include desktop(1200) {
     .desktop {
-      max-width: 600px;
+      //   max-width: 600px;
       .wrap_btns {
         .leave_req_btn {
           font-size: 10px;
@@ -120,7 +149,7 @@ header {
       .wrap_header {
         padding: 15px;
         .main_menu {
-          gap: 20px;
+          gap: 13px;
           a {
             font-size: 10px;
           }
