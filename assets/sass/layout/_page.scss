@@ -54,6 +54,9 @@ header {
         font-weight: 400;
         white-space: nowrap;
         vertical-align: middle;
+        &.active {
+          color: rgb(187, 66, 182);
+        }
       }
       li {
         vertical-align: middle;
@@ -3303,7 +3306,7 @@ footer {
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      flex: 2;
+      flex: 3;
       a {
         font-size: 25px;
       }

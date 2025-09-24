@@ -52,6 +52,75 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   }
+  //   <-------------------------------------->
+  //   отслеживание положения секции и переключение главного меню
+
+  function abserveSectionPosition(idSectionSelector) {
+    const trigger = document.getElementById(`${idSectionSelector}`);
+    const liMenu = document.querySelector(
+      `.main_menu [href="#${idSectionSelector}"]`
+    );
+
+    gsap.from(trigger, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "top bottom",
+        end: "bottom bottom",
+        // markers: true,
+        onEnter: () => {
+          document.querySelectorAll(".main_menu .active").forEach((li) => {
+            li.classList.remove("active");
+          });
+
+          liMenu?.classList.add("active");
+        },
+        onEnterBack: () => {
+          document.querySelectorAll(".main_menu .active").forEach((li) => {
+            li.classList.remove("active");
+          });
+          liMenu?.classList.add("active");
+        },
+      },
+    });
+  }
+
+  function abserveSectionPositionBeginer(idSectionSelector) {
+    const trigger = document.getElementById(`${idSectionSelector}`);
+
+    gsap.from(trigger, {
+      scrollTrigger: {
+        trigger: trigger,
+        start: "bottom+=10px bottom",
+        end: "bottom bottom",
+        // markers: true,
+        onEnter: () => {
+          document.querySelectorAll(".main_menu .active").forEach((li) => {
+            li.classList.remove("active");
+          });
+        },
+        onEnterBack: () => {
+          document.querySelectorAll(".main_menu .active").forEach((li) => {
+            li.classList.remove("active");
+          });
+        },
+      },
+    });
+  }
+
+  abserveSectionPositionBeginer("begin");
+  abserveSectionPosition("about");
+  abserveSectionPosition("services");
+  abserveSectionPosition("soft");
+  abserveSectionPosition("equipment");
+  abserveSectionPosition("protect");
+  abserveSectionPosition("outsourcing");
+  abserveSectionPosition("solution");
+  abserveSectionPosition("development");
+  abserveSectionPosition("partners");
+  abserveSectionPosition("solutions");
+  abserveSectionPosition("contacts");
+  //   отслеживание положения секции и переключение главного меню
+  //   <-------------------------------------->
 
   function gorizontalSwiper() {
     // Слайдер Комплексные решения

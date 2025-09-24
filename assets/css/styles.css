@@ -328,6 +328,8 @@ header .desktop {
       font-weight: 400;
       white-space: nowrap;
       vertical-align: middle; }
+      header .desktop .main_menu a.active {
+        color: #bb42b6; }
     header .desktop .main_menu li {
       vertical-align: middle; }
   header .desktop .wrap_btns {
@@ -2474,7 +2476,7 @@ footer {
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      flex: 2; }
+      flex: 3; }
       .menu_mobile .wrap_content .burger__list a {
         font-size: 25px; }
     .menu_mobile .wrap_content .burger__button {
