@@ -3,9 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (document.getElementById("preloader")) {
     document.body.style.overflow = "hidden";
+    const wrapFrontLoader = document.querySelector("#preloader .front");
+    wrapFrontLoader ? wrapFrontLoader.classList.add("full_load") : null;
     const loader = () => {
       document.body.style.overflow = "";
       const preloader = document.getElementById("preloader");
+
       const fadeout = setInterval(() => {
         const opacity = getComputedStyle(preloader).opacity;
         opacity > 0

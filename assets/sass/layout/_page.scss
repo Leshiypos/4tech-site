@@ -3283,42 +3283,52 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-
-  img {
+  .wrap_preloader {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 55px;
-  }
-  .loader {
-    position: relative;
     width: 100px;
-    height: 100px;
-    &:before {
-      content: "";
-      border-radius: 50%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .wrap_img {
+    &.back {
+      opacity: 0.1;
       position: absolute;
-      inset: 0;
-      box-shadow: 0 0 10px 2px rgba(188, 188, 188, 0.3) inset;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: right;
     }
-    &:after {
-      content: "";
-      border-radius: 50%;
-      position: absolute;
-      inset: 0;
-      box-shadow: 0 0 10px 2px rgba(188, 188, 188, 0.3) inset;
-      box-shadow: 0 2px 0 #664bff inset;
-      animation: rotate 2s linear infinite;
+    &.front {
+      width: 100px;
+      overflow: hidden;
+      animation: load 500ms linear forwards;
+
+      &.full_load {
+        animation: loaded 2s linear forwards;
+      }
     }
+  }
+  img {
+    width: 100px;
   }
 }
 
-@keyframes rotate {
+@keyframes load {
   0% {
-    transform: rotate(0);
+    width: 0;
   }
   100% {
-    transform: rotate(360deg);
+    width: 38px;
+  }
+}
+@keyframes loaded {
+  0% {
+    width: 39px;
+  }
+  100% {
+    width: 100px;
   }
 }
