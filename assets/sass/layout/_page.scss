@@ -876,7 +876,7 @@ header {
   .head_content {
     @extend %flexRowNowrapSB;
     align-items: flex-start;
-    margin-bottom: 135px;
+    margin-bottom: 60px;
     .title {
       flex: 3;
       display: flex;
@@ -915,7 +915,7 @@ header {
   .row_catalog {
     @extend %flexRowNowrapSB;
     gap: 15px;
-    margin-bottom: 140px;
+    margin-bottom: 30px;
     .card {
       flex: 1;
       border-radius: 20px;
@@ -967,11 +967,13 @@ header {
     }
   }
   @include desktop(1600) {
+    margin-top: 70px;
+    padding-top: 60px;
     .row_catalog {
-      margin-bottom: 120px;
+      margin-bottom: 30px;
     }
     .head_content {
-      margin-bottom: 140px;
+      margin-bottom: 60px;
       .title {
         h2 {
           font-size: 130px;
@@ -1001,7 +1003,7 @@ header {
     }
   }
   @include desktop(1400) {
-    margin-top: 110px;
+    margin-top: 40px;
     .row_catalog {
       &.last {
         .card {
@@ -1018,10 +1020,10 @@ header {
       }
     }
     .row_catalog {
-      margin-bottom: 110px;
+      margin-bottom: 30px;
     }
     .head_content {
-      margin-bottom: 100px;
+      margin-bottom: 60px;
       .title {
         h2 {
           font-size: 110px;
@@ -1044,9 +1046,9 @@ header {
     }
   }
   @include desktop(1200) {
-    margin-top: 90px;
+    margin-top: 20px;
     .row_catalog {
-      margin-bottom: 90px;
+      margin-bottom: 30px;
       .card h3 {
         margin-bottom: 15px;
       }
@@ -1065,7 +1067,7 @@ header {
       }
     }
     .head_content {
-      margin-bottom: 100px;
+      margin-bottom: 60px;
       .title {
         h2 {
           font-size: 110px;
