@@ -601,7 +601,9 @@ header .mobile {
         transform: scale(2.2); } }
 
 .overyone_here_section {
-  padding-top: 165px; }
+  display: flex;
+  height: 100vh;
+  align-items: center; }
   .overyone_here_section .wrap_section {
     gap: 19px;
     margin-right: 23px; }
@@ -681,31 +683,35 @@ header .mobile {
     .overyone_here_section .card .card_content {
       max-width: 75%; } }
   @media screen and (max-width: 1000px) {
-    .overyone_here_section .wrap_section {
-      flex-direction: column;
-      margin: 0 29px; }
-    .overyone_here_section .content h2 {
-      font-size: 28px;
-      line-height: 1.2;
-      max-width: 100%; }
-    .overyone_here_section .content p {
-      font-size: 16px;
-      max-width: 100%; }
-    .overyone_here_section .content .leave_request {
-      display: none; }
-    .overyone_here_section .card .arrow_diag {
-      width: 40px;
-      top: 23px;
-      right: 20px; }
-    .overyone_here_section .card .card_content {
-      margin: 28px 34px;
-      max-width: 250px; }
-      .overyone_here_section .card .card_content p {
-        font-size: 14px; }
-    .overyone_here_section .card h3 {
-      font-size: 30px; }
-    .overyone_here_section .column {
-      width: 100%; } }
+    .overyone_here_section {
+      display: block;
+      height: auto;
+      padding-top: 120px; }
+      .overyone_here_section .wrap_section {
+        flex-direction: column;
+        margin: 0 29px; }
+      .overyone_here_section .content h2 {
+        font-size: 28px;
+        line-height: 1.2;
+        max-width: 100%; }
+      .overyone_here_section .content p {
+        font-size: 16px;
+        max-width: 100%; }
+      .overyone_here_section .content .leave_request {
+        display: none; }
+      .overyone_here_section .card .arrow_diag {
+        width: 40px;
+        top: 23px;
+        right: 20px; }
+      .overyone_here_section .card .card_content {
+        margin: 28px 34px;
+        max-width: 250px; }
+        .overyone_here_section .card .card_content p {
+          font-size: 14px; }
+      .overyone_here_section .card h3 {
+        font-size: 30px; }
+      .overyone_here_section .column {
+        width: 100%; } }
   @media screen and (min-width: 561px) and (max-width: 1000px) {
     .overyone_here_section .wrap_section {
       display: grid;

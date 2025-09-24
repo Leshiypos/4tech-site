@@ -486,7 +486,10 @@ header {
 // <----------------------------->
 
 .overyone_here_section {
-  padding-top: 165px;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  //   padding-top: 165px;
   .wrap_section {
     @extend %flexRowNowrapSB;
     gap: 19px;
@@ -605,6 +608,9 @@ header {
     }
   }
   @include mobile {
+    display: block;
+    height: auto;
+    padding-top: 120px;
     .wrap_section {
       flex-direction: column;
       margin: 0 29px;
