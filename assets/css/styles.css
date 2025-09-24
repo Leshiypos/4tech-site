@@ -202,6 +202,8 @@ a {
     color: white;
     font-weight: 500;
     max-width: 230px; }
+    .btn_hs.leave_request:hover {
+      animation: hueShift 6s linear infinite; }
   .btn_hs.footer {
     width: 208px;
     height: 56px;
@@ -269,6 +271,13 @@ a {
     .btn_hs {
       min-width: 195px; } }
 
+@keyframes hueShift {
+  0% {
+    filter: hue-rotate(0deg); }
+  50% {
+    filter: hue-rotate(180deg); }
+  100% {
+    filter: hue-rotate(360deg); } }
 html {
   font-family: "HelveticaNeueCyr", Arial, sans-serif;
   color: white;

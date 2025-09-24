@@ -42,6 +42,10 @@
     color: white;
     font-weight: 500;
     max-width: 230px;
+
+    &:hover {
+      animation: hueShift 6s linear infinite;
+    }
   }
   &.footer {
     width: 208px;
@@ -126,5 +130,17 @@
   }
   @include mobile(420) {
     min-width: 195px;
+  }
+}
+
+@keyframes hueShift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
   }
 }
