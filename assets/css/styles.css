@@ -631,7 +631,8 @@ header .mobile {
   .overyone_here_section .card {
     position: relative;
     border-radius: 20px;
-    overflow: hidden; }
+    overflow: hidden;
+    cursor: pointer; }
     .overyone_here_section .card .card_content {
       position: absolute;
       margin: 40px;
@@ -656,6 +657,8 @@ header .mobile {
       position: absolute;
       top: 27px;
       right: 24px; }
+    .overyone_here_section .card:hover {
+      animation: hueShift 6s linear infinite; }
   @media screen and (min-width: 1001px) and (max-width: 1600px) {
     .overyone_here_section .card .card_content {
       margin: 30px; }

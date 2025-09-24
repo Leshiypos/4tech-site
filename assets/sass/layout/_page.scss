@@ -529,7 +529,7 @@ header {
     position: relative;
     border-radius: 20px;
     overflow: hidden;
-
+    cursor: pointer;
     .card_content {
       position: absolute;
       margin: 40px;
@@ -557,6 +557,9 @@ header {
       position: absolute;
       top: 27px;
       right: 24px;
+    }
+    &:hover {
+      animation: hueShift 6s linear infinite;
     }
   }
   @include desktop(1600) {
