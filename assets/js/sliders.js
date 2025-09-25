@@ -61,25 +61,23 @@ document.addEventListener("DOMContentLoaded", () => {
       `.main_menu [href="#${idSectionSelector}"]`
     );
 
-    gsap.from(trigger, {
-      scrollTrigger: {
-        trigger: trigger,
-        start: "top bottom",
-        end: "bottom bottom",
-        // markers: true,
-        onEnter: () => {
-          document.querySelectorAll(".main_menu .active").forEach((li) => {
-            li.classList.remove("active");
-          });
+    ScrollTrigger.create({
+      trigger: trigger,
+      start: "30% bottom",
+      end: "bottom bottom",
+      // markers: true,
+      onEnter: () => {
+        document.querySelectorAll(".main_menu .active").forEach((li) => {
+          li.classList.remove("active");
+        });
 
-          liMenu?.classList.add("active");
-        },
-        onEnterBack: () => {
-          document.querySelectorAll(".main_menu .active").forEach((li) => {
-            li.classList.remove("active");
-          });
-          liMenu?.classList.add("active");
-        },
+        liMenu?.classList.add("active");
+      },
+      onEnterBack: () => {
+        document.querySelectorAll(".main_menu .active").forEach((li) => {
+          li.classList.remove("active");
+        });
+        liMenu?.classList.add("active");
       },
     });
   }
@@ -87,38 +85,37 @@ document.addEventListener("DOMContentLoaded", () => {
   function abserveSectionPositionBeginer(idSectionSelector) {
     const trigger = document.getElementById(`${idSectionSelector}`);
 
-    gsap.from(trigger, {
-      scrollTrigger: {
-        trigger: trigger,
-        start: "bottom+=10px bottom",
-        end: "bottom bottom",
-        // markers: true,
-        onEnter: () => {
-          document.querySelectorAll(".main_menu .active").forEach((li) => {
-            li.classList.remove("active");
-          });
-        },
-        onEnterBack: () => {
-          document.querySelectorAll(".main_menu .active").forEach((li) => {
-            li.classList.remove("active");
-          });
-        },
+    ScrollTrigger.create({
+      trigger: trigger,
+      start: "bottom+=10px bottom",
+      end: "bottom bottom",
+      // markers: true,
+      onEnter: () => {
+        document.querySelectorAll(".main_menu .active").forEach((li) => {
+          li.classList.remove("active");
+        });
+      },
+      onEnterBack: () => {
+        document.querySelectorAll(".main_menu .active").forEach((li) => {
+          li.classList.remove("active");
+        });
       },
     });
   }
-
-  abserveSectionPositionBeginer("begin");
-  abserveSectionPosition("about");
-  abserveSectionPosition("services");
-  abserveSectionPosition("soft");
-  abserveSectionPosition("equipment");
-  abserveSectionPosition("protect");
-  abserveSectionPosition("outsourcing");
-  abserveSectionPosition("solution");
-  abserveSectionPosition("development");
-  abserveSectionPosition("partners");
-  abserveSectionPosition("solutions");
-  abserveSectionPosition("contacts");
+  if (window.innerWidth > 1000) {
+    abserveSectionPositionBeginer("begin");
+    abserveSectionPosition("about");
+    abserveSectionPosition("services");
+    abserveSectionPosition("soft");
+    abserveSectionPosition("equipment");
+    abserveSectionPosition("protect");
+    abserveSectionPosition("outsourcing");
+    abserveSectionPosition("solution");
+    abserveSectionPosition("development");
+    abserveSectionPosition("partners");
+    abserveSectionPosition("solutions");
+    abserveSectionPosition("contacts");
+  }
   //   отслеживание положения секции и переключение главного меню
   //   <-------------------------------------->
 
@@ -260,12 +257,19 @@ document.addEventListener("DOMContentLoaded", () => {
       new Swiper(slider, {
         speed: 400,
         slidesPerView: 1.4,
+        autoplay: {
+          delay: 5000,
+        },
         breakpoints: {
           700: {
             slidesPerView: 3.3,
           },
           1000: {
             slidesPerView: 5.3,
+            loop: true,
+            autoplay: {
+              delay: 5000,
+            },
           },
         },
       });
@@ -277,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!cluster) return;
 
     const mm = gsap.matchMedia();
-    mm.add("(max-width: 1000px)", () => {
+    mm.add("(max-width: 3000px)", () => {
       const sliderEls = Array.from(
         cluster.querySelectorAll(".partners_slider")
       );
@@ -325,18 +329,18 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
       // крутится прямо
-      //   wrappers.forEach((w, idx) =>
-      //     tl.to(w, { x: () => -getLengthFor(idx) }, 0)
-      //   );
-      // врутится обратно
       wrappers.forEach((w, idx) =>
-        tl.fromTo(
-          w,
-          { x: () => -getLengthFor(idx) }, // стартуем с правого края
-          { x: 0, immediateRender: false }, // едем к левому (нормальному) положению
-          0
-        )
+        tl.to(w, { x: () => -getLengthFor(idx) }, 0)
       );
+      // врутится обратно
+      //   wrappers.forEach((w, idx) =>
+      //     tl.fromTo(
+      //       w,
+      //       { x: () => -getLengthFor(idx) }, // стартуем с правого края
+      //       { x: 0, immediateRender: false }, // едем к левому (нормальному) положению
+      //       0
+      //     )
+      //   );
 
       ScrollTrigger.addEventListener("refreshInit", updateSwipers);
       tl.scrollTrigger?.refresh();
