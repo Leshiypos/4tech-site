@@ -2518,6 +2518,18 @@ header {
         left: 34px;
         color: #9300ce;
         display: none;
+        @include mobile(700) {
+          bottom: -113px;
+        }
+      }
+      #form-message {
+        position: absolute;
+        bottom: -31px;
+        left: 34px;
+        color: #9300ce;
+        @include mobile(700) {
+          bottom: -113px;
+        }
       }
     }
     .form-phone {
@@ -3060,8 +3072,12 @@ footer {
     }
     .form_wrap {
       margin-top: 82px;
-
       margin-bottom: 180px;
+      #form-message_popup {
+        color: #9300ce;
+        margin-top: 20px;
+        text-align: center;
+      }
       form {
         display: flex;
         flex-flow: row nowrap;
@@ -3074,10 +3090,17 @@ footer {
         flex-flow: row wrap;
         align-items: center;
         gap: 18px;
-        #phone_error {
+        #phone_error_popup {
           position: absolute;
           bottom: -31px;
-          left: 34px;
+          right: 34px;
+          color: #9300ce;
+          display: none;
+        }
+        #form-message_popup {
+          position: absolute;
+          bottom: -31px;
+          right: 34px;
           color: #9300ce;
           display: none;
         }
