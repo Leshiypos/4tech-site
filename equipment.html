@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/libs/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.3.4/dist/lenis.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./assets/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.4/dist/lenis.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/sliders.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+    <!-- Проверка номера -->
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.7.4/build/css/intlTelInput.css"
+    />
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.7.4/build/js/intlTelInput.min.js"></script>
+    <!-- Нужен для форматирования/валидации -->
+
+    <title>4TECH</title>
+  </head>
+  <body>
+    <!-- <div id="preloader">
+      <div class="wrap_preloader">
+        <div class="wrap_img back">
+          <img src="./assets/images/logo.svg" alt="" />
+        </div>
+        <div class="wrap_img front">
+          <img src="./assets/images/logo.svg" alt="" />
+        </div>
+      </div>
+    </div> -->
+    <main>
+      <!-- Мобильное меню -->
+      <nav id="burger-menu" class="menu_mobile">
+        <div class="head_burger">
+          <img class="logo_burger" src="./assets/images/logo.svg" alt="logo" />
+          <button class="close_menu" data-toggle-menu>
+            <img src="./assets/images/icons/cross.svg" alt="Закрыть меню" />
+          </button>
+        </div>
+        <div class="wrap_content">
+          <div></div>
+          <ul class="burger__list">
+            <li class="burger__list-link">
+              <a href="#about" data-link-burger>О нас</a>
+            </li>
+            <li class="burger__list-link">
+              <a href="#services" data-link-burger>Услуги</a>
+            </li>
+            <li class="burger__list-link">
+              <a href="#soft" data-link-burger>Софт</a>
+            </li>
+            <li class="burger__list-link">
+              <a href="#equipment" data-link-burger>Оборудование</a>
+            </li>
+            <li class="burger__list-link">
+              <a href="#protect" data-link-burger>Кибербезопасность</a>
+            </li>
+            <li class="burger__list-link">
+              <a href="#outsourcing" data-link-burger>Аутсорсинг</a>
+            </li>
+            <li class="burger__list-link">
+              <a href="#solution" data-link-burger>Этапы</a>
+            </li>
+            <li class="burger__list-link">
+              <a href="#development" data-link-burger>Разработка</a>
+            </li>
+            <li class="burger__list-link">
+              <a href="#partners" data-link-burger>Партнеры</a>
+            </li>
+            <li class="burger__list-link">
+              <a href="#solutions" data-link-burger>Решения</a>
+            </li>
+            <li class="burger__list-link">
+              <a href="#contacts" data-link-burger>Контакты</a>
+            </li>
+          </ul>
+
+          <div class="burger__button">
+            <button
+              class="btn_hs leave_request mobile_full_width"
+              data-open-popup
+            >
+              <p>Оставить заявку</p>
+              <img
+                src="./assets/images/icons/arrow_diag_in_circle_W.svg"
+                alt="button"
+              />
+            </button>
+          </div>
+        </div>
+      </nav>
+      <!-- Хедер -->
+      <header>
+        <div class="desktop">
+          <div class="wrap_header">
+            <a href="#begin"
+              ><img src="./assets/images/logo.svg" alt="" class="logo"
+            /></a>
+            <nav>
+              <ul class="main_menu">
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#soft">Софт</a></li>
+                <li><a href="#equipment">Оборудование</a></li>
+                <li><a href="#protect">Кибербезопасность</a></li>
+                <li><a href="#outsourcing">Аутсорсинг</a></li>
+                <li><a href="#solution">Этапы</a></li>
+                <li><a href="#development">Разработка</a></li>
+                <li><a href="#partners">Партнеры</a></li>
+                <li><a href="#solutions">Решения</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+              </ul>
+            </nav>
+            <div class="wrap_btns">
+              <a href="#" class="leave_req_btn" data-open-popup
+                >Оставить заявку
+                <img
+                  src="./assets/images/icons/arrow-diag.svg"
+                  alt="leave a request"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <div class="mobile">
+          <img src="./assets/images/logo.svg" alt="" class="logo" />
+          <button class="burger_btn" data-toggle-menu>
+            <img
+              src="./assets/images/icons/burger_btn.svg"
+              alt="button burger"
+            />
+          </button>
+        </div>
+      </header>
+
+      <!-- Секция HEro section -->
+      <section id="begin" class="hero_section">
+        <div class="wrap_section">
+          <img
+            src="./assets/images/header_org_equimment.webp"
+            class="video_background"
+            alt=""
+          />
+
+          <div class="wrap_content">
+            <div class="head_content">
+              <div class="pre_title">
+                <img
+                  src="./assets/images/icons/check_mark.svg"
+                  alt="check_mark"
+                />
+                <span>Принтеры, МФУ, сканеры и расходные материалы</span>
+              </div>
+            </div>
+            <h1>Оргтехника для вашего офиса с гарантией и сервисом</h1>
+            <div class="pre_title_mob">
+              От оборудования до облачных серверов
+            </div>
+            <div class="foot_content two_col">
+              <div class="left_col">
+                <button class="btn_hs white" data-open-popup>
+                  <p>Оставить заявку</p>
+                  <img
+                    src="./assets/images/icons/arrow_in_circle_bl.svg"
+                    alt="arrow in circle"
+                  />
+                </button>
+                <button class="btn_hs transporent" data-open-popup>
+                  <p>Узнать больше</p>
+                  <img
+                    src="./assets/images/icons/arrow_in_circle_w.svg"
+                    alt="arrow in circle"
+                  />
+                </button>
+              </div>
+              <div class="right_col">
+                <a href="#about">
+                  <button class="btn_hs transporent down">
+                    <p>Листайте вниз</p>
+                    <img
+                      src="./assets/images/icons/arrow_in_circle_down_w.svg"
+                      alt="arrow in circle"
+                    />
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Секция Комлпексное решение -->
+      <section class="solutions_second_section">
+        <div class="wrap_section">
+          <div class="head_content">
+            <div class="title">
+              <h2 class="fade_in">комплексное решение</h2>
+            </div>
+            <div class="description_wrap fade_in">
+              <div class="wrap">
+                <div class="video_cube">
+                  <div class="block_cube">
+                    <video
+                      class="video_background fade_in"
+                      poster="./assets/video/cube_mini.webp"
+                      muted=""
+                      loop=""
+                      playsinline=""
+                      preload="auto"
+                      data-autoplay="delay"
+                      autoplay=""
+                    >
+                      <!-- десктоп -->
+                      <source
+                        src="./assets/video/cube_mini.mp4"
+                        type="video/mp4"
+                        media="(min-width: 1001px)"
+                      />
+                      <!-- мобильный -->
+                      <source
+                        src="./assets/video/mobile/cube_mini.mp4"
+                        type="video/mp4"
+                        media="(max-width: 1000px)"
+                      />
+                    </video>
+
+                    <div class="content_logo">
+                      <img src="./assets/images/logo_for_cube.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="description">
+                  Поломки техники, нехватка расходников, завышенные цены — мы
+                  решаем эти задачи.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main_content">
+            <div class="wrap_main_content">
+              <div class="single_solution">
+                <img src="./assets/images/icons/sol_1.svg" alt="" />
+                <div class="right_col">
+                  <h5>Продажа оборудование</h5>
+                  <div class="post_title">
+                    Качественная офисная техника от проверенных производителей.
+                  </div>
+                </div>
+              </div>
+              <div class="single_solution">
+                <img src="./assets/images/icons/sol_2.svg" alt="" />
+                <div class="right_col">
+                  <h5>Аренда оборудования</h5>
+                  <div class="post_title">
+                    арендуйте надёжную оргтехнику с быстрой доставкой и
+                    подключением
+                  </div>
+                </div>
+              </div>
+              <div class="single_solution">
+                <img src="./assets/images/icons/sol_3.svg" alt="" />
+                <div class="right_col">
+                  <h5>Сервис и ремонт</h5>
+                  <div class="post_title">
+                    техническая поддержка и ремонт оборудования
+                  </div>
+                </div>
+              </div>
+              <div class="single_solution">
+                <img src="./assets/images/icons/sol_4.svg" alt="" />
+                <div class="right_col">
+                  <h5>Расходные материалы</h5>
+                  <div class="post_title">
+                    Поставляем оригинальные расходники без скрытых доплат
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Секция Каталог-->
+      <section class="catalog_equipment_section">
+        <div class="wrap_section">
+          <div class="head_content">
+            <h2>Каталог</h2>
+          </div>
+          <div class="main_content">
+            <!-- Карточка -->
+            <div class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/cat_item_1.png" alt="" />
+              </div>
+              <div class="description_wrap">
+                <div class="description">
+                  <h4>Canon S25 ULTRA</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec porttitor tincidunt volutpat.
+                  </p>
+                </div>
+              </div>
+              <div class="btn_block">
+                <button class="btn_hs white" data-open-popup="">
+                  <p>Запросить цену</p>
+                  <img
+                    src="./assets/images/icons/arrow_in_circle_bl.svg"
+                    alt="arrow in circle"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка -->
+            <div class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/cat_item_2.png" alt="" />
+              </div>
+              <div class="description_wrap">
+                <div class="description">
+                  <h4>Canon S25 ULTRA</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec porttitor tincidunt volutpat.
+                  </p>
+                </div>
+              </div>
+              <div class="btn_block">
+                <button class="btn_hs white" data-open-popup="">
+                  <p>Запросить цену</p>
+                  <img
+                    src="./assets/images/icons/arrow_in_circle_bl.svg"
+                    alt="arrow in circle"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка -->
+            <div class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/cat_item_3.png" alt="" />
+              </div>
+              <div class="description_wrap">
+                <div class="description">
+                  <h4>Canon S25 ULTRA</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec porttitor tincidunt volutpat.
+                  </p>
+                </div>
+              </div>
+              <div class="btn_block">
+                <button class="btn_hs white" data-open-popup="">
+                  <p>Запросить цену</p>
+                  <img
+                    src="./assets/images/icons/arrow_in_circle_bl.svg"
+                    alt="arrow in circle"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка -->
+            <div class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/cat_item_4.png" alt="" />
+              </div>
+              <div class="description_wrap">
+                <div class="description">
+                  <h4>Canon S25 ULTRA</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec porttitor tincidunt volutpat.
+                  </p>
+                </div>
+              </div>
+              <div class="btn_block">
+                <button class="btn_hs white" data-open-popup="">
+                  <p>Запросить цену</p>
+                  <img
+                    src="./assets/images/icons/arrow_in_circle_bl.svg"
+                    alt="arrow in circle"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка -->
+            <div class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/cat_item_5.png" alt="" />
+              </div>
+              <div class="description_wrap">
+                <div class="description">
+                  <h4>Canon S25 ULTRA</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec porttitor tincidunt volutpat.
+                  </p>
+                </div>
+              </div>
+              <div class="btn_block">
+                <button class="btn_hs white" data-open-popup="">
+                  <p>Запросить цену</p>
+                  <img
+                    src="./assets/images/icons/arrow_in_circle_bl.svg"
+                    alt="arrow in circle"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Карточка -->
+            <div class="card">
+              <div class="img_wrap">
+                <img src="./assets/images/cat_item_6.png" alt="" />
+              </div>
+              <div class="description_wrap">
+                <div class="description">
+                  <h4>Canon S25 ULTRA</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Donec porttitor tincidunt volutpat.
+                  </p>
+                </div>
+              </div>
+              <div class="btn_block">
+                <button class="btn_hs white" data-open-popup="">
+                  <p>Запросить цену</p>
+                  <img
+                    src="./assets/images/icons/arrow_in_circle_bl.svg"
+                    alt="arrow in circle"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Секция Комлпексное решение -->
+      <section class="solutions_second_section">
+        <div class="wrap_section">
+          <div class="head_content">
+            <div class="title">
+              <h2 class="fade_in">наши преимущества</h2>
+            </div>
+            <div class="description_wrap fade_in">
+              <div class="wrap">
+                <div class="video_cube">
+                  <div class="block_cube">
+                    <video
+                      class="video_background fade_in"
+                      poster="./assets/video/cube_mini.webp"
+                      muted=""
+                      loop=""
+                      playsinline=""
+                      preload="auto"
+                      data-autoplay="delay"
+                      autoplay=""
+                    >
+                      <!-- десктоп -->
+                      <source
+                        src="./assets/video/cube_mini.mp4"
+                        type="video/mp4"
+                        media="(min-width: 1001px)"
+                      />
+                      <!-- мобильный -->
+                      <source
+                        src="./assets/video/mobile/cube_mini.mp4"
+                        type="video/mp4"
+                        media="(max-width: 1000px)"
+                      />
+                    </video>
+
+                    <div class="content_logo">
+                      <img src="./assets/images/logo_for_cube.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div class="description">
+                  Поломки техники, нехватка расходников, завышенные цены — мы
+                  решаем эти задачи.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main_content">
+            <div class="wrap_main_content">
+              <div class="single_solution">
+                <img src="./assets/images/icons/sol_our_1.svg" alt="" />
+                <div class="right_col">
+                  <h5>Быстрая доставка</h5>
+                  <div class="post_title">
+                    We use premium European materials for lasting quality and
+                    style
+                  </div>
+                </div>
+              </div>
+              <div class="single_solution">
+                <img src="./assets/images/icons/sol_our_2.svg" alt="" />
+                <div class="right_col">
+                  <h5>Гарантия до 3-х лет</h5>
+                  <div class="post_title">
+                    Our experts craft furniture with precision and attention to
+                    detail
+                  </div>
+                </div>
+              </div>
+              <div class="single_solution">
+                <img src="./assets/images/icons/sol_our_3.svg" alt="" />
+                <div class="right_col">
+                  <h5>Техническая поддержка</h5>
+                  <div class="post_title">
+                    Every project includes an official warranty and service
+                    support
+                  </div>
+                </div>
+              </div>
+              <div class="single_solution">
+                <img src="./assets/images/icons/sol_our_4.svg" alt="" />
+                <div class="right_col">
+                  <h5>Лучшие бренды</h5>
+                  <div class="post_title">
+                    Clear pricing with no hidden costs or unexpected fees
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="partners" class="partners_cluster">
+        <!-- Секция Наши партнеры -->
+        <section class="partners_section">
+          <div class="wrap_section">
+            <h2 class="fade_in">Наши партнеры</h2>
+            <div class="main_content">
+              <div class="swiper partners_slider fade_in">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/images/adobe.webp"
+                      alt=""
+                      class="partner_logo"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/images/microsoft.webp"
+                      alt=""
+                      class="partner_logo"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/images/team_viewer.webp"
+                      alt=""
+                      class="partner_logo"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/images/esset.webp"
+                      alt=""
+                      class="partner_logo"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/images/symantec.webp"
+                      alt=""
+                      class="partner_logo"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/images/kaspersky.webp"
+                      alt=""
+                      class="partner_logo"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/images/microsoft.webp"
+                      alt=""
+                      class="partner_logo"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/images/team_viewer.webp"
+                      alt=""
+                      class="partner_logo"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/images/esset.webp"
+                      alt=""
+                      class="partner_logo"
+                    />
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="./assets/images/symantec.webp"
+                      alt=""
+                      class="partner_logo"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Секция Наши Клиенты -->
+        <section class="partners_section">
+          <div class="wrap_section">
+            <h2 class="fade_in">Наши Клиенты</h2>
+            <div class="main_content">
+              <div class="sliders_wrap">
+                <!-- Первый слайдер -->
+                <div class="swiper partners_slider fade_in">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/adobe.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/microsoft.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/team_viewer.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/esset.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/symantec.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/kaspersky.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/microsoft.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/team_viewer.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/esset.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/symantec.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- Второй слайдер -->
+                <div class="swiper partners_slider fade_in">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/adobe.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/microsoft.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/team_viewer.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/esset.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/symantec.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/kaspersky.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/microsoft.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/team_viewer.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/esset.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="./assets/images/symantec.webp"
+                        alt=""
+                        class="partner_logo"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Секция Отзывов -->
+      <section class="reviews_clients_section">
+        <div class="wrap_section">
+          <div class="head_content">
+            <h2>Отзывы клиентов</h2>
+          </div>
+          <div class="reviews_block">
+            <!-- Одиночный отзыв -->
+            <div class="single_review">
+              <div class="head_review">
+                <img
+                  src="./assets/images/review_img.png"
+                  class="avatar"
+                  alt="avatar"
+                />
+                <div class="wrap_desription">
+                  <h5 class="name">Владимир Виномар</h5>
+                  <div class="job_title">Основатель СТО “SISTEMA”</div>
+                  <div class="rating_block">
+                    <img
+                      src="./assets/images/icons/stars_rate_active.png"
+                      class="unactive_rate_stars"
+                      alt="rating"
+                    />
+                    <div class="wrap_stars_active" style="width: 40%">
+                      <img
+                        src="./assets/images/icons/stars_rate_active.png"
+                        class="active_rate_stars"
+                        alt="rating"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text_review">
+                <p>
+                  Наша компания регулярно заказывает оргтехнику и компьютерное
+                  оборудование через этот сайт. Особенно хочется отметить
+                  высокий уровень сервиса и профессионализм сотрудников:
+                  менеджеры всегда помогают подобрать оптимальные модели под
+                  наши задачи и бюджет, дают грамотные рекомендации.
+                </p>
+                <p>
+                  За всё время сотрудничества не возникало ни одной серьёзной
+                  проблемы — доставка всегда в срок, техника приходит в
+                  заводской упаковке, с полным комплектом документов и
+                  гарантией. Удобно, что можно заказать всё необходимое для
+                  офиса в одном месте — от принтеров и МФУ до расходных
+                  материалов.
+                </p>
+                <p>
+                  Благодарим за надёжную работу и внимательное отношение к
+                  клиентам. Планируем продолжать сотрудничество и дальше!
+                </p>
+              </div>
+            </div>
+            <!-- Одиночный отзыв -->
+            <div class="single_review">
+              <div class="head_review">
+                <img
+                  src="./assets/images/review_img.png"
+                  class="avatar"
+                  alt="avatar"
+                />
+                <div class="wrap_desription">
+                  <h5 class="name">Владимир Виномар</h5>
+                  <div class="job_title">Основатель СТО “SISTEMA”</div>
+                  <div class="rating_block">
+                    <img
+                      src="./assets/images/icons/stars_rate_active.png"
+                      class="unactive_rate_stars"
+                      alt="rating"
+                    />
+                    <div class="wrap_stars_active" style="width: 60%">
+                      <img
+                        src="./assets/images/icons/stars_rate_active.png"
+                        class="active_rate_stars"
+                        alt="rating"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text_review">
+                <p>
+                  Наша компания регулярно заказывает оргтехнику и компьютерное
+                  оборудование через этот сайт. Особенно хочется отметить
+                  высокий уровень сервиса и профессионализм сотрудников:
+                  менеджеры всегда помогают подобрать оптимальные модели под
+                  наши задачи и бюджет, дают грамотные рекомендации.
+                </p>
+                <p>
+                  За всё время сотрудничества не возникало ни одной серьёзной
+                  проблемы — доставка всегда в срок, техника приходит в
+                  заводской упаковке, с полным комплектом документов и
+                  гарантией. Удобно, что можно заказать всё необходимое для
+                  офиса в одном месте — от принтеров и МФУ до расходных
+                  материалов.
+                </p>
+                <p>
+                  Благодарим за надёжную работу и внимательное отношение к
+                  клиентам. Планируем продолжать сотрудничество и дальше!
+                </p>
+              </div>
+            </div>
+            <!-- Одиночный отзыв -->
+            <div class="single_review">
+              <div class="head_review">
+                <img
+                  src="./assets/images/review_img.png"
+                  class="avatar"
+                  alt="avatar"
+                />
+                <div class="wrap_desription">
+                  <h5 class="name">Владимир Виномар</h5>
+                  <div class="job_title">Основатель СТО “SISTEMA”</div>
+                  <div class="rating_block">
+                    <img
+                      src="./assets/images/icons/stars_rate_active.png"
+                      class="unactive_rate_stars"
+                      alt="rating"
+                    />
+                    <div class="wrap_stars_active" style="width: 80%">
+                      <img
+                        src="./assets/images/icons/stars_rate_active.png"
+                        class="active_rate_stars"
+                        alt="rating"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="text_review">
+                <p>
+                  Наша компания регулярно заказывает оргтехнику и компьютерное
+                  оборудование через этот сайт. Особенно хочется отметить
+                  высокий уровень сервиса и профессионализм сотрудников:
+                  менеджеры всегда помогают подобрать оптимальные модели под
+                  наши задачи и бюджет, дают грамотные рекомендации.
+                </p>
+                <p>
+                  За всё время сотрудничества не возникало ни одной серьёзной
+                  проблемы — доставка всегда в срок, техника приходит в
+                  заводской упаковке, с полным комплектом документов и
+                  гарантией. Удобно, что можно заказать всё необходимое для
+                  офиса в одном месте — от принтеров и МФУ до расходных
+                  материалов.
+                </p>
+                <p>
+                  Благодарим за надёжную работу и внимательное отношение к
+                  клиентам. Планируем продолжать сотрудничество и дальше!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="questions_section">
+        <div class="wrap_section">
+          <div class="head_content">
+            <h2>FAQ</h2>
+          </div>
+          <div class="main_content">
+            <!-- Вопрос -->
+            <div class="single_question active">
+              <div class="wrap_question">
+                <div class="item_number">01/</div>
+                <div class="question_content">
+                  <h5 class="qestion">Есть ли доставка в регионы?</h5>
+
+                  <div class="answer">
+                    Нет. Это обязательные базовые навыкидля освоения более
+                    высокого уровня опыта. Не возможно научиться читать, когда
+                    вы не знаете алфавита
+                  </div>
+                </div>
+              </div>
+              <img
+                src="./assets/images/icons/arrow_white.svg"
+                class="arrow"
+                alt="arrow"
+              />
+            </div>
+
+            <!-- Вопрос -->
+            <div class="single_question">
+              <div class="wrap_question">
+                <div class="item_number">02/</div>
+                <div class="question_content">
+                  <h5 class="qestion">Есть ли доставка в регионы?</h5>
+
+                  <div class="answer">
+                    Нет. Это обязательные базовые навыкидля освоения более
+                    высокого уровня опыта. Не возможно научиться читать, когда
+                    вы не знаете алфавита
+                  </div>
+                </div>
+              </div>
+              <img
+                src="./assets/images/icons/arrow_white.svg"
+                class="arrow"
+                alt="arrow"
+              />
+            </div>
+
+            <!-- Вопрос -->
+            <div class="single_question">
+              <div class="wrap_question">
+                <div class="item_number">03/</div>
+                <div class="question_content">
+                  <h5 class="qestion">Есть ли доставка в регионы?</h5>
+
+                  <div class="answer">
+                    Нет. Это обязательные базовые навыкидля освоения более
+                    высокого уровня опыта. Не возможно научиться читать, когда
+                    вы не знаете алфавита
+                  </div>
+                </div>
+              </div>
+              <img
+                src="./assets/images/icons/arrow_white.svg"
+                class="arrow"
+                alt="arrow"
+              />
+            </div>
+
+            <!-- Вопрос -->
+            <div class="single_question">
+              <div class="wrap_question">
+                <div class="item_number">04/</div>
+                <div class="question_content">
+                  <h5 class="qestion">Есть ли доставка в регионы?</h5>
+
+                  <div class="answer">
+                    Нет. Это обязательные базовые навыкидля освоения более
+                    высокого уровня опыта. Не возможно научиться читать, когда
+                    вы не знаете алфавита
+                  </div>
+                </div>
+              </div>
+              <img
+                src="./assets/images/icons/arrow_white.svg"
+                class="arrow"
+                alt="arrow"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Секция Контактная форма -->
+      <section id="contacts" class="contact_form_section">
+        <div class="wrap_section">
+          <div class="two_column">
+            <div class="col">
+              <div class="head_content">
+                <h2 class="fade_in">
+                  давайте обсудим <br />
+                  ваш проект
+                </h2>
+                <p class="description fade_in">
+                  Оставьте заявку, и мы подберем решения, которые повысят
+                  эффективность вашего бизнеса и сэкономят ресурсы за счет
+                  автоматизации. Все — под ключ и без лишней головной боли.
+                </p>
+              </div>
+              <div class="form_wrap">
+                <!-- <form
+                  id="custom-contact-form"
+                  class="contact-form"
+                  action=""
+                  method="post"
+                  enctype="multipart/form-data"
+                >
+                  <div class="fields">
+                    <label class="form-phone">
+                      <input
+                        id="number"
+                        class="contact-form-input fade_in"
+                        type="tel"
+                        name="number_visible"
+                        inputmode="tel"
+                        autocomplete="tel"
+                        placeholder="Ваш телефон"
+                        required
+                      />
+                      <input type="hidden" name="phone_e164" id="phone_e164" />
+                    </label>
+                    <small id="phone_error" class="input-hint"
+                      >Введите корректный номер</small
+                    >
+                  </div>
+
+                  <button
+                    class="btn_hs leave_request fade_in mobile_full_width"
+                    type="submit"
+                  >
+                    <p>Оставить заявку</p>
+                    <img
+                      src="./assets/images/icons/arrow_diag_in_circle_W.svg"
+                      alt="button"
+                    />
+                  </button>
+                </form>
+                <div id="form-message"></div> -->
+                <button
+                  class="btn_hs leave_request fade_in write_whatsap mobile_full_width"
+                  data-open-popup
+                >
+                  <p>Написать в WhatsApp</p>
+                  <img
+                    src="./assets/images/icons/arrow_diag_in_circle_W.svg"
+                    alt=""
+                  />
+                </button>
+              </div>
+
+              <div class="foot_content">
+                <div class="col_foot_content fade_in">
+                  <div>
+                    <div class="stat">11+</div>
+                    <div class="description_stat">
+                      Лет поставляем решения в сфере IT-технологий
+                    </div>
+                  </div>
+                </div>
+                <div class="col_foot_content fade_in">
+                  <div>
+                    <div class="stat">50+</div>
+                    <div class="description_stat">
+                      Компаний-партнеров, известных по всему миру
+                    </div>
+                  </div>
+                </div>
+                <div class="col_foot_content fade_in">
+                  <div>
+                    <div class="stat">70+</div>
+                    <div class="description_stat">
+                      Довольных и постоянных клиентов по всему миру
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col video_col">
+              <video
+                class="video_background fade_in"
+                poster="./assets/video/form_section_BG.webp"
+                muted=""
+                loop=""
+                playsinline=""
+                preload="none"
+                data-autoplay="delay"
+              >
+                <!-- десктоп -->
+                <source
+                  src="./assets/video/form_section_BG.mp4"
+                  type="video/mp4"
+                  media="(min-width: 1001px)"
+                />
+                <!-- мобильный -->
+                <source
+                  src="./assets/video/mobile/form_section_BG.mp4"
+                  type="video/mp4"
+                  media="(max-width: 1000px)"
+                />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="wrap">
+        <div class="head_footer two_col">
+          <div class="col logo fade_in">
+            <img src="./assets/images/logo_footer.webp" alt="logo" />
+          </div>
+
+          <div class="col menu_footer fade_in">
+            <ul>
+              <li><a href="#about">О нас</a></li>
+              <li><a href="#services">Услуги</a></li>
+              <li><a href="#equipment">Оборудование</a></li>
+              <li><a href="#contacts">Контакты</a></li>
+            </ul>
+          </div>
+          <div class="col buttons_inner fade_in">
+            <div class="buttons_wrap">
+              <button class="btn_hs white footer" data-open-popup>
+                <p>Оставить заявку</p>
+                <img
+                  src="./assets/images/icons/arrow_in_circle_bl.svg"
+                  alt="arrow in circle"
+                />
+              </button>
+              <button class="btn_hs transporent footer" data-open-popup>
+                <p>Узнать больше</p>
+                <img
+                  src="./assets/images/icons/arrow_in_circle_w.svg"
+                  alt="arrow in circle"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="foot_footer two_col">
+          <div class="col col_info fade_in">
+            <div class="wrap_content">
+              <div class="text_logo">4TECH LLC</div>
+              <div class="address">
+                Al. Bolestawa Krzywoustego 40-870 Katowice
+              </div>
+            </div>
+          </div>
+          <div class="col col_privacy_mobile fade_in">
+            <a href="">Политика обработки данных</a>
+          </div>
+          <div class="col col_prodaction">
+            <div class="wrap_prodaction">
+              <a href="https://fernandes-media.com/" class="wrap_content">
+                <img src="./assets/images/fernandes_logo.webp" alt="" />
+                <div>
+                  <div class="title">FERNANDES MEDIA</div>
+                  <div class="descriptios">разработка сайта</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col col_privacy fade_in">
+            <ul>
+              <li><a href="">Privacy</a></li>
+              <li><a href="">Policy</a></li>
+              <li><a href="">Terms & Conditions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div id="popup-overlay" class="hidden">
+      <div id="popup" class="popup">
+        <div class="wrap_popup">
+          <button class="popoup__close" data-close-popup>
+            <img src="./assets/images/icons/cross.svg" alt="Закрыть окно" />
+          </button>
+          <div class="head_popup">
+            <h2>Оставьте заявку</h2>
+            <p>
+              Оставьте свой номер телефона, и мы свяжемся с вами как можно
+              скорее.
+            </p>
+          </div>
+          <div class="form_wrap">
+            <form
+              id="custom-contact-form-popup"
+              class="contact-form"
+              action=""
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <div class="fields">
+                <label class="form-phone" from="your_name">
+                  <input
+                    id="your_name"
+                    class="contact-form-input"
+                    type="text"
+                    name="your_name"
+                    placeholder="Ваше имя"
+                    required
+                  />
+                </label>
+                <label class="form-phone" from="number_visible">
+                  <input
+                    id="number_popup"
+                    class="contact-form-input"
+                    type="tel"
+                    name="number_visible"
+                    inputmode="tel"
+                    autocomplete="tel"
+                    placeholder="Ваш телефон"
+                    required
+                  />
+                  <input
+                    type="hidden"
+                    name="phone_e164"
+                    id="phone_e164_popUp"
+                  />
+                  <small
+                    id="phone_error_popup"
+                    class="input-hint"
+                    style="display: none"
+                  >
+                    Введите корректный номер
+                  </small>
+                </label>
+              </div>
+
+              <button
+                class="btn_hs leave_request mobile_full_width"
+                type="submit"
+              >
+                <p>Оставить заявку</p>
+                <img
+                  src="./assets/images/icons/arrow_diag_in_circle_W.svg"
+                  alt="button"
+                />
+              </button>
+            </form>
+            <div id="form-message"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

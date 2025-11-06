@@ -1,3 +1,54 @@
+function sendForm(formId, errorId, action_name) {
+  const form = document.getElementById(formId);
+
+  const messageBlock = document.getElementById(errorId);
+
+  if (form) {
+    const formData = new FormData(form);
+    formData.append("action", action_name);
+    fetch(my_ajax_object.ajax_url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        if (response.success) {
+          messageBlock.innerHTML = response.data.message;
+          form.reset();
+          setTimeout(() => {
+            messageBlock.innerHTML = "";
+          }, 3000);
+        } else {
+          messageBlock.innerHTML = response.data.message;
+        }
+      })
+      .catch((error) => {
+        messageBlock.innerHTML = "Ошибка отправки. Попробуйте позже";
+      });
+  }
+}
+
+// FAQ
+
+function faqInit() {
+  const closeAllQuestion = (elements) => {
+    if (!elements.length) return;
+    elements.forEach((element) => {
+      element.classList.remove("active");
+    });
+  };
+  document.addEventListener("click", (e) => {
+    let target = e.target;
+    let singleQuest = target.closest(".single_question");
+    if (!singleQuest) return;
+    let allActiveQuest = target
+      .closest(".questions_section")
+      .querySelectorAll(".single_question.active");
+    singleQuest.classList.toggle("active");
+    closeAllQuestion(allActiveQuest);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // preloader
 
@@ -149,17 +200,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ------- Отправка формы -------
     form.addEventListener("submit", (e) => {
+      e.preventDefault();
       const e164 = iti.getNumber(); // всегда с "+"
       const isValid = iti.isValidNumber();
 
       if (!isValid) {
-        e.preventDefault();
         error.style.display = "block";
         input.classList.add("has-error");
         input.focus();
         return;
       }
       hidden.value = e164;
+      error.style.display = "none";
+      sendForm("custom-contact-form", "form-message", "custom_contact_form");
     });
   })();
 
@@ -257,17 +310,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ------- Отправка формы -------
     form.addEventListener("submit", (e) => {
+      e.preventDefault();
       const e164 = iti.getNumber(); // всегда с "+"
       const isValid = iti.isValidNumber();
 
       if (!isValid) {
-        e.preventDefault();
         error.style.display = "block";
         input.classList.add("has-error");
         input.focus();
         return;
       }
       hidden.value = e164;
+      error.style.display = "none";
+      sendForm(
+        "custom-contact-form-popup",
+        "form-message_popup",
+        "custom_contact_form_popup"
+      );
     });
   })();
   //   Работа с popUp
@@ -298,7 +357,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const btnToggleMenu = e.target.closest("[data-toggle-menu]");
       const linkBurger = e.target.closest("[data-link-burger]");
       if (btnToggleMenu) {
-        console.log("нажал");
         burgerMenu.classList.toggle("active");
       }
       if (linkBurger) {
@@ -307,12 +365,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   bergerMenuControl();
+  faqInit();
 });
 
 // отложенный загрузка  видер
 function delayVideoLoad() {
   window.addEventListener("load", () => {
-    console.log("Страница загружена");
     const videos = [...document.querySelectorAll('[data-autoplay="delay"]')];
     loadSequentially(videos).catch(console.warn);
   });
@@ -350,7 +408,6 @@ function delayVideoLoad() {
 
     // пытаемся запустить
     try {
-      console.log("Попытка запуска");
       await video.play();
     } catch (e) {
       console.warn("Автозапуск заблокирован, пробуем без звука/по клику:", e);
