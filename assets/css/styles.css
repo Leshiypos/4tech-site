@@ -2657,15 +2657,138 @@ footer {
   .solutions_second_section .main_content h5 {
     font-weight: 500;
     font-size: 20px;
+    font-size: clamp(14px, calc( 14px + (20 - 14) * ((100vw - 1000px) / (1900 - 1000)) ), 20px);
     line-height: 125%;
     letter-spacing: -0.03em;
     margin-bottom: 10px; }
   .solutions_second_section .main_content .post_title {
     font-weight: 400;
     font-size: 14px;
+    font-size: clamp(10px, calc( 10px + (14 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 14px);
     line-height: 136%;
     letter-spacing: -0.03em;
     color: #8f8f8f; }
+  @media screen and (min-width: 1001px) and (max-width: 1600px) {
+    .solutions_second_section {
+      margin-top: 55px;
+      margin-bottom: 140px; }
+      .solutions_second_section .head_content {
+        margin-bottom: 140px; }
+        .solutions_second_section .head_content .description_wrap .wrap {
+          gap: 20px; }
+        .solutions_second_section .head_content .description_wrap .block_cube {
+          width: 200px;
+          height: 200px; }
+        .solutions_second_section .head_content .description_wrap .content_logo img {
+          width: 70px; }
+        .solutions_second_section .head_content .description_wrap .description {
+          max-width: 360px; }
+      .solutions_second_section .main_content .single_solution {
+        gap: 24px;
+        max-width: 300px; }
+        .solutions_second_section .main_content .single_solution img {
+          width: 75px; }
+      .solutions_second_section .main_content h5 {
+        margin-bottom: 8px; } }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .solutions_second_section {
+      margin-top: 20px;
+      margin-bottom: 110px; }
+      .solutions_second_section .head_content {
+        margin-bottom: 130px; }
+        .solutions_second_section .head_content .description_wrap .wrap {
+          gap: 10px; }
+        .solutions_second_section .head_content .description_wrap .block_cube {
+          width: 180px;
+          height: 180px; }
+        .solutions_second_section .head_content .description_wrap .content_logo img {
+          width: 50px; }
+        .solutions_second_section .head_content .description_wrap .description {
+          max-width: 340px; }
+      .solutions_second_section .main_content .single_solution {
+        gap: 20px;
+        max-width: 280px; }
+        .solutions_second_section .main_content .single_solution img {
+          width: 65px; }
+      .solutions_second_section .main_content h5 {
+        margin-bottom: 6px; } }
+  @media screen and (min-width: 1001px) and (max-width: 1200px) {
+    .solutions_second_section {
+      margin-top: 0;
+      margin-bottom: 85px; }
+      .solutions_second_section .head_content {
+        margin-bottom: 100px; }
+        .solutions_second_section .head_content .description_wrap .wrap {
+          gap: 0; }
+        .solutions_second_section .head_content .description_wrap .block_cube {
+          width: 140px;
+          height: 140px; }
+        .solutions_second_section .head_content .description_wrap .content_logo img {
+          width: 40px; }
+        .solutions_second_section .head_content .description_wrap .description {
+          max-width: 320px; }
+      .solutions_second_section .main_content .single_solution {
+        gap: 10px;
+        max-width: 250px; }
+        .solutions_second_section .main_content .single_solution img {
+          width: 60px; }
+      .solutions_second_section .main_content h5 {
+        margin-bottom: 3px; } }
+  @media screen and (max-width: 1000px) {
+    .solutions_second_section .head_content {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 10px; }
+      .solutions_second_section .head_content .title h2 {
+        font-size: 40px;
+        max-width: 260px; }
+      .solutions_second_section .head_content .description_wrap {
+        width: 100%; }
+        .solutions_second_section .head_content .description_wrap .wrap {
+          flex-direction: row-reverse;
+          width: 100%;
+          align-items: center;
+          gap: 0;
+          margin-top: -50px;
+          margin-bottom: 40px; }
+        .solutions_second_section .head_content .description_wrap .description {
+          max-width: 220px;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 175%;
+          letter-spacing: -0.03em;
+          margin-right: auto; }
+        .solutions_second_section .head_content .description_wrap .block_cube {
+          margin-left: auto;
+          overflow: hidden; }
+    .solutions_second_section .main_content .wrap_main_content {
+      flex-flow: row wrap;
+      gap: 67px;
+      column-gap: 40px; }
+    .solutions_second_section .main_content .single_solution {
+      max-width: unset;
+      flex: 1 1 290px;
+      min-width: 290px; }
+    .solutions_second_section .main_content h5 {
+      font-size: 20px; }
+    .solutions_second_section .main_content .post_title {
+      font-size: 14px; } }
+  @media screen and (max-width: 650px) {
+    .solutions_second_section .head_content .description_wrap .wrap {
+      flex-direction: column-reverse;
+      width: 100%;
+      align-items: unset;
+      gap: 0;
+      margin: 0;
+      margin-top: -10px; }
+    .solutions_second_section .head_content .description_wrap .description {
+      max-width: 217px; }
+    .solutions_second_section .head_content .description_wrap .block_cube {
+      margin-top: -40px;
+      overflow: hidden;
+      z-index: -1; }
+      .solutions_second_section .head_content .description_wrap .block_cube .content_logo img {
+        width: 75px; } }
 
 .catalog_equipment_section .wrap_section {
   margin: 0 20px; }
@@ -2673,7 +2796,6 @@ footer {
   font-weight: 300;
   font-size: 70px;
   font-size: clamp(40px, calc( 40px + (70 - 40) * ((100vw - 1000px) / (1900 - 1000)) ), 70px);
-  line-height: 101%;
   letter-spacing: -0.03em;
   text-transform: lowercase; }
 .catalog_equipment_section .head_content {
@@ -2681,7 +2803,7 @@ footer {
 .catalog_equipment_section .main_content {
   display: grid;
   gap: 25px;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); }
+  grid-template-columns: repeat(4, 1fr); }
 .catalog_equipment_section .card {
   display: flex;
   flex-flow: column nowrap;
@@ -2706,11 +2828,13 @@ footer {
   .catalog_equipment_section .description_wrap h4 {
     font-weight: 400;
     font-size: 35px;
-    line-height: 203%;
-    letter-spacing: -0.03em; }
+    font-size: clamp(20px, calc( 20px + (35 - 20) * ((100vw - 1000px) / (1900 - 1000)) ), 35px);
+    letter-spacing: -0.03em;
+    margin-bottom: 25px; }
   .catalog_equipment_section .description_wrap p {
     font-weight: 400;
     font-size: 14px;
+    font-size: clamp(10px, calc( 10px + (14 - 10) * ((100vw - 1000px) / (1900 - 1000)) ), 14px);
     line-height: 157%;
     letter-spacing: -0.03em;
     color: #8f8f8f; }
@@ -2720,6 +2844,42 @@ footer {
   .catalog_equipment_section .btn_block button {
     width: 100%;
     max-width: 100%; }
+@media screen and (min-width: 1001px) and (max-width: 1600px) {
+  .catalog_equipment_section .head_content {
+    margin-bottom: 55px; }
+  .catalog_equipment_section .description_wrap {
+    padding: 30px;
+    padding-bottom: 5px;
+    gap: 34px; }
+    .catalog_equipment_section .description_wrap h4 {
+      margin-bottom: 22px; }
+  .catalog_equipment_section .btn_block {
+    padding: 25px; } }
+@media screen and (min-width: 1001px) and (max-width: 1400px) {
+  .catalog_equipment_section .head_content {
+    margin-bottom: 45px; }
+  .catalog_equipment_section .description_wrap {
+    padding: 26px;
+    padding-bottom: 3px;
+    gap: 30px; }
+    .catalog_equipment_section .description_wrap h4 {
+      margin-bottom: 16px; }
+  .catalog_equipment_section .btn_block {
+    padding: 21px; } }
+@media screen and (min-width: 1001px) and (max-width: 1200px) {
+  .catalog_equipment_section .description_wrap {
+    padding: 20px;
+    padding-bottom: 0;
+    gap: 26px; }
+    .catalog_equipment_section .description_wrap h4 {
+      margin-bottom: 10px; }
+  .catalog_equipment_section .btn_block {
+    padding: 15px; }
+  .catalog_equipment_section .head_content {
+    margin-bottom: 40px; } }
+@media screen and (max-width: 1000px) {
+  .catalog_equipment_section .main_content {
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); } }
 
 .reviews_clients_section {
   margin-top: 135px; }
