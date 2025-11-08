@@ -1543,6 +1543,27 @@ header .mobile {
     .solution_section .head_content .title h2 {
       font-size: 50px; } }
 
+.equipment_page .solution_section {
+  margin-bottom: 136px; }
+  .equipment_page .solution_section .head_content .description_wrap {
+    max-width: 24%; }
+    .equipment_page .solution_section .head_content .description_wrap .wrap img {
+      display: none; }
+  .equipment_page .solution_section .head_content .title {
+    justify-content: space-between; }
+    .equipment_page .solution_section .head_content .title h2 {
+      font-size: 50px;
+      font-size: clamp(24px, calc( 24px + (50 - 24) * ((100vw - 1000px) / (1900 - 1000)) ), 50px);
+      font-weight: 300;
+      line-height: 100%;
+      text-transform: lowercase; }
+  @media screen and (max-width: 1000px) {
+    .equipment_page .solution_section .head_content .title h2 {
+      font-size: 40px; } }
+  @media screen and (max-width: 390px) {
+    .equipment_page .solution_section .head_content .title h2 {
+      font-size: 30px; } }
+
 .development_section {
   margin-top: 200px; }
   .development_section .wrap_section {

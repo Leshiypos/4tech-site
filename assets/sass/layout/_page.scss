@@ -1891,6 +1891,49 @@ header {
   }
 }
 
+// На странице Оборудование
+.equipment_page .solution_section {
+  margin-bottom: 136px;
+  .head_content {
+    .description_wrap {
+      max-width: 24%;
+      .wrap {
+        img {
+          display: none;
+        }
+      }
+    }
+    .title {
+      justify-content: space-between;
+      h2 {
+        font-size: 50px;
+        @include fluid-font(24, 50);
+        font-weight: 300;
+        line-height: 100%;
+        text-transform: lowercase;
+      }
+    }
+  }
+  @include mobile {
+    .head_content {
+      .title {
+        h2 {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+  @include mobile(390) {
+    .head_content {
+      .title {
+        h2 {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+}
+
 // <------------------------------------->
 
 .development_section {
