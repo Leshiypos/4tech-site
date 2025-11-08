@@ -2785,7 +2785,7 @@ footer {
     padding: 0 20px;
   }
   .head_footer {
-    margin-bottom: 45px;
+    margin-bottom: 84px;
   }
   .two_col {
     align-items: center;
@@ -2819,6 +2819,9 @@ footer {
       margin-left: auto;
       gap: 10px;
     }
+  }
+  .mobile_menu {
+    display: none;
   }
   // Низ футера
   .foot_footer {
@@ -2872,28 +2875,6 @@ footer {
       color: rgba(105, 105, 105, 1);
       display: none;
     }
-    .col_prodaction {
-      display: flex;
-      justify-content: center;
-      display: none;
-      .wrap_content {
-        display: flex;
-        flex-flow: row nowrap;
-        align-items: center;
-        gap: 7px;
-      }
-      .title {
-        font-size: 16px;
-        @include fluid-font(10, 16);
-        text-transform: uppercase;
-        margin-bottom: 3px;
-      }
-      .descriptios {
-        font-size: 14px;
-        @include fluid-font(10, 14);
-        color: rgba(255, 255, 255, 0.5);
-      }
-    }
 
     .col_privacy {
       display: flex;
@@ -2912,11 +2893,34 @@ footer {
       }
     }
   }
+  .prodaction_block {
+    display: flex;
+    justify-content: center;
+    margin-top: 400px;
+    margin-bottom: 130px;
+    .wrap_content {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 7px;
+    }
+    .title {
+      font-size: 16px;
+      @include fluid-font(10, 16);
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .descriptios {
+      font-size: 14px;
+      @include fluid-font(10, 14);
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
   @include desktop(1600) {
     margin-top: 130px;
     margin-bottom: 70px;
     .head_footer {
-      margin-bottom: 40px;
+      margin-bottom: 80px;
     }
     .col {
       &.logo {
@@ -2926,12 +2930,12 @@ footer {
       }
     }
 
-    .foot_footer {
-      .col_prodaction {
-        .wrap_content {
-          img {
-            width: 55px;
-          }
+    .prodaction_block {
+      margin-top: 350px;
+      margin-bottom: 110px;
+      .wrap_content {
+        img {
+          width: 55px;
         }
       }
     }
@@ -2940,7 +2944,7 @@ footer {
     margin-top: 110px;
     margin-bottom: 60px;
     .head_footer {
-      margin-bottom: 35px;
+      margin-bottom: 70px;
     }
     .col {
       &.logo {
@@ -2949,13 +2953,17 @@ footer {
         }
       }
     }
+    .prodaction_block {
+      margin-top: 300px;
+      margin-bottom: 90px;
+    }
   }
 
   @include desktop(1200) {
     margin-top: 90px;
     margin-bottom: 50px;
     .head_footer {
-      margin-bottom: 30px;
+      margin-bottom: 60px;
     }
     .col {
       &.logo {
@@ -2964,12 +2972,13 @@ footer {
         }
       }
     }
-    .foot_footer {
-      .col_prodaction {
-        .wrap_content {
-          img {
-            width: 50px;
-          }
+
+    .prodaction_block {
+      margin-top: 280px;
+      margin-bottom: 70px;
+      .wrap_content {
+        img {
+          width: 50px;
         }
       }
     }
@@ -2997,8 +3006,25 @@ footer {
         display: none;
       }
     }
+    .mobile_menu {
+      display: block;
+      margin-bottom: 50px;
+      ul {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      a {
+        font-weight: 400;
+        font-size: 18px;
+        color: #6c6c6c;
+      }
+    }
     .foot_footer {
       .col {
+        align-self: unset;
         &.flex_center {
           &.desktop_visible {
             display: none;
@@ -3009,14 +3035,7 @@ footer {
         flex-direction: column;
         gap: 50px;
       }
-      .col_prodaction {
-        .title {
-          font-size: 16px;
-        }
-        .descriptios {
-          font-size: 14px;
-        }
-      }
+
       .col_privacy {
         display: none;
       }
@@ -3033,6 +3052,16 @@ footer {
         display: block;
       }
     }
+    .prodaction_block {
+      margin-top: 59px;
+      margin-bottom: 62px;
+      .title {
+        font-size: 16px;
+      }
+      .descriptios {
+        font-size: 14px;
+      }
+    }
   }
   @include tablet(750, 1000) {
     .col {
@@ -3042,6 +3071,17 @@ footer {
             display: flex;
           }
         }
+      }
+    }
+  }
+  @include mobile(400) {
+    .mobile_menu {
+      ul {
+        flex-wrap: wrap;
+      }
+
+      a {
+        font-size: 15px;
       }
     }
   }
