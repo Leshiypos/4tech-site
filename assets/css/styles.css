@@ -302,6 +302,20 @@ a {
     right: 0;
     width: 100%;
     overflow: hidden; }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .rating_block {
+      width: 110px;
+      height: 15px; }
+      .rating_block img {
+        width: 110px;
+        height: 15px; } }
+  @media screen and (min-width: 1001px) and (max-width: 1200px) {
+    .rating_block {
+      width: 88px;
+      height: 12px; }
+      .rating_block img {
+        width: 88px;
+        height: 12px; } }
 
 html {
   font-family: "HelveticaNeueCyr", Arial, sans-serif;
@@ -2878,8 +2892,38 @@ footer {
   .catalog_equipment_section .head_content {
     margin-bottom: 40px; } }
 @media screen and (max-width: 1000px) {
+  .catalog_equipment_section .head_content {
+    margin-bottom: 58px; }
   .catalog_equipment_section .main_content {
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); } }
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+  .catalog_equipment_section h2 {
+    font-size: 40px; }
+  .catalog_equipment_section .description_wrap {
+    padding: 31px;
+    padding-bottom: 6px; }
+    .catalog_equipment_section .description_wrap h4 {
+      font-size: 35px; }
+    .catalog_equipment_section .description_wrap p {
+      font-size: 14px; }
+  .catalog_equipment_section .btn_block {
+    padding: 33px 26px 26px; } }
+@media screen and (max-width: 392px) {
+  .catalog_equipment_section .head_content {
+    margin-bottom: 58px; }
+  .catalog_equipment_section .main_content {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+  .catalog_equipment_section h2 {
+    font-size: 35px; }
+  .catalog_equipment_section .description_wrap {
+    padding: 28px;
+    padding-bottom: 3px; }
+    .catalog_equipment_section .description_wrap h4 {
+      font-size: 28px;
+      margin-bottom: 20px; }
+    .catalog_equipment_section .description_wrap p {
+      font-size: 14px; }
+  .catalog_equipment_section .btn_block {
+    padding: 25px 18px 18px; } }
 
 .reviews_clients_section {
   margin-top: 135px; }
@@ -2921,10 +2965,12 @@ footer {
         gap: 2px; }
         .reviews_clients_section .reviews_block .head_review .wrap_desription .name {
           font-weight: 400;
-          font-size: 28px; }
+          font-size: 28px;
+          font-size: clamp(16px, calc( 16px + (28 - 16) * ((100vw - 1000px) / (1900 - 1000)) ), 28px); }
         .reviews_clients_section .reviews_block .head_review .wrap_desription .job_title {
           font-weight: 500;
           font-size: 19px;
+          font-size: clamp(12px, calc( 12px + (19 - 12) * ((100vw - 1000px) / (1900 - 1000)) ), 19px);
           line-height: 184%;
           color: #5f5f5f; }
     .reviews_clients_section .reviews_block .text_review {
@@ -2934,10 +2980,77 @@ footer {
       .reviews_clients_section .reviews_block .text_review p {
         font-weight: 500;
         font-size: 18px;
+        font-size: clamp(11px, calc( 11px + (18 - 11) * ((100vw - 1000px) / (1900 - 1000)) ), 18px);
         line-height: 194%;
         color: #777777; }
         .reviews_clients_section .reviews_block .text_review p:first-child, .reviews_clients_section .reviews_block .text_review p:last-child {
           color: #bababa; }
+  @media screen and (min-width: 1001px) and (max-width: 1600px) {
+    .reviews_clients_section .head_content {
+      margin-bottom: 52.5px; }
+    .reviews_clients_section .reviews_block {
+      gap: 27px; }
+      .reviews_clients_section .reviews_block .single_review {
+        padding: 30px 49px 94px; } }
+  @media screen and (min-width: 1001px) and (max-width: 1400px) {
+    .reviews_clients_section .head_content {
+      margin-bottom: 42px; }
+    .reviews_clients_section .reviews_block {
+      gap: 24px; }
+      .reviews_clients_section .reviews_block .head_review {
+        gap: 24px;
+        padding-bottom: 32px;
+        margin-bottom: 24px; }
+        .reviews_clients_section .reviews_block .head_review .avatar {
+          width: 75px;
+          height: 75px; }
+      .reviews_clients_section .reviews_block .single_review {
+        padding: 26px 40px 65px; }
+      .reviews_clients_section .reviews_block .text_review {
+        gap: 30px; }
+        .reviews_clients_section .reviews_block .text_review p {
+          line-height: 1.85; } }
+  @media screen and (min-width: 1001px) and (max-width: 1200px) {
+    .reviews_clients_section .reviews_block {
+      gap: 20px; }
+      .reviews_clients_section .reviews_block .head_review {
+        padding-bottom: 27px;
+        margin-bottom: 17px;
+        gap: 24px; }
+        .reviews_clients_section .reviews_block .head_review .avatar {
+          width: 50px;
+          height: 50px; }
+      .reviews_clients_section .reviews_block .single_review {
+        padding: 20px 32px 45px; }
+      .reviews_clients_section .reviews_block .text_review {
+        gap: 20px; }
+        .reviews_clients_section .reviews_block .text_review p {
+          line-height: 1.8; } }
+  @media screen and (max-width: 1000px) {
+    .reviews_clients_section .wrap_section {
+      margin: 0 15px; }
+    .reviews_clients_section .head_content {
+      margin-bottom: 41px; }
+      .reviews_clients_section .head_content h2 {
+        text-transform: lowercase;
+        font-size: 40px;
+        margin-left: 5px; }
+    .reviews_clients_section .reviews_block {
+      gap: 59px;
+      column-gap: 30px; }
+      .reviews_clients_section .reviews_block .head_review {
+        gap: 15px; }
+        .reviews_clients_section .reviews_block .head_review .wrap_desription {
+          gap: 7px; }
+          .reviews_clients_section .reviews_block .head_review .wrap_desription .name {
+            font-size: 25px; }
+          .reviews_clients_section .reviews_block .head_review .wrap_desription .job_title {
+            font-size: 16px; }
+      .reviews_clients_section .reviews_block .text_review p {
+        font-size: 18px; }
+      .reviews_clients_section .reviews_block .single_review {
+        flex: 1 1 310px;
+        padding: 35px 18px 41px 25px; } }
 
 .questions_section {
   margin-top: 76px; }

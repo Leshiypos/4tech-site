@@ -19,4 +19,20 @@
     width: 100%;
     overflow: hidden;
   }
+  @include desktop(1400) {
+    width: 110px;
+    height: 15px;
+    img {
+      width: 110px;
+      height: 15px;
+    }
+  }
+  @include desktop(1200) {
+    width: 88px;
+    height: 12px;
+    img {
+      width: 88px;
+      height: 12px;
+    }
+  }
 }

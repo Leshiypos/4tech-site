@@ -3834,8 +3834,52 @@ footer {
     }
   }
   @include mobile {
+    .head_content {
+      margin-bottom: 58px;
+    }
     .main_content {
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+    h2 {
+      font-size: 40px;
+    }
+    .description_wrap {
+      h4 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 14px;
+      }
+      padding: 31px;
+      padding-bottom: 6px;
+    }
+    .btn_block {
+      padding: 33px 26px 26px;
+    }
+  }
+  @include mobile(392) {
+    .head_content {
+      margin-bottom: 58px;
+    }
+    .main_content {
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    }
+    h2 {
+      font-size: 35px;
+    }
+    .description_wrap {
+      h4 {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 14px;
+      }
+      padding: 28px;
+      padding-bottom: 3px;
+    }
+    .btn_block {
+      padding: 25px 18px 18px;
     }
   }
 }
@@ -3893,10 +3937,12 @@ footer {
         .name {
           font-weight: 400;
           font-size: 28px;
+          @include fluid-font(16, 28);
         }
         .job_title {
           font-weight: 500;
           font-size: 19px;
+          @include fluid-font(12, 19);
           line-height: 184%;
           color: #5f5f5f;
         }
@@ -3909,12 +3955,111 @@ footer {
       p {
         font-weight: 500;
         font-size: 18px;
+        @include fluid-font(11, 18);
         line-height: 194%;
         color: rgba(119, 119, 119, 1);
         &:first-child,
         &:last-child {
           color: rgba(186, 186, 186, 1);
         }
+      }
+    }
+  }
+  @include desktop(1600) {
+    .head_content {
+      margin-bottom: 75px * 0.7;
+    }
+    .reviews_block {
+      gap: 27px;
+      .single_review {
+        padding: 30px 49px 94px;
+      }
+    }
+  }
+  @include desktop(1400) {
+    .head_content {
+      margin-bottom: 75px * 0.7 * 0.8;
+    }
+    .reviews_block {
+      gap: 24px;
+      .head_review {
+        gap: 24px;
+        padding-bottom: 32px;
+        margin-bottom: 24px;
+        .avatar {
+          width: 75px;
+          height: 75px;
+        }
+      }
+      .single_review {
+        padding: 26px 40px 65px;
+      }
+      .text_review {
+        gap: 30px;
+        p {
+          line-height: 1.85;
+        }
+      }
+    }
+  }
+  @include desktop(1200) {
+    .reviews_block {
+      gap: 20px;
+      .head_review {
+        padding-bottom: 27px;
+        margin-bottom: 17px;
+        gap: 24px;
+        .avatar {
+          width: 50px;
+          height: 50px;
+        }
+      }
+      .single_review {
+        padding: 20px 32px 45px;
+      }
+      .text_review {
+        gap: 20px;
+        p {
+          line-height: 1.8;
+        }
+      }
+    }
+  }
+  @include mobile {
+    .wrap_section {
+      margin: 0 15px;
+    }
+    .head_content {
+      margin-bottom: 41px;
+      h2 {
+        text-transform: lowercase;
+        font-size: 40px;
+        margin-left: 5px;
+      }
+    }
+    .reviews_block {
+      gap: 59px;
+      column-gap: 30px;
+      .head_review {
+        gap: 15px;
+        .wrap_desription {
+          gap: 7px;
+          .name {
+            font-size: 25px;
+          }
+          .job_title {
+            font-size: 16px;
+          }
+        }
+      }
+      .text_review {
+        p {
+          font-size: 18px;
+        }
+      }
+      .single_review {
+        flex: 1 1 310px;
+        padding: 35px 18px 41px 25px;
       }
     }
   }
