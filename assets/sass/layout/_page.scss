@@ -3546,7 +3546,7 @@ footer {
 .solutions_second_section {
   position: relative;
   margin-top: 68px;
-  margin-bottom: 160px;
+  margin-bottom: 51px;
   padding-bottom: 10px;
   overflow: hidden;
 
@@ -3640,7 +3640,7 @@ footer {
   }
   @include desktop(1600) {
     margin-top: 55px;
-    margin-bottom: 140px;
+    margin-bottom: 50px;
     .head_content {
       margin-bottom: 140px;
       .description_wrap {
@@ -3677,7 +3677,7 @@ footer {
 
   @include desktop(1400) {
     margin-top: 20px;
-    margin-bottom: 110px;
+    margin-bottom: 45px;
     .head_content {
       margin-bottom: 130px;
       .description_wrap {
@@ -3713,7 +3713,7 @@ footer {
   }
   @include desktop(1200) {
     margin-top: 0;
-    margin-bottom: 85px;
+    margin-bottom: 40px;
     .head_content {
       margin-bottom: 100px;
       .description_wrap {
@@ -3750,7 +3750,7 @@ footer {
 
   @include mobile {
     margin-top: 45px;
-    margin-bottom: 96px;
+    margin-bottom: 40px;
     .wrap_section {
       padding-top: 0;
     }

@@ -2686,7 +2686,7 @@ footer {
 .solutions_second_section {
   position: relative;
   margin-top: 68px;
-  margin-bottom: 160px;
+  margin-bottom: 51px;
   padding-bottom: 10px;
   overflow: hidden; }
   .solutions_second_section .wrap_section {
@@ -2763,7 +2763,7 @@ footer {
   @media screen and (min-width: 1001px) and (max-width: 1600px) {
     .solutions_second_section {
       margin-top: 55px;
-      margin-bottom: 140px; }
+      margin-bottom: 50px; }
       .solutions_second_section .head_content {
         margin-bottom: 140px; }
         .solutions_second_section .head_content .description_wrap .wrap {
@@ -2785,7 +2785,7 @@ footer {
   @media screen and (min-width: 1001px) and (max-width: 1400px) {
     .solutions_second_section {
       margin-top: 20px;
-      margin-bottom: 110px; }
+      margin-bottom: 45px; }
       .solutions_second_section .head_content {
         margin-bottom: 130px; }
         .solutions_second_section .head_content .description_wrap .wrap {
@@ -2807,7 +2807,7 @@ footer {
   @media screen and (min-width: 1001px) and (max-width: 1200px) {
     .solutions_second_section {
       margin-top: 0;
-      margin-bottom: 85px; }
+      margin-bottom: 40px; }
       .solutions_second_section .head_content {
         margin-bottom: 100px; }
         .solutions_second_section .head_content .description_wrap .wrap {
@@ -2829,7 +2829,7 @@ footer {
   @media screen and (max-width: 1000px) {
     .solutions_second_section {
       margin-top: 45px;
-      margin-bottom: 96px; }
+      margin-bottom: 40px; }
       .solutions_second_section .wrap_section {
         padding-top: 0; }
       .solutions_second_section .head_content {
